@@ -1,0 +1,10 @@
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task04d\bin\Debug\Task04d.exe
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task04d\bin\Debug\Task04d.pdb
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task04d\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task04d\obj\x86\Debug\Task04d.exe
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task04d\obj\x86\Debug\Task04d.pdb
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task04d\obj\x86\Debug\Task04d.exe
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task04d\obj\x86\Debug\Task04d.pdb
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task04d\bin\Debug\Task04d.exe
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task04d\bin\Debug\Task04d.pdb
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task04d\obj\x86\Debug\ResolveAssemblyReference.cache

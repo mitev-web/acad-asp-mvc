@@ -1,0 +1,5 @@
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ProjectionDemo\bin\Debug\ProjectionDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ProjectionDemo\bin\Debug\ProjectionDemo.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ProjectionDemo\obj\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ProjectionDemo\obj\Debug\ProjectionDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ProjectionDemo\obj\Debug\ProjectionDemo.pdb

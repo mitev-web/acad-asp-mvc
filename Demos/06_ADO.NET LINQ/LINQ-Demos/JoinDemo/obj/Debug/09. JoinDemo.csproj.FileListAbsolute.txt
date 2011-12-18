@@ -1,0 +1,5 @@
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\JoinDemo\bin\Debug\JoinDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\JoinDemo\bin\Debug\JoinDemo.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\JoinDemo\obj\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\JoinDemo\obj\Debug\JoinDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\JoinDemo\obj\Debug\JoinDemo.pdb

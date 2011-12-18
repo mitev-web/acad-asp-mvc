@@ -1,0 +1,15 @@
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task05\bin\Debug\Task05.exe
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task05\bin\Debug\Task05.pdb
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task05\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task05\obj\x86\Debug\Task05.exe
+T:\ASP.NET\Homeworks\Homeworks_GEMI_399\LanguageOverviewPartI\Task05\obj\x86\Debug\Task05.pdb
+T:\01_ASP.NET_course\Homeworks\01_LanguageOverviewPartI\Task05\obj\x86\Debug\Task05.exe
+T:\01_ASP.NET_course\Homeworks\01_LanguageOverviewPartI\Task05\obj\x86\Debug\Task05.pdb
+T:\01_ASP.NET_course\Homeworks\01_LanguageOverviewPartI\Task05\bin\Debug\Task05.exe
+T:\01_ASP.NET_course\Homeworks\01_LanguageOverviewPartI\Task05\bin\Debug\Task05.pdb
+T:\01_ASP.NET_course\Homeworks\01_LanguageOverviewPartI\Task05\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task05\obj\x86\Debug\Task05.exe
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task05\obj\x86\Debug\Task05.pdb
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task05\bin\Debug\Task05.exe
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task05\bin\Debug\Task05.pdb
+T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartI\Task05\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -1,0 +1,7 @@
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\SelectManyExample\bin\Debug\SelectmanyExample.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\SelectManyExample\bin\Debug\SelectmanyExample.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\SelectManyExample\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\SelectManyExample\obj\x86\Debug\SelectmanyExample.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\SelectManyExample\obj\x86\Debug\SelectmanyExample.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\SelectManyExample\obj\x86\Debug\SelectmanyExample.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\SelectManyExample\obj\x86\Debug\SelectmanyExample.pdb

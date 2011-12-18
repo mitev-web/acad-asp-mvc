@@ -1,0 +1,11 @@
+//Write SQL statements to insert several records in the Users and Groups tables.
+
+INSERT INTO USERS(UserName, Password,FirstName, LastName, LastLogin) VALUES ('Peshaka', 'pe6ak2013', 'Pesho', 'Peshev', '11/21/2011')
+INSERT INTO USERS(UserName, Password,FirstName, LastName, LastLogin) VALUES ('Ivan', 'Pero11', 'Ivan', 'Ivanov', '12/1/2011')
+INSERT INTO USERS(UserName, Password,FirstName, LastName, LastLogin) VALUES ('valeto', 'viva202', 'Valeto', 'Velikana', '11/30/2011')
+INSERT INTO USERS(UserName, Password,FirstName, LastName, LastLogin) VALUES ('ginka', 'ginka11', 'Ginka', 'Lokumova', '2/25/2010')
+INSERT INTO USERS(UserName, Password,FirstName, LastName, LastLogin) VALUES ('penka', 'penka15', 'Penka', 'Minkova', '4/11/2011')
+
+INSERT INTO Groups VALUES ('Purva Grupa')
+INSERT INTO Groups VALUES ('Vtora Grupa')
+INSERT INTO Groups VALUES ('Treta Grupa');

@@ -1,0 +1,7 @@
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\StandardQueryOperatorsDemo\bin\Debug\StandardQueryOperatorsDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\StandardQueryOperatorsDemo\bin\Debug\StandardQueryOperatorsDemo.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\StandardQueryOperatorsDemo\obj\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\StandardQueryOperatorsDemo\obj\Debug\StandardQueryOperatorsDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\StandardQueryOperatorsDemo\obj\Debug\StandardQueryOperatorsDemo.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\StandardQueryOperatorsDemo\obj\Debug\StandardQueryOperatorsDemo.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\StandardQueryOperatorsDemo\obj\Debug\StandardQueryOperatorsDemo.pdb

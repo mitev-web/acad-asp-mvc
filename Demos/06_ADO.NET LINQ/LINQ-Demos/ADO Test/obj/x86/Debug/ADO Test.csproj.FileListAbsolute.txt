@@ -1,0 +1,5 @@
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ADO Test\bin\Debug\ADO Test.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ADO Test\bin\Debug\ADO Test.pdb
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ADO Test\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ADO Test\obj\x86\Debug\ADO Test.exe
+T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\ADO Test\obj\x86\Debug\ADO Test.pdb
