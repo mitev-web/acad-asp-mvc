@@ -1,0 +1,55 @@
+/* browser styles reset */
+body,ul,li{margin:0;padding:0;}
+
+body
+{
+	background:#fff;
+	color:#000;
+	font:62.5% arial,sans-serif;
+}
+
+div
+{
+	display:inline-block;
+	border:1px solid #00f;
+	font-size:1.2em;
+}
+
+ul
+{
+	list-style:none;
+	border:1px solid #fff;
+	background:#00f;
+	padding:1em;
+}
+
+li,
+a
+{
+	display:inline-block;
+	line-height:30px;
+}
+
+li
+{
+	border:1px solid #666;
+	border-left-width:0;
+}
+
+li.first
+{
+	border-left-width:1px;
+}
+
+a
+{
+	padding:.4em .8em;
+	background:#ddd;
+	color:#000;
+	text-decoration:none;
+}
+
+a:hover
+{
+	background:#99f;
+}

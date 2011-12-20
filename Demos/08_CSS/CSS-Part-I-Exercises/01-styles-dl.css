@@ -1,0 +1,83 @@
+/* browser styles reset */
+body,h1,dl,dt,dd{margin:0;padding:0;}
+
+body
+{
+	background:#666;
+	color:#aaa;
+	font:62.5% arial,sans-serif;
+}
+
+h1
+{
+	width:352px;
+	border:10px solid #333;
+	border-bottom-width:0;
+	padding:.6em 14px .4em;
+	font-weight:normal;
+	font-size:2.2em;
+}
+
+dl
+{
+	width:380px;
+	border:10px solid #333;
+	border-top-width:0;
+	padding:0 0 1em;
+	font-size:1.2em;
+}
+
+dl:after
+{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+dt,
+dd
+{
+	float:left;
+	padding:.7em 14px;
+	vertical-align:top;
+}
+
+a
+{
+	color:#ff3;
+	text-decoration:none;
+}
+dt
+{
+	width:120px;
+	clear:both;
+	color:#fff;
+	font-style:italic;
+	text-transform:capitalize;
+}
+
+strong
+{
+	display:block;
+	color:#f00;
+}
+
+.topost
+{
+	display:block;
+	margin:1em 0 0;
+}
+
+em
+{
+	color:#f90;
+}
+
+span
+{
+	display:inline-block;
+	font-size:3em;
+	color:#0c0;
+	vertical-align:middle;
+	line-height:10px;
+}

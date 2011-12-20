@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Show-Hide Example</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="hideButton">hide</button>
+    <button id="showButton">show</button>
+    <div id="something" style="width: 150px; margin: 10px; background: red">
+        Something to Hide</div>
+    <script type="text/javascript">
+        $("#showButton").hide();
+		
+        $("#hideButton").click(function () {
+            $("#something").hide();
+            $("#hideButton").hide();
+            $("#showButton").show();
+        });
+		
+        $("#showButton").click(function () {
+            $("#something").show();
+            $("#hideButton").show();
+            $("#showButton").hide();
+        });
+    </script>
+</body>
+
+</html>

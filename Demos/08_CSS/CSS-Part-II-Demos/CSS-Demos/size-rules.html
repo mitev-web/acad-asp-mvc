@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>CSS Size Rules</title>
+    <style type="text/css">
+        body
+        {
+            font-size: 25px;
+        }
+        div, table, td
+        {
+            border-width: 3px;
+            border-color: black;
+            border-style: solid;
+        }
+        .one
+        {
+            width: 300px;
+            height: 120px;
+        }
+        .two
+        {
+            width: 400px;
+            height: 200px;
+        }
+        .three
+        {
+            width: 650px;
+            height: 25px;
+        }
+        table
+        {
+            width: 650px;
+            height: 5px;
+        }
+        td
+        {
+            height: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        This div is 300px wide, 120px high</div>
+    <br />
+    <div class="two">
+        This div is 400px wide, 200px high</div>
+    <br />
+    <div class="three">
+        Notice how the browser follows the size, declared by the style for this div, but
+        "overflows" the content, because it is too much</div>
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td>
+                Notice that tables and table cells ignore height property if content is too much
+                for the specified size (this one should be 350px wide and 5px high)
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 200px">
+                Although some browsers TRY to follow the height rule specified in the CSS (this
+                one has height of 200px)
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

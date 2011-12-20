@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	<title>CSS Background Rules</title>
+	<style type="text/css">
+		body {background-color:#B0C0F0;font-size:22px;}
+		.one {background-image:url("back.gif");color:white}
+		.two {background-image:url("arrow.gif");background-position:left; background-repeat:no-repeat;padding-left:20px}
+		.three {background-image:url("arrow.gif");background-position:center; background-repeat:repeat-y;}
+	</style>
+</head>
+
+<body>
+	The document has solid background color specified
+	<br /><br />
+	<div class="one">This div has some simple background image applied<br /><br /></div>
+	<br />
+	<br />
+
+	<span class="two">This span has arrow image for background that is left positioned and not repeated
+	(also some left padding so that the text is not over the image)</span>
+	<br />
+	<br />
+	<div class="three">
+		This div has the same as image for<br />
+		background but is y-repeated<br />
+		and placed in the center
+	</div>
+</body>
+
+</html>

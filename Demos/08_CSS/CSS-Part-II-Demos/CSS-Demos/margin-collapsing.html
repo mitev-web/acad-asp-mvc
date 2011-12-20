@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Margin collapsing</title>
+<style type="text/css">
+body {font-family:Verdana, sans-serif; font-size:20px}
+.title {padding:10px 0;font-weight:bold}
+.outer {border:1px solid #333}
+.red {background-color:red;padding:0 20px}
+.blue {background-color:blue;padding:20px;color:white;margin:20px 0}
+</style>
+</head>
+<body>
+
+<div class="title">This is what margin collapsing is all about</div>
+<div class="outer">
+	After this text there are 3 elements with margin: 100px; margin:30px 0 20px 0; margin:10px and with color backgrounds
+	<div style="margin:100px;background:red"></div>
+	<div style="margin:30px 0 20px 0;background:green"></div>
+	<div style="margin:10px;background:blue"></div>
+	Top/Bottom margins collapse when they touch<br />
+	The actual space left is 100px - Max (100, 100, 30, 20, 10, 10) = 100<br />
+	Margins on zero height elements are considered to be touching
+</div>
+
+<div class="title">Margins on nested elements</div>
+<div class="outer">
+	<div class="red">
+		<div class="blue">
+			There is no red above or below this element<br />
+			When margins are nested, then the final margin is applied to the outermost element in the collapsing.
+		</div>
+	</div>
+</div>
+
+<div class="title">This is what you would expect</div>
+<div class="outer">
+	<div class="red" style="padding:20px">
+		<div class="blue" style="margin:0">Here we have red above and below</div>
+	</div>
+</div>
+
+<div class="title">If somethign shows up between the margins they don't collapse</div>
+<div class="outer">
+	<div class="red" style="border:10px solid green">
+		<div class="blue">
+			The red element has a border!
+		</div>
+	</div>
+</div>
+
+
+<div class="title">Notice that left/right margins do not collapse</div>
+<div class="outer">
+	<div class="red" style="padding:0">
+		<div class="blue" style="margin:20px">The red is drawn on the left and right </div>
+	</div>
+</div>
+
+<p>Position, float and etc elements are not taken into account for the calculation</p>
+<p>Note on negative margins: first Max of all positive margins is calculated and then from it is substracted the Max(abs(negative margin1), abs(negative margin2))
+</body>
+</html>

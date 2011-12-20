@@ -1,0 +1,71 @@
+/* browser styles reset */
+body,h1{margin:0;padding:0;}
+
+body
+{
+	background:#666;
+	color:#aaa;
+	font:62.5% arial,sans-serif;
+}
+
+#ticketInfo h1
+{
+	margin:.2em 0 .1em;
+	font-weight:normal;
+	font-size:1.8em;
+}
+
+#ticketInfo
+{
+	width:400px;
+	border:10px solid #333;
+	font-size:1.2em;
+}
+
+#ticketInfo td,
+#ticketInfo th
+{
+	padding:.6em 1em;
+	vertical-align:top;
+}
+
+#ticketInfo a
+{
+	color:#ff3;
+	text-decoration:none;
+}
+#ticketInfo th
+{
+	width:120px;
+	color:#fff;
+	font-style:italic;
+	font-weight:normal;
+	text-transform:capitalize;
+	text-align:left;
+}
+
+#ticketInfo strong
+{
+	display:block;
+	color:#f00;
+}
+
+.topost
+{
+	display:block;
+	margin:1em 0 0;
+}
+
+#ticketInfo em
+{
+	color:#f90;
+}
+
+#ticketInfo span
+{
+	display:inline-block;
+	font-size:3em;
+	color:#0c0;
+	vertical-align:middle;
+	line-height:10px;
+}

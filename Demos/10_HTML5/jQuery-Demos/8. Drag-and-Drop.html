@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drag and Drop - Example</title>
+    <script type="text/javascript" src="scripts/jquery-1.5.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.8.9.custom.min.js"></script>
+    <style type="text/css">
+        .border {
+            border: 1 solid blue;
+        }
+        .trash {
+            background-color: Aqua;
+            width:150;
+            padding:5 5 5 5;
+            border: 5 solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/TrashBin.png" id="bin" alt="trash bin" />
+    <span id="numItems">0</span> items in the trash bin.
+    <div style="display:block;" >
+        <div class="trash" id="firstRow">
+            Telerik Academy Howework
+        </div>
+        <div class="trash" id="secondRow">
+            Telerik Academy Lectures
+        </div>
+        <div class="trash" id="thirdRow">
+            University homework
+        </div>
+        <div class="trash" id="fourthRow">
+            University Lectures
+        </div>
+        <div class="trash" id="fifthRow">
+            Party Time!
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $(".trash").draggable({
+            'opacity': 0.3,
+            'revert': "valid",
+            'delay': 200,
+            'distance': 4,
+            'helper': "clone"
+        });
+
+        $("#bin").droppable({
+            'accept': ".trash",
+            'activeClass': "border",
+            'drop': function (e, ui) {
+                $("#numItems").text(new Number($("#numItems").text()) + 1);
+                var ID = $(ui.draggable).attr("id");
+                $("#" + ID).hide();
+
+            }
+        });
+    </script>
+</body>
+
+</html>
