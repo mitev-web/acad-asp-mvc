@@ -1,89 +1,0 @@
-10
-
-dir
-509
-https://pl3.projectlocker.com/netessentials/svn/.NET-Development-Essentials/Lectures/2.9.%20ADO.NET%20Entity%20Framework/Entity-Framework-Demos
-https://pl3.projectlocker.com/netessentials/svn
-
-
-
-2010-10-21T10:25:31.865954Z
-509
-donchominkov@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38070090-1395-4d31-94df-71dc4cdf9f67
-
-ReadingWithLINQToEntities
-dir
-
-UsingEntityFrameworkModel
-dir
-
-ResolvingTheNplus1QueryProblem
-dir
-
-ReadingFromMultipleTables
-dir
-
-UpdatingDeletingInsertingData
-dir
-
-JoinAndGroupDemo
-dir
-
-QueriesLogging
-dir
-
-Entity-Framework-Demos.sln
-file
-511
-
-
-
-2010-10-21T14:15:23.125462Z
-0b02b56c08c017a5941565edd8a56c7b
-2010-10-21T14:36:13.481987Z
-511
-donchominkov@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8721
-
-ExecuteSQLQuery
-dir
-
-ExecuteParameterizedSQLQueries
-dir
-

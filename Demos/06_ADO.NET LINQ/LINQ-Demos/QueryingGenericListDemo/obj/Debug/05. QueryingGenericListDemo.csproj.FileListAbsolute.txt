@@ -1,5 +1,0 @@
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryingGenericListDemo\bin\Debug\QueryingGenericListDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryingGenericListDemo\bin\Debug\QueryingGenericListDemo.pdb
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryingGenericListDemo\obj\Debug\ResolveAssemblyReference.cache
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryingGenericListDemo\obj\Debug\QueryingGenericListDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryingGenericListDemo\obj\Debug\QueryingGenericListDemo.pdb

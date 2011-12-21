@@ -1,7 +1,0 @@
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryExpressionsDemo\bin\Debug\QueryExpressionsDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryExpressionsDemo\bin\Debug\QueryExpressionsDemo.pdb
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryExpressionsDemo\obj\Debug\ResolveAssemblyReference.cache
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryExpressionsDemo\obj\Debug\QueryExpressionsDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\QueryExpressionsDemo\obj\Debug\QueryExpressionsDemo.pdb
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\QueryExpressionsDemo\obj\Debug\QueryExpressionsDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\QueryExpressionsDemo\obj\Debug\QueryExpressionsDemo.pdb
