@@ -1,0 +1,53 @@
+﻿body
+{
+    font-style: normal;
+    font-family: Calibri;
+    font-size:13px;
+    margin-left:-30px;
+}
+
+img 
+{
+border: 1px solid black;
+}
+li 
+{
+margin-top:8px;
+}
+
+ol li 
+{
+list-style: numeric 
+}
+ul li .inside
+{
+    display:list-item;
+}
+
+ul li 
+{
+        list-style-type: disc;
+}
+
+a {
+color: #a23936;
+font-style: normal;
+font-size: 14px;
+
+}
+h2 {
+font-weight: bold;
+font-style: italic;
+}
+
+.spacer 
+{
+font-weight:bold;
+list-style-position: inside;
+margin-top: 30px;
+}
+
+ol 
+{
+    list-style-position: inside;
+}

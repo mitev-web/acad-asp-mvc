@@ -1,0 +1,55 @@
+﻿     #left_panel 
+     {
+       float:left;
+         height: 672px;
+         width: 262px;
+         border: 2px solid black;
+         text-align:center;
+         margin-right: 20px;
+     }
+     
+     p {
+		 line-height:12px;
+	 }
+	 img {
+		margin:-3px;0;0;0;padding:0px; 
+	 }
+     h1
+     {
+         text-align:center;
+     }
+     #main_panel
+     {
+		width:940px;
+		height: 672px;
+		border: 2px solid black;
+     }
+     img 
+     {
+         padding: 15px;
+     }
+
+     ul 
+     {
+      
+         list-style-type: none;
+     }
+     ul li 
+     {
+           font-weight:bold;
+       margin-top:5px;
+	   margin-bottom:5px;
+	  
+     }
+	 
+	 
+	 .root_li {
+		 margin-top:20px;
+		 margin-left: 20px;
+	 }
+
+	 ul li ul li {
+		 
+
+		       font-weight: normal; 
+	 }
