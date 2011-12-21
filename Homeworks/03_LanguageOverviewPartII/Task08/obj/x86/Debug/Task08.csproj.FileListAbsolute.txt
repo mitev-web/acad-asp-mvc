@@ -1,7 +1,0 @@
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\obj\x86\Debug\ResolveAssemblyReference.cache
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\bin\Debug\Task08.exe
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\bin\Debug\Task08.pdb
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\bin\Debug\Task06.exe
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\bin\Debug\Task06.pdb
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\obj\x86\Debug\Task08.exe
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task08\obj\x86\Debug\Task08.pdb
