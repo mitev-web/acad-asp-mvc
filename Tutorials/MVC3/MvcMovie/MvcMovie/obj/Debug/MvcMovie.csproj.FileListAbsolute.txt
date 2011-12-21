@@ -1,0 +1,16 @@
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\MvcMovie.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\MvcMovie.pdb
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\EntityFramework.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\Microsoft.Web.Infrastructure.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\Microsoft.Web.Optimization.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.Helpers.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.Mvc.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.Providers.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.Razor.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.WebPages.Deployment.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.WebPages.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\System.Web.WebPages.Razor.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\bin\EntityFramework.xml
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\obj\Debug\ResolveAssemblyReference.cache
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\obj\Debug\MvcMovie.dll
+T:\01_ASP.NET_course\Data\Tutorials\MVC3\MvcMovie\MvcMovie\obj\Debug\MvcMovie.pdb
