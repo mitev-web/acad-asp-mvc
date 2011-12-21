@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery UI - Demos</title>
+    <script type="text/javascript" src="scripts/jquery-1.5.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.8.9.custom.min.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css"> 
+</head>
+
+<body>
+    Select a your birth date:
+	<input id="birthdate" type="text" />
+    <script type="text/javascript">
+		$('#birthdate').datepicker();
+    </script>
+
+	<br/> <br/>
+
+	<div id="accordion">
+		<h3><a href="#">Section 1</a></h3>
+		<div>Some text comes here</div>
+		<h3><a href="#">Section 2</a></h3>
+		<div>More text comes here</div>
+		<h3><a href="#">Section 3</a></h3>
+		<div>Even more text comes here</div>
+	</div>
+	<script type="text/javascript">
+		$('#accordion').accordion();
+    </script>
+
+	<br/> <br/>
+
+	Enter a programming language:
+	<input id="langBox" type="text" />
+	<br/> <br/>	
+    <script type="text/javascript">
+		var langs = ["C", "C#", "C++", "Java", "JavaScript", 
+			"PHP", "Python", "Perl", "Ruby", "SQL"];
+		$("#langBox").autocomplete({ source: langs });
+    </script>
+
+	<br/> <br/>
+
+	<a id="showDialogHyperlink" href="#">Show a dialog</a>
+	<div id="dialog" title="Some title" style="display:none">
+		<p>Some text inside the dialog</p>
+		<p>More text inside the dialog</p>
+	</div>
+	<script type="text/javascript">
+		$("#showDialogHyperlink").button();
+		$("#showDialogHyperlink").click(function() {
+			$("#dialog").dialog();
+		});
+    </script>
+
+	<br/> <br/>
+
+	<div id="slider"></div>
+	<script type="text/javascript">
+		$("#slider").slider();
+		$("#slider").css('width', '300px');
+    </script>
+
+	<br/> <br/>
+
+	<div id="tabs" style="width: 500px">
+		<ul>
+			<li><a href="#tabs-1">First Tab</a></li>
+			<li><a href="#tabs-2">Second Tab</a></li>
+			<li><a href="#tabs-3">Third Tab</a></li>
+		</ul>
+		<div id="tabs-1">
+			<p>This is the first tab contents.<p>
+			<p>Looks nice, right?<p>			
+		</div>
+		<div id="tabs-2">
+			<p>This is the second tab contents.<p>
+			<p>Easy to use, right?<p>			
+		</div>
+		<div id="tabs-3">
+			This is the third tab contents
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#tabs").tabs();
+    </script>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+﻿body
+{
+}
+img 
+{
+    border: 1px solid black;
+}
+#content
+{
+    background-color: #CCCCCC;
+    width: 400px;
+    padding: 20px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+a {
+margin-right: 70px;
+
+}
+h2 {
+  font-weight: bold;
+  font-style: italic;
+  }
+li 
+{
+  font-style: italic;
+  font-weight: bold;
+}

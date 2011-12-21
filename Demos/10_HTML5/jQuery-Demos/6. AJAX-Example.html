@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery AJAX Example</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+
+<body>
+	<button id="buttonPartialRendering">Perform AJAX Request (Partial Rendering)</button>
+	<button id="buttonJSONService">Perform AJAX Request (JSON service)</button>
+    <script type="text/javascript">
+		$("#buttonPartialRendering").click(function() {
+			$.ajax({
+				url: "6. AJAX-Data.html",
+				success: function(data){
+					$('#resultDiv').html(data);
+				}
+			});
+		});
+
+		$("#buttonJSONService").click(function() {
+			$.getJSON("6. JSON-Data.html", function(data) {
+				for (var i=0; i<data.names.length; i++) {
+				  var name = data.names[i];
+				  $('#resultDiv').append(
+					'<h1>' + name.firstName + ' ' + 
+					name.lastName + '</h1>');				  
+			  }
+			});
+		});			
+    </script>
+    <div id="resultDiv">Result will be shown here</div>
+</body>
+
+</html>

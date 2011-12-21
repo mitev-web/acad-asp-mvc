@@ -1,5 +1,0 @@
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task05\bin\Debug\Task05.exe
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task05\bin\Debug\Task05.pdb
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task05\obj\x86\Debug\ResolveAssemblyReference.cache
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task05\obj\x86\Debug\Task05.exe
-T:\01_ASP.NET_course\Homeworks\02_LanguageOverviewPartII\Task05\obj\x86\Debug\Task05.pdb

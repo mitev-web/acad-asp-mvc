@@ -1,5 +1,0 @@
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\NestedQueriyDemo\bin\Debug\NestedQueriyDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\NestedQueriyDemo\bin\Debug\NestedQueriyDemo.pdb
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\NestedQueriyDemo\obj\Debug\ResolveAssemblyReference.cache
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\NestedQueriyDemo\obj\Debug\NestedQueriyDemo.exe
-T:\01_ASP.NET_course\Demos\06_ADO.NET LINQ\LINQ-Demos\6.LINQ-Demos\NestedQueriyDemo\obj\Debug\NestedQueriyDemo.pdb

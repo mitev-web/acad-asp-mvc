@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Methods Chaining</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <style type="text/css">
+        .redBackgroundClass {
+            background: Red;
+        }
+        .greenForegroundClass {
+            color: Green;
+        }
+    </style>
+</head>
+
+<body>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <p>some &ltp&gt with <a>some &lta&gt</a></p>
+    <script type="text/javascript">
+        $('body')
+		.find('p')
+			.find('a')
+				.addClass('redBackgroundClass')
+			.end()
+			.addClass('greenForegroundClass')
+		.end()       
+    </script>
+</body>
+
+</html>
