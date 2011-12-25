@@ -1,0 +1,66 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Calibri;
+}
+
+h2{
+	font-size: 18px;	
+	font-weight: 500;
+	color:#AFAA96;
+	margin: 10px 0px 5px 10px;
+}
+ul {
+	margin:0 0 5px 0px;
+	list-style-type:none;
+
+}
+li {
+	margin: 7px;	
+}
+
+#ticket_body {
+	margin-left:25%;
+	width: 325px;
+	float: left;
+	border:	9px solid #303030;
+	background-color:#595959;
+}
+.field_names {
+	float: left;
+	color: #dddddd;
+	font-size:12px;
+	font-style:italic;
+	margin-left: -35px;
+}
+.field_values {
+	float: left;
+		float: left;
+	color: #aaaaaa;
+	font-size:12px;
+	font-style:italic;
+}
+
+.warning {
+	color: red;	
+	margin-top: -5px;
+	margin-bottom: 10px;
+	font-style:normal;
+	font-weight: bold
+}
+
+.green_circle {
+	list-style-image:url(../images/green_circle.png);
+	list-style-position:inside;
+	color: green;
+}
+
+.gold {
+	color: #D6D895;
+}
+
+.orange {
+	color: #FF8605;
+	font-style:normal;
+}

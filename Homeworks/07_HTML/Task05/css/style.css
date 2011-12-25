@@ -5,9 +5,16 @@
          width: 262px;
          border: 2px solid black;
          text-align:center;
-         margin-right: 20px;
+         margin-right: -2px;
      }
-     
+     #main_panel
+     {
+		width:940px;
+		float:left;
+		height: 672px;
+
+		border: 2px solid black;
+     }
      p {
 		 line-height:12px;
 	 }
@@ -18,20 +25,18 @@
      {
          text-align:center;
      }
-     #main_panel
-     {
-		width:940px;
-		height: 672px;
-		border: 2px solid black;
-     }
-     img 
+
+     .book
      {
          padding: 15px;
      }
+	 .thumb{
+		margin:-3px;0;0;0;padding:0px; 
+	 }
 
      ul 
      {
-      
+
          list-style-type: none;
      }
      ul li 
@@ -41,11 +46,10 @@
 	   margin-bottom:5px;
 	  
      }
-	 
-	 
+
 	 .root_li {
 		 margin-top:20px;
-		 margin-left: 20px;
+
 	 }
 
 	 ul li ul li {
