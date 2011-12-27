@@ -1,4 +1,10 @@
-﻿     #left_panel 
+﻿     
+	 #container {
+		float:left; 
+		width:950px;
+	 }
+	 
+	 #left_panel 
      {
        float:left;
          height: 672px;
@@ -35,24 +41,22 @@
 
      ul 
      {
-
          list-style-type: none;
      }
      ul li 
      {
-           font-weight:bold;
-       margin-top:5px;
-	   margin-bottom:5px;
-	  
+		font-weight:bold;
+		margin-top:5px;
+		margin-bottom:5px;
      }
 
 	 .root_li {
 		 margin-top:20px;
-
 	 }
+	 #main_panel li ul {
 
+		padding-left:20px;
+	 }
 	 ul li ul li {
-		 
-
 		       font-weight: normal; 
 	 }
