@@ -1,0 +1,52 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Arial;
+	font-weight:normal;
+	font-size:11px;
+	margin: 80px 80px 0px 150px;
+}
+
+#panel {
+	background-color:#DEDED5;
+	width:300px;
+	padding:0 15px 0px 15px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	float:left;
+}
+
+h2 {
+	font-size:20px;
+	text-transform:uppercase;
+}
+
+dl {
+
+
+
+}
+
+dt {
+font-size:18px;
+float:left;
+color:#CB4198;
+}
+
+dd {
+padding-left: 15px;
+font-size:18px;
+
+}
+
+a {
+	color: black;
+	text-decoration:none;	
+}
+
+a:hover{
+	color: black;
+	text-decoration:underline;	
+}
