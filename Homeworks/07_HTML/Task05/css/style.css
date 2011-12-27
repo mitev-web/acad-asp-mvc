@@ -9,11 +9,10 @@
      }
      #main_panel
      {
-		width:940px;
+		width:680px;
 		float:left;
 		height: 672px;
-
-		border: 2px solid black;
+    	border: 2px solid black;
      }
      p {
 		 line-height:12px;
