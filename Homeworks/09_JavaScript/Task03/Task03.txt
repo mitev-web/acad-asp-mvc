@@ -1,0 +1,3 @@
+Create a Web page that asks the user about his name and says goodbye to him when leaving the page.
+
+Modify the previous HTML page to have a text field for email address and on clicking the button check if the email is valid (it should follow the format <something>@<host>.<domain>).

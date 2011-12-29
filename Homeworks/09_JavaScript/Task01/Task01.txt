@@ -1,0 +1,1 @@
+Create an HTML page that has two text fields    (first name and last name) and a button. When the user clicks the button, a message should show the text in the text fields followed by the current time. 
