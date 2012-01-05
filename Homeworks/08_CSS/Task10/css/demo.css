@@ -1,0 +1,58 @@
+.badgestronaut
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 225px;
+    z-index: 2;
+}
+
+.badgestronaut p
+{
+    margin: 0 0 10px 0;
+    padding: 0;
+    width: 225px;
+    height: 50px;
+}
+
+.badgestronaut a
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -999em;
+    background: url(http://www.zachstronaut.com/images/zachstronaut-badge.gif) top left no-repeat;
+    opacity: 0.8;
+}
+
+.badgestronaut a:hover
+{
+    opacity: 1.0;
+    border-bottom: 2px solid #0f0;
+}
+
+.getmore
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    width: 232px;
+    height: 85px;
+    z-index: 2;
+}
+
+.getmore a
+{
+    display: block;
+    height: 100%;
+    text-indent: -999em;
+    background: url(http://www.zachstronaut.com/images/get-more.gif) top left no-repeat;
+    opacity: 0.8;
+}
+
+.getmore a:hover
+{
+    opacity: 1.0;
+}

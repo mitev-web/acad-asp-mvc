@@ -17,6 +17,8 @@ namespace UpdatingDeletingInsertingData
             };
             northwindEntities.Products.AddObject(newProduct);
 
+
+
             Update(northwindEntities);
         }
 

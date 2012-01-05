@@ -1,0 +1,67 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Arial;
+	font-weight:normal;
+	font-size:11px;
+	margin: 80px 80px 0px 150px;
+}
+
+
+#content{
+	float:left;
+	width:500px;
+	text-align:left;
+	background-color:#EEEEEE;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:10px 10px 20px 10px;
+
+
+
+}
+
+ul {
+padding:0;
+
+	
+}
+.right_panel {
+	float:left;
+ 
+	width: 280px;
+}
+
+
+.left_panel img  {
+	border: 1px solid #B6B6B6;
+	
+	float:left;
+	
+}
+
+.buttons_position{
+position: absolute;
+margin-top:85px;
+margin-left:300px;
+
+
+float:right;
+}
+.right_panel {
+	padding-left: 20px;	
+	font-size:14px;
+	
+}
+
+li {
+	list-style-type:none;
+	border: 1px solid #B6B6B6;
+	padding:15px;
+	height:115px;
+	margin: 25px 0 0 0;
+	background-color:white;
+	
+	
+}

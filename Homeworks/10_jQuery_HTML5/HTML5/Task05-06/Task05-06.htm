@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Task05-06</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script>
+	
+	$(document).ready(function(){
+		
+	$('#form1').submit(function() {
+			if($("input[name='email']").val() != $("input[name='email2']").val()){
+				alert("Emails do not match!");	
+				location.reload();
+				return false;
+			}else{
+			    return true;
+			}
+	});
+});
+	
+
+	</script>
+</head>
+
+<body>
+<div id="container">
+<h2>Account Information</h2>
+<form id="form1" action="http://academy.telerik.com/">
+    <dl>
+    <dt>Username<dd><input type="text" name="user" value="enter your name" >
+    <dt>Password<dd><input type="text" name="pass" value="enter your password" >
+    <dt>Repeat Password<dd><input type="text" name="pass2" value="repeat your password" >
+    <dt>Email<dd><input type="email" name="email" value="enter valid email" required>
+    <dt>Repeat Email<dd><input type="email" name="email2" value="repeat your email" required>
+    <dt>url<dd><input type="url" name="url" value="" required>
+    </dl>
+<input type="submit" id="button" value="Send">
+</form>
+</div>
+
+</body>
+
+</html>

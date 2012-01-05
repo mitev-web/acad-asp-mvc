@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Wellcome to your Web Calendar</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+          <div id="auth-form">
+  
+  
+      <p id="auth-switch">Don't have an account? <a href="register.html">Register now</a>.</p>
+  
+  <div class="form">
+    <form action="/auth/login?destination=account"  accept-charset="UTF-8" method="post" id="strutta-auth-login">
+<div><div class="form-item form-item-textfield" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail address <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" maxlength="128" name="mail" id="edit-mail" size="60" value="" class="form-text required" />
+</div>
+<div class="form-item form-item-password" id="edit-pass-wrapper">
+ <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" name="pass" id="edit-pass"  maxlength="128"  size="60"  class="form-text required" />
+ <div class="description">Forgot your password? <a href="/auth/password" title="Retrieve your password">Retrieve it</a>.</div>
+</div>
+<input type="submit" name="op" id="edit-submit" value="Log in"  class="form-submit" />
+
+
+</div></form>
+  </div>
+</div>
+
+</body>
+
+</html>

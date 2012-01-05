@@ -1,0 +1,28 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Arial;
+	font-weight:normal;
+	font-size:14px;
+}
+
+td {
+	background-color:#88FFFF;
+	border:1px solid #0004FF;
+}
+ul {
+padding:0px 5px 0px 6px;	
+width:50px;
+}
+li {
+	padding:1px;
+list-style-type:none;	
+	
+}
+div {
+	display:none;
+	position:absolute;
+	top: 30px;
+	background-color:yellow;
+}

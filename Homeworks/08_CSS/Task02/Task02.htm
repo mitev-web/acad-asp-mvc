@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Task02</title>
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	  <script>
+        $(function() {
+        $("table tr:last td").css("border-bottom", "1px solid #C8C7AE");
+        });
+      </script>
+</head>
+<body>
+<table>
+<thead>
+    <tr><th>Contact Name</th><th>City</th><th>Country</th><th>Is Promoted</th></tr>
+</thead>
+<tbody>
+    <tr><td>Maria Anders</td><td>Berlin</td><td><img src="images/flag_germany.gif" alt="flag Germany" title="flag Germany">Germany</td><td><input DISABLED type="checkbox"></td></tr>
+    <tr class="odd"><td>Ana Trujillo</td><td>Mexico D.F.</td><td><img src="images/flag_mexico.gif" alt="flag Mexico" title="flag Mexico">Mexico</td><td><input DISABLED type="checkbox"></td></tr>
+    <tr><td>Antonio Moreno</td><td>Mexico D.F</td><td><img src="images/flag_mexico.gif" alt="flag Mexico" title="flag Mexico">Mexico</td><td><input DISABLED type="checkbox" checked=""></td></tr>
+    <tr class="odd"><td>Thomas Hardy</td><td>London</td><td><img src="images/flag_UK.gif" alt="flag UK" title="flag UK">UK</td><td><input DISABLED type="checkbox"></td></tr>
+</tbody>
+</table>
+
+</body>
+</html>

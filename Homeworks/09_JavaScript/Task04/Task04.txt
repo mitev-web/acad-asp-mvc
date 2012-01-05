@@ -1,0 +1,1 @@
+Create a Web page that shows 20 <div> elements with random location, size and color.

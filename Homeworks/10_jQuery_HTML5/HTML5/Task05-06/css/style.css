@@ -1,0 +1,29 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Arial;
+
+	font-weight:normal;
+	font-size:14px;
+	margin: 80px 80px 0px 150px;
+}
+
+#container {
+		float:left;
+	padding:20px;
+	width: 350px;
+	background-color:white;
+	border:3px solid #DFDFDF;
+	
+}
+dl {
+	float:left
+}
+dt {
+	width:120px;
+	float:left
+}
+dd {
+	float:left
+}
