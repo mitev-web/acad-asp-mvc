@@ -1,0 +1,198 @@
+
+
+body {
+background:url(../images/gradient.png);
+background-repeat:repeat-x;
+background-color:#111111;
+font-family:Arial;
+font-weight:normal;
+font-size:11px;
+margin: 80px 80px 0px 150px;
+}
+
+
+
+
+
+
+.container-inline-date .date-spacer{margin-left:-5px;}
+
+
+  width:auto;margin-right:5px;}
+  margin-right:2px !important;
+  padding:0 !important;width:12em;min-width:12em;}
+  width:24%;float:left;}
+  width:24%;float:right;}
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.look-and-feel-template .template-list #edit-template-wrapper::-webkit-scrollbar{width:12px;}
+.look-and-feel-template .template-list #edit-template-wrapper::-webkit-scrollbar-track{background:rgba(0,0,0,.1);-webkit-box-shadow:inset 0 1px 5px rgba(0,0,0,.1);}
+.look-and-feel-template .template-list #edit-template-wrapper::-webkit-scrollbar-thumb{-webkit-border-radius:10px;border-radius:10px;background:rgba(112,112,112,1);}.look-and-feel-template .template-list #edit-template-wrapper::-webkit-scrollbar-thumb:window-inactive{background:rgba(112,112,112,0.4);}
+
+  background:#ccc url(http://www.strutta.com/sites/all/themes/apex/images/background-position.jpg) no-repeat;cursor:pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-item{position:relative;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ui-icon{width:16px;height:16px;background-image:url(http://www.strutta.com/sites/all/modules/custom/strutta/jquery_ui/themes/strutta/images/ui-icons_222222_256x240.png);}
+
+
+
+
+
+.ui-widget-overlay{background:#000;opacity:.30;filter:Alpha(Opacity=30);}
+
+
+
+
+html,body,
+body{font:62.5% "Trebuchet MS","Lucida Grande",Arial,Helvetica,sans-serif;color:#3d494d;}
+h1,h2,h3,h4,h5,h6{line-height:1em;}h1{color:#fff;font-size:3.7em;font-weight:bold;margin:0;text-shadow:0px 1px 2px #000;}h2{color:#fff;font-size:3.7em;font-weight:bold;margin:0;text-shadow:0px 1px 2px #000;}
+p{font-size:1.4em;line-height:1.65em;margin:0 0 1.65em 0;}
+  padding:5px 0;color:#808080;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background:#e5e5e5;}
+
+table dl,
+
+
+
+html,body{background:#212526;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  color:#aaa;}
+}
+
+.block ul{padding:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fieldset,html.js fieldset.collapsed,
+
+table{width:100%;}tr.even{background:#f0f0f0;}tr.odd{background:#f7f7f7;}th{color:#677173;font-size:1.2em;}
+
+  text-align:center;background:#ccc;}#pricing-table .basic{color:#313333;background:#ddedd5;}#pricing-table .pro{color:#000;background:#cae7ed;}
+
+
+
+

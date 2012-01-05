@@ -7,4 +7,7 @@ CREATE TABLE Groups (
   Name VARCHAR(80),
   PRIMARY KEY (ID),
   UNIQUE (Name)
+  
+  
+  ALTER TABLE tbl_name ADD COLUMN
 )
