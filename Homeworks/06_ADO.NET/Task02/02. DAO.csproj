@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2F29F2A9-CF4A-41FD-8A09-7AB0FAD3DFEC}</ProjectGuid>
+    <ProjectGuid>{C36067F6-740D-4703-AC7A-253B32A231F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task04.A</RootNamespace>
-    <AssemblyName>Task04.A</AssemblyName>
+    <RootNamespace>Task02</RootNamespace>
+    <AssemblyName>Task02</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -37,8 +37,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="TestDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task01\Task01.csproj">
-      <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
-      <Name>Task01</Name>
-    </ProjectReference>
+    <None Include="App.Config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="1App.Config" />
+    <ProjectReference Include="..\Task01\01. ObjectContext.csproj">
+      <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
+      <Name>01. ObjectContext</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

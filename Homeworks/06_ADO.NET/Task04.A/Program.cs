@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
-using System.Text;
+using Task01;
 
 namespace ADO.NET
 {

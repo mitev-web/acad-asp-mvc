@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data.Objects;
 using System.Linq;
+using Task01;
 
 namespace ADO.NET
 {
-    class Program
+    class Task04
     {
 
         static void Main()
@@ -14,6 +15,7 @@ namespace ADO.NET
             //4.Implement previous by using native SQL 
             //query and executing it through the ObjectContext.
 
+            
             string queryString =
             @"SELECT VALUE DISTINCT Customer
             FROM NorthwindEntities.Customers AS Customer

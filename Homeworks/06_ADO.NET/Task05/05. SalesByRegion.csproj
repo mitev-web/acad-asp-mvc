@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C36067F6-740D-4703-AC7A-253B32A231F9}</ProjectGuid>
+    <ProjectGuid>{020DDE88-25FE-40F5-8EA2-09CED0939F3A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task02</RootNamespace>
-    <AssemblyName>Task02</AssemblyName>
+    <RootNamespace>Task05</RootNamespace>
+    <AssemblyName>Task05</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="SalesByRegion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <ProjectReference Include="..\Task01\01. ObjectContext.csproj">
+      <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
+      <Name>01. ObjectContext</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task01\Task01.csproj">
-      <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
-      <Name>Task01</Name>
-    </ProjectReference>
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{020DDE88-25FE-40F5-8EA2-09CED0939F3A}</ProjectGuid>
+    <ProjectGuid>{BF24A1DD-E866-4550-B935-2D6CE8332109}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task05</RootNamespace>
-    <AssemblyName>Task05</AssemblyName>
+    <RootNamespace>Task04</RootNamespace>
+    <AssemblyName>Task04</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -44,13 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Task04.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task01\Task01.csproj">
+    <ProjectReference Include="..\Task01\01. ObjectContext.csproj">
       <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
-      <Name>Task01</Name>
+      <Name>01. ObjectContext</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

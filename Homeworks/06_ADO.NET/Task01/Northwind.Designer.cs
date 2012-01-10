@@ -18,21 +18,21 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Products_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ADO.NET.Category), "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Product), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Orders_Customers", "Customers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ADO.NET.Customer), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Order), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Employees_Employees", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ADO.NET.Employee), "Employees1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Employee), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Orders_Employees", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ADO.NET.Employee), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Order), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Order_Details_Orders", "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ADO.NET.Order), "Order_Details", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Order_Detail), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Order_Details_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ADO.NET.Product), "Order_Details", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Order_Detail), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Orders_Shippers", "Shippers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ADO.NET.Shipper), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Order), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Products_Suppliers", "Suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ADO.NET.Supplier), "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Product), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Territories_Region", "Region", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ADO.NET.Region), "Territories", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Territory), true)]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "CustomerCustomerDemo", "CustomerDemographics", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.CustomerDemographic), "Customers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Customer))]
-[assembly: EdmRelationshipAttribute("NorthwindModel", "EmployeeTerritories", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Employee), "Territories", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ADO.NET.Territory))]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Products_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Task01.Category), "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Product), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Orders_Customers", "Customers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Task01.Customer), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Order), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Employees_Employees", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Task01.Employee), "Employees1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Employee), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Orders_Employees", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Task01.Employee), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Order), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Order_Details_Orders", "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Task01.Order), "Order_Details", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Order_Detail), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Order_Details_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Task01.Product), "Order_Details", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Order_Detail), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Orders_Shippers", "Shippers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Task01.Shipper), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Order), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Products_Suppliers", "Suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Task01.Supplier), "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Product), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "FK_Territories_Region", "Region", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Task01.Region), "Territories", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Territory), true)]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "CustomerCustomerDemo", "CustomerDemographics", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.CustomerDemographic), "Customers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Customer))]
+[assembly: EdmRelationshipAttribute("NorthwindModel", "EmployeeTerritories", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Employee), "Territories", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Task01.Territory))]
 
 #endregion
 
-namespace ADO.NET
+namespace Task01
 {
     #region Contexts
     

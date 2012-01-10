@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 
@@ -13,9 +13,11 @@ namespace Task09
 
             string[] arr = { "pesho", "gosho", "krokodil" };
 
-            var strLenMax = (from s in arr
-                            orderby s.Length
-                            select s).Last();
+            //var strLenMax = (from s in arr
+            //                orderby s.Length
+            //                select s).Last();
+
+            var strLenMax = (arr.Select(x => x).OrderBy(x => x.Length)).Last();
 
                 Console.WriteLine(strLenMax);
            

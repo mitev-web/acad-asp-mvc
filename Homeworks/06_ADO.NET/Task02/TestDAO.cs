@@ -13,6 +13,9 @@ namespace ADO.NET
             //Create a DAO class with static methods which provide functionality for
             //    inserting, modifying and deleting customers. Write a testing class.
 
+            //Added in project 1
+
+            
             if (DB.TestConnection())
             {
                 Console.WriteLine("Test successfull");

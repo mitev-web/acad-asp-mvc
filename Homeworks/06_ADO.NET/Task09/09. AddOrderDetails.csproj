@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{86601EE5-3D78-4330-A031-8A003563CD77}</ProjectGuid>
+    <ProjectGuid>{9624AD16-7B9F-4C50-BC7C-37DA75CEECC6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task07</RootNamespace>
-    <AssemblyName>Task07</AssemblyName>
+    <RootNamespace>Task09</RootNamespace>
+    <AssemblyName>Task09</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -51,9 +51,9 @@
     <None Include="App.Config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task01\Task01.csproj">
+    <ProjectReference Include="..\Task01\01. ObjectContext.csproj">
       <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
-      <Name>Task01</Name>
+      <Name>01. ObjectContext</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

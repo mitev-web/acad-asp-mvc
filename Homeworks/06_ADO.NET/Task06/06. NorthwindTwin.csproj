@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BF24A1DD-E866-4550-B935-2D6CE8332109}</ProjectGuid>
+    <ProjectGuid>{5CF483CB-4D3B-4DE7-B0DC-360C649932CB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task04</RootNamespace>
-    <AssemblyName>Task04</AssemblyName>
+    <RootNamespace>Task06</RootNamespace>
+    <AssemblyName>Task06</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="NorthWindTwin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task01\Task01.csproj">
-      <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
-      <Name>Task01</Name>
-    </ProjectReference>
+    <None Include="App.Config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <ProjectReference Include="..\Task01\01. ObjectContext.csproj">
+      <Project>{1414AB49-2F0E-4219-BC2C-41416F493A5A}</Project>
+      <Name>01. ObjectContext</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

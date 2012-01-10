@@ -1,0 +1,19 @@
+            NorthwindEntities context = new NorthwindEntities();
+            string DBscript;
+            DBscript = context.CreateDatabaseScript();
+            //DBscript.Replace("Northwind", "NorthwindTwin");
+            DBscript = "CREATE DATABASE [NorthwindTwin] \ngo  \nuse [NorthwindTwin] \n" + DBscript;
+
+            //Create NEW file
+            StreamWriter northwindTwinFile = new StreamWriter("CreateNorthwindTwinDB2.sql");
+
+            //Save the script from NorthwindDB in the created file(saveTheFile)
+            using (northwindTwinFile)
+            {
+                northwindTwinFile.WriteLine(DBscript);
+            }
+            Console.WriteLine(DBscript);
+
+ 
+И след това си съзадавам новата база "NorthwindTwin" и запазвам изтегленият скрипт в
+новият sql файл( CreateNorthwindTwinDB2.sql ) .f
