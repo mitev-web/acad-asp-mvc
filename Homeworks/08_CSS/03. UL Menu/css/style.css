@@ -1,0 +1,46 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Arial;
+	font-weight:normal;
+	font-size:11px;
+	margin: 80px 80px 0px 150px;
+}
+
+ul {
+	width:310px;
+	margin:0;
+	padding:3px 3px 3px 10px;
+	list-style:none;
+	border: 3px double white;
+	background-color:#175994;
+}
+
+li {
+	list-style-position:inside;
+    background-image:url(../images/li_gradient.png);
+	background-repeat:repeat-x;
+	padding: 0 8px 0 8px;
+	display:inline-block;
+	background-color:#F1F0F0;
+	margin:5px 0 5px 0;
+	border:1px solid black;
+	line-height:29px;
+		
+}
+
+li:hover{
+	background-image:url(../images/li_hover_gradient.png);
+	background-repeat:repeat-x;
+	background-color: blue;
+}
+
+a {
+	color: black;
+	text-decoration:none;	
+}
+
+a:hover{
+	color: white;
+}

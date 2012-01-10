@@ -1,0 +1,40 @@
+﻿body {
+	background:url(../images/gradient.png);
+	background-repeat:repeat-x;
+	background-color:#111111;
+	font-family:Arial;
+	font-weight:bold;
+	color:#646464;
+	font-size:12px;
+	margin: 50px 50px 0px 100px;
+}
+h1 {
+color:black;	
+}
+#example_form {
+width: 180px;	
+padding:10px;
+background-color:#E0E0E0;
+box-shadow: 5px 5px 2px #30356E;
+height:205px;
+}
+input {
+	margin-bottom:20px;
+		color:#6D6DA0;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		border:1px solid #848484;
+}
+
+input[type='submit'] {
+	cursor:pointer;
+	float:left;
+			-moz-border-radius: 15px;
+		border-radius: 15px;
+		font-weight:bold;
+		color:#444444;
+		width:87px;
+		height: 28px;
+		background-color:white;
+		box-shadow: 3px 3px 3px #cccccc;
+}

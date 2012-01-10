@@ -32,6 +32,8 @@ namespace ADO.NET
 
             c2.ContactName = "Maria Georgieva";
 
+            c1.Sa
+
         }
     }
 }
