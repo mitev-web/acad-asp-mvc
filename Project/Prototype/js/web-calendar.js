@@ -19,7 +19,17 @@
 
 });
 
+	$("#call-category").click(function () {
+	
+		$('#add-category').dialog({ resizable: false, minWidth: 500 });
 
+});
+
+	$("#call-meeting").click(function () {
+	
+		$('#add-meeting').dialog({ resizable: false, minWidth: 567 });
+
+});
 	
 	$("#formregister").submit(function() {
 	

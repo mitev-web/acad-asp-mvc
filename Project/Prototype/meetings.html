@@ -7,7 +7,7 @@
     
     <link href="css/jquery-ui.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
-    
+    	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css"> 
 	<script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/web-calendar.js"></script>
@@ -28,14 +28,33 @@
 	
           <ul class="sub-menu">
 
-        <li class="link-button"><a href="home.html">Add new category</a></li>
-        <li class="link-button"><a href="add_meeting.html">Add new meeting</a></li>
+        <li class="link-button" id="call-category">Add new category</li>
+        <li class="link-button" ><a href="add_meeting.html">Add new meeting</li>
       </ul>
   
 
 </header>
 
 <div class="spacer">&nbsp;</div>
+<div id="add-category" title="Add new Category">
+		<h1>Please add the contact information</h1>
+		<form id="formregister" accept-charset="UTF-8" action="home.html" method="post">
+			<dl>
+				<dt><label for="category-name">Category Name: </label>
+				<span class="required">*</span> </dt>
+				<dd>
+				<input id="category-name" class="form-text" maxlength="50" required size="60" type="text" value="default" />
+				</dd>
+				<dt><label for="category-description">Category Description:</label></dt>
+				<dd>
+				<input id="category-description" class="form-text" maxlength="50" size="50" type="text" value="" />
+				</dd>
+			</dl>
+			<input class="link-button" type="submit" value="Add Contact" />
+		</form>
+	</div>
+    
+
 <h1>My Meetings</h1>
 
 <table>
@@ -63,6 +82,7 @@
 
 <footer>Copyright 2012© <a href="http://georgi-mitev.com">Georgi Mitev</a></footer>
 </div>
+
 </body>
 
 </html>

@@ -282,7 +282,7 @@ dd {
 	margin:0;
 }
 
-#register-form{
+#register-form,#add-category{
 	width:400px;
 }
 
@@ -294,23 +294,27 @@ dd {
 	padding-right:7px;
 }
 
-#register-form .form-text {
+#register-form .form-text ,#add-category .form-text , #add-meeting .form-text 
+{
 	width: 220px;
 	margin:5px 0 5px 0;
 }
 
-#login-form .form-text {
+
+.form-text {
 		width:100%;
 }
 
 #login-form {
 	width:500px;	
 }
-#login-form,#register-form  {
+
+
+#login-form,#register-form, #add-category, #add-meeting  {
 	
 	background-color:#fff;
 	background-color:#efe;
-
+	
 	margin:0 auto 20px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -323,6 +327,20 @@ dd {
 	-moz-box-shadow:0 3px 5px rgba(100,100,100,.5);
 	-webkit-box-shadow:0 3px 5px rgba(100,100,100,.5);
 	box-shadow:0 3px 5px rgba(100,100,100,.5);
+}
+
+#add-meeting {
+	width:400px;
+}
+#add-category{
+	display:none;
+	width:400px;
+	-moz-border-top-left-radius:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+		-moz-border-top-right-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
 }
 
 .form-text {
