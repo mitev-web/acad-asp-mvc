@@ -1,6 +1,0 @@
-//Write a SQL statement that changes the password to NULL for all users that have 
-//not been in the system since 07.10.2011.
-
-UPDATE Users
-SET Password = NULL
-Where LastLogin < CAST ('7/10/2011' AS Datetime)
