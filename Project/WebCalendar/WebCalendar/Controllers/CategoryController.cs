@@ -8,30 +8,29 @@ using System.Web.Mvc;
 
 namespace WebCalendar.Controllers
 { 
-    public class UserController : Controller
+    public class CategoryController : Controller
     {
         private WebCalendarEntities db = new WebCalendarEntities();
 
         //
-        // GET: /User/
+        // GET: /Category/
 
         public ViewResult Index()
         {
-            
-            return View(db.Users.ToList());
+            return View(db.Categories.ToList());
         }
 
         //
-        // GET: /User/Details/5
+        // GET: /Category/Details/5
 
         public ViewResult Details(int id)
         {
-            User user = db.Users.Single(u => u.ID == id);
-            return View(user);
+            Category category = db.Categories.Single(c => c.ID == id);
+            return View(category);
         }
 
         //
-        // GET: /User/Create
+        // GET: /Category/Create
 
         public ActionResult Create()
         {
@@ -39,63 +38,63 @@ namespace WebCalendar.Controllers
         } 
 
         //
-        // POST: /User/Create
+        // POST: /Category/Create
 
         [HttpPost]
-        public ActionResult Create(User user)
+        public ActionResult Create(Category category)
         {
             if (ModelState.IsValid)
             {
-                db.Users.AddObject(user);
+                db.Categories.AddObject(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            return View(user);
+            return View(category);
         }
         
         //
-        // GET: /User/Edit/5
+        // GET: /Category/Edit/5
  
         public ActionResult Edit(int id)
         {
-            User user = db.Users.Single(u => u.ID == id);
-            return View(user);
+            Category category = db.Categories.Single(c => c.ID == id);
+            return View(category);
         }
 
         //
-        // POST: /User/Edit/5
+        // POST: /Category/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(User user)
+        public ActionResult Edit(Category category)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Attach(user);
-                db.ObjectStateManager.ChangeObjectState(user, EntityState.Modified);
+                db.Categories.Attach(category);
+                db.ObjectStateManager.ChangeObjectState(category, EntityState.Modified);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            return View(category);
         }
 
         //
-        // GET: /User/Delete/5
+        // GET: /Category/Delete/5
  
         public ActionResult Delete(int id)
         {
-            User user = db.Users.Single(u => u.ID == id);
-            return View(user);
+            Category category = db.Categories.Single(c => c.ID == id);
+            return View(category);
         }
 
         //
-        // POST: /User/Delete/5
+        // POST: /Category/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            User user = db.Users.Single(u => u.ID == id);
-            db.Users.DeleteObject(user);
+            Category category = db.Categories.Single(c => c.ID == id);
+            db.Categories.DeleteObject(category);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

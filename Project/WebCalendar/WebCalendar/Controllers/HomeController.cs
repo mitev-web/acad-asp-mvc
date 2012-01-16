@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebCalendar.Models;
 
 namespace WebCalendar.Controllers
 {
@@ -11,15 +12,9 @@ namespace WebCalendar.Controllers
         public ActionResult Index()
         {
 
-            WebCalendarEntities wc = new WebCalendarEntities();
+            IEnumerable<Category> model = Models.Category.GetAll();
 
-            foreach (Meeting m in wc.Meetings)
-            {
-                ViewBag.Message += m.Date;
-
-            }
-
-            return View();
+            return View(model);
         }
 
         public ActionResult About()
