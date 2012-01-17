@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5D850002-6480-43F2-BA63-9743E7EECD80}</ProjectGuid>
+    <ProjectGuid>{1E36BFC2-C6B1-4062-ABA5-CF4F237D0DB4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebCalendar.Tests</RootNamespace>
@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebCalendar\WebCalendar.csproj">
-      <Project>{4AF8D7E4-1306-4D8F-9CAB-351D32206735}</Project>
+      <Project>{D48D3022-88C2-43F7-A02E-EBAF32345A49}</Project>
       <Name>WebCalendar</Name>
     </ProjectReference>
   </ItemGroup>

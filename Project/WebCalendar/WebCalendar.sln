@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar", "WebCalendar\WebCalendar.csproj", "{4AF8D7E4-1306-4D8F-9CAB-351D32206735}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar", "WebCalendar\WebCalendar.csproj", "{D48D3022-88C2-43F7-A02E-EBAF32345A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar.Tests", "WebCalendar.Tests\WebCalendar.Tests.csproj", "{5D850002-6480-43F2-BA63-9743E7EECD80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar.Tests", "WebCalendar.Tests\WebCalendar.Tests.csproj", "{1E36BFC2-C6B1-4062-ABA5-CF4F237D0DB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4AF8D7E4-1306-4D8F-9CAB-351D32206735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AF8D7E4-1306-4D8F-9CAB-351D32206735}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AF8D7E4-1306-4D8F-9CAB-351D32206735}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AF8D7E4-1306-4D8F-9CAB-351D32206735}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D850002-6480-43F2-BA63-9743E7EECD80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D850002-6480-43F2-BA63-9743E7EECD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D850002-6480-43F2-BA63-9743E7EECD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D850002-6480-43F2-BA63-9743E7EECD80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D48D3022-88C2-43F7-A02E-EBAF32345A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D48D3022-88C2-43F7-A02E-EBAF32345A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D48D3022-88C2-43F7-A02E-EBAF32345A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D48D3022-88C2-43F7-A02E-EBAF32345A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E36BFC2-C6B1-4062-ABA5-CF4F237D0DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E36BFC2-C6B1-4062-ABA5-CF4F237D0DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E36BFC2-C6B1-4062-ABA5-CF4F237D0DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E36BFC2-C6B1-4062-ABA5-CF4F237D0DB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

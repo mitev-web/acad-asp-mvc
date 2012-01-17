@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace WebCalendar.Controllers
-{ 
+{
     public class CategoryController : Controller
     {
         private WebCalendarEntities db = new WebCalendarEntities();
@@ -15,18 +16,36 @@ namespace WebCalendar.Controllers
         //
         // GET: /Category/
 
-        public ViewResult Index()
+        public ViewResult Index(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
-            return View(db.Categories.ToList());
+            ViewBag.Count = db.Categories.Count();
+            ViewBag.Start = start;
+            ViewBag.ItemsPerPage = itemsPerPage;
+            ViewBag.OrderBy = orderBy;
+            ViewBag.Desc = desc;
+
+            return View();
         }
 
         //
-        // GET: /Category/Details/5
+        // GET: /Category/GridData/?start=0&itemsPerPage=20&orderBy=ID&desc=true
 
-        public ViewResult Details(int id)
+        public ActionResult GridData(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
+        {
+            Response.AppendHeader("X-Total-Row-Count", db.Categories.Count().ToString());
+            ObjectQuery<Category> categories = db.Categories;
+            categories = categories.OrderBy("it." + orderBy + (desc ? " desc" : ""));
+
+            return PartialView(categories.Skip(start).Take(itemsPerPage));
+        }
+
+        //
+        // GET: /Default5/RowData/5
+
+        public ActionResult RowData(int id)
         {
             Category category = db.Categories.Single(c => c.ID == id);
-            return View(category);
+            return PartialView("GridData", new Category[] { category });
         }
 
         //
@@ -34,8 +53,8 @@ namespace WebCalendar.Controllers
 
         public ActionResult Create()
         {
-            return View();
-        } 
+            return PartialView("Edit");
+        }
 
         //
         // POST: /Category/Create
@@ -47,19 +66,19 @@ namespace WebCalendar.Controllers
             {
                 db.Categories.AddObject(category);
                 db.SaveChanges();
-                return RedirectToAction("Index");  
+                return PartialView("GridData", new Category[] { category });
             }
 
-            return View(category);
+            return PartialView("Edit", category);
         }
-        
+
         //
         // GET: /Category/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             Category category = db.Categories.Single(c => c.ID == id);
-            return View(category);
+            return PartialView(category);
         }
 
         //
@@ -73,30 +92,21 @@ namespace WebCalendar.Controllers
                 db.Categories.Attach(category);
                 db.ObjectStateManager.ChangeObjectState(category, EntityState.Modified);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return PartialView("GridData", new Category[] { category });
             }
-            return View(category);
-        }
 
-        //
-        // GET: /Category/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            Category category = db.Categories.Single(c => c.ID == id);
-            return View(category);
+            return PartialView(category);
         }
 
         //
         // POST: /Category/Delete/5
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {            
+        [HttpPost]
+        public void Delete(int id)
+        {
             Category category = db.Categories.Single(c => c.ID == id);
             db.Categories.DeleteObject(category);
             db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

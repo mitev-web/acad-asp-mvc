@@ -17,8 +17,8 @@ namespace WebCalendar.Controllers
 
         public ViewResult Index()
         {
-            
-            return View(db.Users.ToList());
+            ViewBag.Users = db.Users.ToList();
+            return View();
         }
 
         //

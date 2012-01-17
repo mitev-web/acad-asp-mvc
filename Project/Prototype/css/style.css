@@ -308,6 +308,28 @@ dd {
 #login-form {
 	width:500px;	
 }
+tfoot td {
+
+	vertical-align:middle;
+}
+.page-number {
+
+
+height:100%;
+margin-top:7px;
+float:left;
+display:inline;
+
+
+}
+.pagination {
+	padding:0;
+	margin-top:5px;
+	float:left;
+}
+.page-number input {
+	width:25px;	
+}
 
 
 #login-form,#register-form, #add-category, #add-meeting  {

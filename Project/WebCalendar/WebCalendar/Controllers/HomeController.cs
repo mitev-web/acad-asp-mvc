@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebCalendar.Models;
 
 namespace WebCalendar.Controllers
 {
     public class HomeController : Controller
     {
+        WebCalendarEntities db = new WebCalendarEntities();
         public ActionResult Index()
         {
-
-            IEnumerable<Category> model = Models.Category.GetAll();
-
-            return View(model);
+            ViewBag.Message = "Modify this template to kick-start your ASP.NET MVC application.";
+            
+            return View(db.Users.ToList());
         }
 
         public ActionResult About()
