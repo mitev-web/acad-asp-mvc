@@ -20,7 +20,16 @@ namespace WebCalendar.Controllers
 
         public string About()
         {
-            return User.Identity.Name;
+          //  return User.Identity.Name;
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return "yes";
+            }
+            else
+            {
+                return "no";
+            }
         }
 
         public ActionResult Contact()
