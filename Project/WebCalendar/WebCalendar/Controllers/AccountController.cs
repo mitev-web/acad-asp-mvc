@@ -22,6 +22,13 @@ namespace WebCalendar.Controllers
             return ContextDependentView();
         }
 
+        public ActionResult Wellcome()
+        {
+
+            return View();
+
+
+        }
         //
         // POST: /Account/JsonLogOn
 
@@ -113,6 +120,7 @@ namespace WebCalendar.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
                     return Json(new { success = true });
+                    
                 }
                 else
                 {
@@ -138,9 +146,10 @@ namespace WebCalendar.Controllers
                 Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Home");
+                {//amended
+                    //FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+                    //return RedirectToAction("Index", "Home"); 
+                    return RedirectToAction("Wellcome", "Home");
                 }
                 else
                 {

@@ -107,7 +107,7 @@ public class MyMembershipProvider : MembershipProvider
 
         if (u == null)
         {
-            UserRepository _user = new UserRepository();
+            UserData _user = new UserData();
 
             _user.CreateUser(username, password, email);
             status = MembershipCreateStatus.Success;
@@ -170,7 +170,7 @@ public class MyMembershipProvider : MembershipProvider
 
     public override MembershipUser GetUser(string username, bool userIsOnline)
     {
-        UserRepository _user = new UserRepository();
+        UserData _user = new UserData();
 
         return _user.GetUser(username);
     }
@@ -182,7 +182,7 @@ public class MyMembershipProvider : MembershipProvider
 
     public override string GetUserNameByEmail(string email)
     {
-       return UserRepository.GetUserNameByEmail(email);
+       return UserData.GetUserNameByEmail(email);
     }
 
     public override int MaxInvalidPasswordAttempts
@@ -266,6 +266,6 @@ public class MyMembershipProvider : MembershipProvider
 
     public override bool ValidateUser(string username, string password)
     {
-        return UserRepository.UserIsValid(username, password);
+        return UserData.UserIsValid(username, password);
     }
 }

@@ -1,67 +1,126 @@
 ﻿body {
-	background:url(../images/gradient.png);
-	background-repeat:repeat-x;
-	background-color:#111111;
-	font-family:Arial;
-	font-weight:normal;
-	font-size:11px;
+	background: url(../images/gradient.png);
+	background-repeat: repeat-x;
+	background-color: #111111;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 11px;
 	margin: 80px 80px 0px 150px;
 }
-
-
-#content{
-	float:left;
-	width:500px;
-	text-align:left;
-	background-color:#EEEEEE;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	padding:10px 10px 20px 10px;
-
-
-
+#cubeLayout {
+	-webkit-perspective: 800;
+	-webkit-perspective-origin: 50% 100px;
+	-moz-perspective: 800;
+	-moz-perspective-origin: 50% 100px;
+	-o-perspective: 800;
+	-o-perspective-origin: 50% 100px;
+	-ms-perspective: 800;
+	-ms-perspective-origin: 50% 100px;
+	perspective: 800;
+	perspective-origin: 50% 100px;
+	margin: 50px auto;
+	width: 400px;
+	float: left;
 }
-
-ul {
-padding:0;
-
-	
+#cubeLayout #cube {
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+	width: 200px;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform-origin: (50% 100px 0);
+	-moz-transform-style: preserve-3d;
+	-moz-transform-origin: (50% 100px 0);
+	-o-transform-style: preserve-3d;
+	-o-transform-origin: (50% 100px 0);
+	-ms-transform-style: preserve-3d;
+	-ms-transform-origin: (50% 100px 0);
+	transform-style: preserve-3d;
+	transform-origin: (50% 100px 0);
 }
-.right_panel {
-	float:left;
- 
-	width: 280px;
+#cubeLayout #Ycube, #cubeLayout #Zcube {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
-
-
-.left_panel img  {
-	border: 1px solid #B6B6B6;
-	
-	float:left;
-	
+#cubeLayout .face {
+	position: absolute;
+	height: 160px;
+	width: 160px;
+	padding: 20px;
+	background-color: rgba(50, 50, 50, 0.3);
+	-webkit-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+	-o-backface-visibility: visible;
+	-ms-backface-visibility: visible;
+	backface-visibility: visible;
+	border: 1px #aaa solid;
 }
-
-.buttons_position{
-position: absolute;
-margin-top:85px;
-margin-left:300px;
-
-
-float:right;
+#cubeLayout .face p {
+	font-size: 160px;
+	line-height: 1;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: rgba(0,0,0,0.75);
 }
-.right_panel {
-	padding-left: 20px;	
-	font-size:14px;
-	
+#cube .one {
+	-webkit-transform: rotateX(90deg) translateZ(100px);
+	-moz-transform: rotateX(90deg) translateZ(100px);
+	-o-transform: rotateX(90deg) translateZ(100px);
+	-ms-transform: rotateX(90deg) translateZ(100px);
+	transform: rotateX(90deg) translateZ(100px);
+	background-color: rgba(255, 0, 0, 0.5);
 }
-
-li {
-	list-style-type:none;
-	border: 1px solid #B6B6B6;
-	padding:15px;
-	height:115px;
-	margin: 25px 0 0 0;
-	background-color:white;
-	
-	
+#cube .two {
+	-webkit-transform: translateZ(100px);
+	-moz-transform: translateZ(100px);
+	-o-transform: translateZ(100px);
+	-ms-transform: translateZ(100px);
+	transform: translateZ(100px);
+}
+#cube .three {
+	-webkit-transform: rotateY(90deg) translateZ(100px);
+	-moz-transform: rotateY(90deg) translateZ(100px);
+	-o-transform: rotateY(90deg) translateZ(100px);
+	-ms-transform: rotateY(90deg) translateZ(100px);
+	transform: rotateY(90deg) translateZ(100px);
+}
+#cube .four {
+	background-color: yellow;
+	-webkit-transform: rotateY(180deg) translateZ(100px);
+	-moz-transform: rotateY(180deg) translateZ(100px);
+	-o-transform: rotateY(180deg) translateZ(100px);
+	-ms-transform: rotateY(180deg) translateZ(100px);
+	transform: rotateY(180deg) translateZ(100px);
+	background-color: rgba(0, 255, 0, 0.5);
+}
+#cube .five {
+	-webkit-transform: rotateY(-90deg) translateZ(100px);
+	-moz-transform: rotateY(-90deg) translateZ(100px);
+	-o-transform: rotateY(-90deg) translateZ(100px);
+	-ms-transform: rotateY(-90deg) translateZ(100px);
+	transform: rotateY(-90deg) translateZ(100px);
+}
+#cube .six {
+	-webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+	-moz-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+	-o-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+	-ms-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+	transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+	background-color: rgba(0, 0, 255, 0.5);
+}
+#td3controls {
+	width: 300px;
+	float: right;
+}
+#td3controls label {
+	float: left;
+	width: 150px;
+}
+#td3controls input {
+	float: left;
+	width: 150px;
 }

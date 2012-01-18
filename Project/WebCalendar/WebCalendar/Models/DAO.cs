@@ -12,5 +12,6 @@ namespace WebCalendar.Models
             db = new WebCalendarEntities();
         }
 
+
     }
 }

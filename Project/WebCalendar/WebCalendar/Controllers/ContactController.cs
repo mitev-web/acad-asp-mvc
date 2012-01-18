@@ -18,7 +18,7 @@ namespace WebCalendar.Controllers
 
         public ViewResult Index(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
-            ViewBag.Count = Models.Contact.CountAllByUserID(4);
+            ViewBag.Count = Models.ContactData.CountAllByUserID(4);
             ViewBag.Start = start;
             ViewBag.ItemsPerPage = itemsPerPage;
             ViewBag.OrderBy = orderBy;

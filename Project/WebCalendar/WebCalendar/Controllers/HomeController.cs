@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebCalendar;
+using WebCalendar.Models;
 
 namespace WebCalendar.Controllers
 {
@@ -16,11 +18,9 @@ namespace WebCalendar.Controllers
             return View(db.Users.ToList());
         }
 
-        public ActionResult About()
+        public string About()
         {
-            ViewBag.Message = "Your quintessential app description page.";
-
-            return View();
+            return User.Identity.Name;
         }
 
         public ActionResult Contact()
@@ -28,6 +28,14 @@ namespace WebCalendar.Controllers
             ViewBag.Message = "Your quintessential contact page.";
 
             return View();
+        }
+
+
+        public ActionResult Wellcome()
+        {
+
+            return View();
+
         }
     }
 }
