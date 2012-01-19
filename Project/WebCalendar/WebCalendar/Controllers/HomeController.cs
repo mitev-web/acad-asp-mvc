@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebCalendar;
 using WebCalendar.Models;
+using WebCalendar.DAL;
 
 namespace WebCalendar.Controllers
 {

@@ -6,6 +6,7 @@ using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebCalendar.DAL;
 
 namespace WebCalendar.Controllers
 {
@@ -18,7 +19,7 @@ namespace WebCalendar.Controllers
 
         public ViewResult Index(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
-            ViewBag.Count = Models.ContactData.CountAllByUserID(4);
+            ViewBag.Count = db.Contacts.Count();
             ViewBag.Start = start;
             ViewBag.ItemsPerPage = itemsPerPage;
             ViewBag.OrderBy = orderBy;

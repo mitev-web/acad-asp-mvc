@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using WebCalendar.Models;
 using System.Collections.Specialized;
+using System.Linq;
+using System.Configuration;
+using System.Web.Security;
+using WebCalendar;
 
 public class MyMembershipProvider : MembershipProvider
 {
@@ -107,7 +106,7 @@ public class MyMembershipProvider : MembershipProvider
 
         if (u == null)
         {
-            UserData _user = new UserData();
+            UserModel _user = new UserModel();
 
             _user.CreateUser(username, password, email);
             status = MembershipCreateStatus.Success;
@@ -170,9 +169,9 @@ public class MyMembershipProvider : MembershipProvider
 
     public override MembershipUser GetUser(string username, bool userIsOnline)
     {
-        UserData _user = new UserData();
+        UserModel _user = new UserModel();
 
-        return _user.GetUser(username);
+        return _user.CreateMembershipUser(username);
     }
 
     public override MembershipUser GetUser(object providerUserKey, bool userIsOnline)
@@ -182,7 +181,7 @@ public class MyMembershipProvider : MembershipProvider
 
     public override string GetUserNameByEmail(string email)
     {
-       return UserData.GetUserNameByEmail(email);
+       return UserModel.GetUserNameByEmail(email);
     }
 
     public override int MaxInvalidPasswordAttempts
@@ -266,6 +265,6 @@ public class MyMembershipProvider : MembershipProvider
 
     public override bool ValidateUser(string username, string password)
     {
-        return UserData.UserIsValid(username, password);
+        return UserModel.UserIsValid(username, password);
     }
 }

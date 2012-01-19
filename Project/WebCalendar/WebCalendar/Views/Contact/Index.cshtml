@@ -1,11 +1,11 @@
-﻿@model IEnumerable<WebCalendar.Contact>
+﻿@model IEnumerable<WebCalendar.DAL.Contact>
 @{
     ViewBag.Title = "Contact";
 }
 @{
 
-    ViewBag.ItemsPerPage = ViewBag.ItemsPerPage ?? 15;
-    ViewBag.ItemsPerPageOptions = ViewBag.ItemsPerPageOptions ?? new List<int>{ 15, 30, 60 };
+    ViewBag.ItemsPerPage = ViewBag.ItemsPerPage ?? 20;
+    ViewBag.ItemsPerPageOptions = ViewBag.ItemsPerPageOptions ?? new List<int>{ 10, 20, 50, 100 };
 
     int currentPage = ViewBag.Start / ViewBag.ItemsPerPage + 1;
     int pageCount = (ViewBag.Count - 1) / ViewBag.ItemsPerPage + 1;

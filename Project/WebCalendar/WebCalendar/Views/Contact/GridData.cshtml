@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebCalendar.Contact>
+﻿@model IEnumerable<WebCalendar.DAL.Contact>
 
 @foreach (var item in Model) {
     <tr data-pkey="@item.ID">
@@ -24,7 +24,6 @@
             @Html.DisplayFor(modelItem => item.User.UserName)
         </td>
         <td class="rowControl hidden">
-             <a href="Contact/ID/@item.ID">View</a> |
             <a href="#makeRowEditable" class="makeRowEditable">Edit</a> |
             <a href="#deleteRow" class="deleteRow">Delete</a>
         </td>
