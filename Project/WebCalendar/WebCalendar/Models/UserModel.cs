@@ -14,7 +14,7 @@ namespace WebCalendar
 
             if (u != null)
             {
-                if (u.Password == CreatePasswordHash(pass, u.PasswordSalt))
+                if (u.Password == UserDAL.CreatePasswordHash(pass, u.PasswordSalt))
                 {
                     return true;
                 }
@@ -31,27 +31,27 @@ namespace WebCalendar
 
 
 
-        private static string CreateSalt()
-        {
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-            byte[] buff = new byte[32];
-            rng.GetBytes(buff);
+        //private static string CreateSalt()
+        //{
+        //    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+        //    byte[] buff = new byte[32];
+        //    rng.GetBytes(buff);
 
-            return Convert.ToBase64String(buff);
-        }
+        //    return Convert.ToBase64String(buff);
+        //}
 
-        private static string CreatePasswordHash(string password, string salt)
-        {
-            string saltAndPwd = "mixing" + password + "with some" + salt;
+        //private static string CreatePasswordHash(string password, string salt)
+        //{
+        //    string saltAndPwd = "mixing" + password + "with some" + salt;
 
-            System.Security.Cryptography.SHA1 hash = System.Security.Cryptography.SHA1.Create();
-            System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
-            byte[] combined = encoder.GetBytes(saltAndPwd);
-            hash.ComputeHash(combined);
-            string hashCode = Convert.ToBase64String(hash.Hash);
+        //    System.Security.Cryptography.SHA1 hash = System.Security.Cryptography.SHA1.Create();
+        //    System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
+        //    byte[] combined = encoder.GetBytes(saltAndPwd);
+        //    hash.ComputeHash(combined);
+        //    string hashCode = Convert.ToBase64String(hash.Hash);
 
-            return hashCode;
-        }
+        //    return hashCode;
+        //}
 
         public MembershipUser CreateUser(string username, string password, string email)
         {
@@ -59,8 +59,8 @@ namespace WebCalendar
 
             u.UserName = username;
             u.Email = email;
-            u.PasswordSalt = CreateSalt();
-            u.Password = CreatePasswordHash(password, u.PasswordSalt);
+            u.PasswordSalt = UserDAL.CreateSalt();
+            u.Password = UserDAL.CreatePasswordHash(password, u.PasswordSalt);
             db.AddToUsers(u);
             db.SaveChanges();
 

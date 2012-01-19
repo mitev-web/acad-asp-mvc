@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Security.Cryptography;
 using WebCalendar.DAL;
 
 namespace WebCalendar.UserTestData
@@ -10,13 +9,14 @@ namespace WebCalendar.UserTestData
         static void Main(string[] args)
         {
 
-            //User pesho = UserDAL.CreateUser("pesho", "pesho123", Faker.StringFaker.Alpha(3) + Faker.InternetFaker.Email(), "Petur", "Popov");
+            User pesho = UserDAL.CreateUser("sdafs", "pesho123", Faker.StringFaker.Alpha(3) + Faker.InternetFaker.Email(), Faker.NameFaker.FirstName(), Faker.NameFaker.LastName());
 
-            //GenerateUserData.GenerateContactsForUser(pesho, 50);
+            //User pesho = UserDAL.GetByUserName("mirkata");
 
-            Console.WriteLine();
+            GenerateUserData.GenerateContactsForUser(pesho, 20);
+            GenerateUserData.GenerateCategoriesForUser(pesho, 3);
+            GenerateUserData.GenerateMeetingsForUser(pesho, 2);
 
-            Console.WriteLine(Faker.NameFaker.Name());
         }
 
 

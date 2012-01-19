@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace WebCalendar.DAL
 {
     public class UserDAL : DAO
     {
+
+
+        public static IEnumerable<User> GetAll()
+        {
+            return db.Users;
+        }
         public static User GetByID(int id)
         {
             var user = db.Users.Where(x => x.ID == id).FirstOrDefault();
@@ -13,11 +20,20 @@ namespace WebCalendar.DAL
             return (User)user;
         }
 
-        public static User CreateUser(string username, string password, string email, string fName, string Lname)
+        public static User GetByUserName(string userName)
+        {
+            var user = db.Users.Where(x => x.UserName == userName).FirstOrDefault();
+
+            return (User)user;
+        }
+
+        public static User CreateUser(string username, string password, string email, string firstName, string lastName)
         {
             User u = new User();
             u.UserName = username;
             u.Email = email;
+            u.FirstName = firstName;
+            u.LastName = lastName;
             u.PasswordSalt = CreateSalt();
             u.Password = CreatePasswordHash(password, u.PasswordSalt);
 
@@ -27,7 +43,7 @@ namespace WebCalendar.DAL
             return u;
         }
 
-        private static string CreateSalt()
+        public static string CreateSalt()
         {
             RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
             byte[] buff = new byte[32];
@@ -36,7 +52,7 @@ namespace WebCalendar.DAL
             return Convert.ToBase64String(buff);
         }
 
-        private static string CreatePasswordHash(string password, string salt)
+        public static string CreatePasswordHash(string password, string salt)
         {
             string saltAndPwd = "mixing" + password + "with some" + salt;
 

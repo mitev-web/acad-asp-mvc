@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace WebCalendar.DAL
 {
-    public class MeetingData : DAO
+    public class MeetingDAL : DAO
     {
         public static IEnumerable<Meeting> GetAll(int userID)
         {
@@ -24,14 +24,21 @@ namespace WebCalendar.DAL
             return meetings;
         }
 
-        public static void CreateMeeting(User user, IEnumerable<Contact> contacts, DateTime date, string description, string location)
+        public static void CreateMeeting(User user, Category category, IEnumerable<Contact> contacts, DateTime date, string description, string location)
         {
             Meeting m = new Meeting();
             m.User = user;
             m.Date = date;
             m.Description = description;
             m.Location = location;
-            //m.Contacts = <EntityCollection>contacts;
+            m.Category = category;
+
+            foreach (Contact c in contacts)
+            {
+                m.Contacts.Add(c);
+            }
+
+            db.SaveChanges();
 
        
         }

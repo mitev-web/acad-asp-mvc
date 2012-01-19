@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WebCalendarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="WebCalendarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="WebCalendarModelStoreContainer">
           <EntitySet Name="Categories" EntityType="WebCalendarModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Contacts" EntityType="WebCalendarModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
@@ -12,6 +12,10 @@
           <EntitySet Name="MeetingsContacts" EntityType="WebCalendarModel.Store.MeetingsContacts" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="WebCalendarModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Users" EntityType="WebCalendarModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Categories_Users" Association="WebCalendarModel.Store.FK_Categories_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
           <AssociationSet Name="FK_Contacts_Users" Association="WebCalendarModel.Store.FK_Contacts_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Contacts" EntitySet="Contacts" />
@@ -40,6 +44,7 @@
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="text" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="Contacts">
           <Key>
@@ -95,6 +100,18 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="255" />
         </EntityType>
+        <Association Name="FK_Categories_Users">
+          <End Role="Users" Type="WebCalendarModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Categories" Type="WebCalendarModel.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Contacts_Users">
           <End Role="Users" Type="WebCalendarModel.Store.Users" Multiplicity="1" />
           <End Role="Contacts" Type="WebCalendarModel.Store.Contacts" Multiplicity="*" />
@@ -155,8 +172,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebCalendarModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -182,6 +198,10 @@
             <End Role="Contacts" EntitySet="Contacts" />
             <End Role="Meetings" EntitySet="Meetings" />
           </AssociationSet>
+          <AssociationSet Name="FK_Categories_Users" Association="WebCalendarModel.FK_Categories_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Category" EntitySet="Categories" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -191,6 +211,8 @@
           <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Meetings" Relationship="WebCalendarModel.FK_Meetings_Categories" FromRole="Categories" ToRole="Meetings" />
+          <Property Type="Int32" Name="UserID" />
+          <NavigationProperty Name="User" Relationship="WebCalendarModel.FK_Categories_Users" FromRole="Category" ToRole="User" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -244,6 +266,7 @@
           <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Contacts" Relationship="WebCalendarModel.FK_Contacts_Users" FromRole="Users" ToRole="Contacts" />
           <NavigationProperty Name="Meetings" Relationship="WebCalendarModel.FK_Meetings_Users" FromRole="Users" ToRole="Meetings" />
+          <NavigationProperty Name="Categories" Relationship="WebCalendarModel.FK_Categories_Users" FromRole="User" ToRole="Category" />
         </EntityType>
         <Association Name="FK_Meetings_Categories">
           <End Role="Categories" Type="WebCalendarModel.Category" Multiplicity="1" />
@@ -285,6 +308,18 @@
           <End Role="Contacts" Type="WebCalendarModel.Contact" Multiplicity="*" />
           <End Role="Meetings" Type="WebCalendarModel.Meeting" Multiplicity="*" />
         </Association>
+        <Association Name="FK_Categories_Users">
+          <End Type="WebCalendarModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="WebCalendarModel.Category" Role="Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -292,7 +327,8 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="WebCalendarModelStoreContainer" CdmEntityContainer="WebCalendarEntities">
           <EntitySetMapping Name="Categories"><EntityTypeMapping TypeName="WebCalendarModel.Category"><MappingFragment StoreEntitySet="Categories">
-            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="Name" ColumnName="Name" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -365,13 +401,13 @@
         <EntityTypeShape EntityType="WebCalendarModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" Height="1.7566536458333335" IsExpanded="true" />
         <EntityTypeShape EntityType="WebCalendarModel.User" Width="1.5" PointX="0.75" PointY="1" Height="2.4140429687499996" IsExpanded="true" />
         <AssociationConnector Association="WebCalendarModel.FK_Meetings_Categories" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="6.8307299804687505" />
-          <ConnectorPoint PointX="5.46875" PointY="6.8307299804687505" />
-          <ConnectorPoint PointX="5.46875" PointY="3.4140429687499996" />
+          <ConnectorPoint PointX="4.5" PointY="7.0164517975846916" />
+          <ConnectorPoint PointX="5.46875" PointY="7.0164517975846916" />
+          <ConnectorPoint PointX="5.46875" PointY="3.4442187142372132" />
         </AssociationConnector>
         <AssociationConnector Association="WebCalendarModel.FK_Contacts_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.207021484375" />
-          <ConnectorPoint PointX="3" PointY="2.207021484375" />
+          <ConnectorPoint PointX="2.25" PointY="2.3055403452118233" />
+          <ConnectorPoint PointX="3" PointY="2.3055403452118233" />
         </AssociationConnector>
         <AssociationConnector Association="WebCalendarModel.FK_Meetings_Users" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="1.0011528461538464" />
@@ -382,6 +418,11 @@
         <AssociationConnector Association="WebCalendarModel.MeetingsContacts" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="2.207021484375" />
           <ConnectorPoint PointX="5.25" PointY="2.207021484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="WebCalendarModel.FK_Categories_Users" >
+          <ConnectorPoint PointX="1.5" PointY="3.6110806904236479" />
+          <ConnectorPoint PointX="1.5" PointY="6.4718163928389547" />
+          <ConnectorPoint PointX="3" PointY="6.4718163928389547" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

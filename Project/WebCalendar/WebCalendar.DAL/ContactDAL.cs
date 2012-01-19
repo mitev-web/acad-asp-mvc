@@ -14,6 +14,17 @@ namespace WebCalendar.DAL
             return contact;
         }
 
+        public static IEnumerable<Contact> GetAll()
+        {
+            return db.Contacts;
+        }
+
+        public static IEnumerable<Contact> GetAllByUser(User u)
+        {
+            var e = db.Contacts.Where(x => x.User == u);
+            return e;
+        }
+
         public static IEnumerable<Contact> GetAllByUserID(int userID)
         {
             IEnumerable<Contact> contacts = from contact in db.Contacts

@@ -22,6 +22,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("WebCalendarModel", "FK_Contacts_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebCalendar.DAL.User), "Contacts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebCalendar.DAL.Contact), true)]
 [assembly: EdmRelationshipAttribute("WebCalendarModel", "FK_Meetings_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebCalendar.DAL.User), "Meetings", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebCalendar.DAL.Meeting), true)]
 [assembly: EdmRelationshipAttribute("WebCalendarModel", "MeetingsContacts", "Contacts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebCalendar.DAL.Contact), "Meetings", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebCalendar.DAL.Meeting))]
+[assembly: EdmRelationshipAttribute("WebCalendarModel", "FK_Categories_Users", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebCalendar.DAL.User), "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebCalendar.DAL.Category), true)]
 
 #endregion
 
@@ -304,6 +305,30 @@ namespace WebCalendar.DAL
         private global::System.String _Name;
         partial void OnNameChanging(global::System.String value);
         partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> UserID
+        {
+            get
+            {
+                return _UserID;
+            }
+            set
+            {
+                OnUserIDChanging(value);
+                ReportPropertyChanging("UserID");
+                _UserID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserID");
+                OnUserIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _UserID;
+        partial void OnUserIDChanging(Nullable<global::System.Int32> value);
+        partial void OnUserIDChanged();
 
         #endregion
     
@@ -327,6 +352,44 @@ namespace WebCalendar.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Meeting>("WebCalendarModel.FK_Meetings_Categories", "Meetings", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WebCalendarModel", "FK_Categories_Users", "User")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("WebCalendarModel.FK_Categories_Users", "User").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("WebCalendarModel.FK_Categories_Users", "User").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("WebCalendarModel.FK_Categories_Users", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("WebCalendarModel.FK_Categories_Users", "User", value);
                 }
             }
         }
@@ -1312,6 +1375,28 @@ namespace WebCalendar.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Meeting>("WebCalendarModel.FK_Meetings_Users", "Meetings", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WebCalendarModel", "FK_Categories_Users", "Category")]
+        public EntityCollection<Category> Categories
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Category>("WebCalendarModel.FK_Categories_Users", "Category");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Category>("WebCalendarModel.FK_Categories_Users", "Category", value);
                 }
             }
         }

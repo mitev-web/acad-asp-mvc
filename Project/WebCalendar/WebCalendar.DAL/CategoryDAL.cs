@@ -17,6 +17,18 @@ namespace WebCalendar.DAL
             return e;
         }
 
+        public static void CreateCategory(User user, string categoryName, string categoryDescription)
+        {
+            Category c = new Category();
+            c.Name = categoryName;
+            c.Description = categoryDescription;
+            c.User = user;
+            db.AddToCategories(c);
+            db.SaveChanges();
+        }
+
+
+
 
 
         public static void RemoveByID(int categoryID)
