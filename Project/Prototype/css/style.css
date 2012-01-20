@@ -14,6 +14,14 @@ header {
 	filter:alpha(opacity=80);
 	width:100%;
 }
+h2 {
+margin: 0 0 10px 10px;	
+font-size:14px;
+}
+.meetings tbody tr {
+
+height:60px;
+}
 
 
 ;.sub-menu, .menu{
@@ -22,8 +30,8 @@ header {
 
 
 .spacer {
-height:50px;
-width:100%;	
+	height:50px;
+	width:100%;	
 }
 .menu a {
 	text-decoration:none;
@@ -230,7 +238,6 @@ margin: 0 0 0 40px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
-
 	border:2px solid #ccc;
 	-moz-border-radius:14px;
 	-webkit-border-radius:14px;
@@ -434,8 +441,9 @@ table {
 	border-radius:5px;
 	margin: 0 0 10px 0;
 }
-.left {
-
+.attendands a {
+	display: block;	
+	height:17px;
 }
 footer {
 	
@@ -450,7 +458,6 @@ footer {
 	-moz-border-bottom-left-radius:14px;
 	-webkit-bottom-left-border-radius:14px;
 	border-bottom-left-radius:14px;
-	
 	-moz-border-bottom-right-radius:14px;
 	-webkit-bottom-right-border-radius:14px;
 	border-bottom-right-radius:14px;
