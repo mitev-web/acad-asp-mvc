@@ -3,9 +3,10 @@
 
 <head>
 <meta charset="utf-8" />
-<title>Web Calendar :: Home</title>
+<title>Web Calendar :: Meetings for Ivan Petrov</title>
 <link href="css/jquery-ui.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" rel="stylesheet">
 <script src="js/jquery-1.7.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/web-calendar.js"></script>
@@ -19,28 +20,42 @@
 <header>
     <ul class="menu">
 		<li class="link-button"><a href="contacts.html">My Contacts</a></li>
-		<li class="link-button"><a href="meetings.html">My Meetings</a></li>
-		<li class="link-button active"><a href="home.html">Home</a></li>
+		<li class="link-button active"><a href="meetings.html">My Meetings</a></li>
+		<li class="link-button"><a href="home.html">Home</a></li>
 	</ul>
 	<div class="config-button">
 	</div>
 	<span>Hello Pesho!</span>
+	<div class="spacer">
+&nbsp;</div>
+	<ul class="sub-menu">
+		<li id="call-category" class="link-button">Add new category</li>
+		<li class="link-button"><a href="add_meeting.html">Add new meeting</a></li>
+	</ul>
+  
 
 </header>
 
-	<div class="upcomming">
-		<span>You have no meetings scheduled for today!</span><div class="close-button">
-		</div>
+	<div class="spacer">
+&nbsp;</div>
+	<div id="add-category" title="Add new Category">
+		<h1>Please add the contact information</h1>
+		<form id="formregister" accept-charset="UTF-8" action="home.html" method="post">
+			<dl>
+				<dt><label for="category-name">Category Name: </label>
+				<span class="required">*</span> </dt>
+				<dd>
+				<input id="category-name" class="form-text" maxlength="50" required="" size="60" type="text" value="default" />
+				</dd>
+				<dt><label for="category-description">Category Description:</label></dt>
+				<dd>
+				<input id="category-description" class="form-text" maxlength="50" size="50" type="text" value="" />
+				</dd>
+			</dl>
+			<input class="link-button" type="submit" value="Add Contact" />
+		</form>
 	</div>
-	<div class="upcomming birthday">
-		<span>Ivan is having a birthday tomorrow!</span><div class="close-button">
-		</div>
-	</div>
-	<div class="upcomming meeting">
-		<span>You have an important meeting today!</span><div class="close-button">
-		</div>
-	</div>
-	<h1>Please check your next meetings below:</h1>
+	<h1>Ivan Petrov's Meetings</h1>
 	<table class="meetings">
 		<thead>
 			<tr>
@@ -74,7 +89,7 @@
 			<td class="attendands"><a href="#">Pesho Sekirata</a><a href="#">Nadia 
 			Koleva</a></td>
 			<td><a href="meeting_contacts.html">
-			<img alt="view contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
+			<img alt="vview contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
 			<a href="#">
 			<img alt="edit this contact" src="images/edit.png" /></a>
 			<a class="delete" href="#">
@@ -102,7 +117,7 @@
 			<td class="attendands"><a href="#">Pesho Sekirata</a><a href="#">Nadia 
 			Koleva</a></td>
 			<td><a href="meeting_contacts.html">
-			<img alt="view contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
+			<img alt="vview contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
 			<a href="#">
 			<img alt="edit this contact" src="images/edit.png" /></a>
 			<a class="delete" href="#">
@@ -116,35 +131,7 @@
 			<td class="attendands"><a href="meeting_contacts.html">View All Participants</a><a href="#">Emil 
 			Petkov</a><a href="#">Ivanka Mutafova</a></td>
 			<td><a href="meeting_contacts.html">
-			<img alt="vview contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
-			<a href="#">
-			<img alt="edit this contact" src="images/edit.png" /></a>
-			<a class="delete" href="#">
-			<img alt="delete this row" src="images/delete.png" /></a></td>
-		</tr>
-		<tr>
-			<td>2012-01-20 08:30:00</td>
-			<td>Business</td>
-			<td>This is a good description for this Meeting</td>
-			<td>Sofia Lomsko, shose 45</td>
-			<td class="attendands"><a href="#">Pesho Sekirata</a><a href="#">Nadia 
-			Koleva</a></td>
-			<td><a href="meeting_contacts.html">
 			<img alt="view contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
-			<a href="#">
-			<img alt="edit this contact" src="images/edit.png" /></a>
-			<a class="delete" href="#">
-			<img alt="delete this row" src="images/delete.png" /></a></td>
-		</tr>
-		<tr class="odd">
-			<td>2012-01-20 08:30:00</td>
-			<td>Personal</td>
-			<td>This is a good description for this Meeting</td>
-			<td>Sofia Lomsko, shose 45</td>
-			<td class="attendands"><a href="meeting_contacts.html">View All Participants</a><a href="#">Emil 
-			Petkov</a><a href="#">Ivanka Mutafova</a></td>
-			<td><a href="meeting_contacts.html">
-			<img alt="vview contacts for this meeting" src="images/view.png" title="view contacts for this meeting" /></a>
 			<a href="#">
 			<img alt="edit this contact" src="images/edit.png" /></a>
 			<a class="delete" href="#">
@@ -152,7 +139,8 @@
 		</tr>
 	</table>
 
-<footer><div id="copyright">Copyright 2012© <a href="http://georgi-mitev.com" target="_blank">Georgi Mitev</a></div></footer>
+
+<footer><div id="copyright">Copyright 2012© <a href="http://georgi-mitev.com">Georgi Mitev</a></div></footer>
 </div>
 
 </body>

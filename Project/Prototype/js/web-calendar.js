@@ -13,6 +13,12 @@
 
 });
 
+	$(".delete").click(function () {
+	
+		confirm ("Are you sure you want to delete this record?")
+
+});
+
 	$(".link-button").click(function () {
 	
 		$(this).addClass("active");
