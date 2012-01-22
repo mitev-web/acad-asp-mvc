@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+@keyframes resize {
+	0% {...}
+	50% {...}
+	100% {...}
+}
+#box {
+	height: 50px;
+	width: 50px;
+	background-color: red;
+	animation-name: resize;
+	animation-duration: 1s;
+	animation-iteration-count: 4;
+	animation-direction: alternate; 	animation-timing-function: ease-in-out;
+}
+
+#box {
+	-webkit-transition: all 1s ease-in-out; 	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out; 	transition: all 1s ease-in-out;
+}
+
+</style>
+</head>
+<body>
+
+<div id="box">test</div>
+
+</body>

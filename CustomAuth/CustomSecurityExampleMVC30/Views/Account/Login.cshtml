@@ -1,0 +1,24 @@
+﻿@model CustomSecurityExampleMVC30.Models.LoginPageViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+<fieldset style="width: 280px;">
+    <legend>Login</legend>
+    <p>
+        <label>
+            username</label>
+        @Html.TextBoxFor(x => x.Username)
+    </p>
+    <p>
+        <label>
+            Password</label>
+        @Html.TextBoxFor(x => x.Password)
+    </p>
+    <p>
+        <input type="submit" value="login" />
+    </p>
+</fieldset>
+}
