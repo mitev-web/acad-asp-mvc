@@ -1,0 +1,60 @@
+﻿body {
+	margin: 200px 0 0 0;
+	background-color:black;
+	font-size:22px;
+	text-align:center;
+}
+@-webkit-keyframes resize {
+	0% {
+
+		color: rgba(255,0,0,0.7);
+		font-size: 32px; 
+	}
+	25% {
+
+		color: rgba(255,0,0,0.7);
+		font-size: 52px; 
+	}
+
+	50% {
+
+			color: rgba(0,255,0,0.7);	
+		font-size: 72px; 
+	}
+
+	75% {
+
+			color: rgba(0,255,0,0.7);	
+		font-size: 92px; 
+	}
+	100% {
+		color: rgba(0,0,255,0.7);
+				font-size: 102px; 
+	}
+}
+
+p {
+color:white;	
+	
+}
+#resize {
+	height: 500px;
+	width: 500px;
+	border:1px solid red;
+	margin: 0 auto;
+}
+#resize #box {
+	padding-top:50px;
+	color:rgba(0,255,255,0.8);	
+	font-weight:bold;
+	font-size:32px;
+	position:absolute;
+	margin: 0 auto;
+}
+
+#resize:hover #box {
+	-webkit-animation-name: resize;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:alternate;
+}

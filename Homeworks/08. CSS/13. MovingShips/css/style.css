@@ -1,0 +1,57 @@
+﻿body {
+	margin-top:100px;
+	background-color: black;
+	font-size: 22px;
+	
+	width:100%;
+	height:100%;
+	text-align: center;
+}
+p {
+	color:white;
+	font-size:24px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+#sea-borders {
+	background: url(../images/sea.png) no-repeat center;
+	width: 713px;
+	height: 448px;
+		margin: auto;
+}
+#rock {
+	margin: auto;
+ 
+
+	position: absolute;
+	width: 713px;
+	height: 448px;
+	z-index: 5;
+}
+#ease-in.ship1 {
+	-webkit-transition: all 7s ease-out;
+}
+#ease-out.ship2 {
+	-webkit-transition: all 7s ease-in-out;
+}
+#ease-in-out.ship3 {
+	-webkit-transition: all 7s ease-in-out;
+}
+.ship1, .ship2{
+	position: relative;
+	color: rgba(0,255,255,0.8);
+	height: 41px;
+	float: right;
+	width: 60px;
+	margin-top: 230px;
+	font-weight: bold;
+	background: url(../images/ship.png) no-repeat;
+}
+.ship2 {
+	margin-top: 320px;
+}
+body:hover .ship2, body:hover .ship1, body:hover .ship3, body:hover #rock {
+	margin-right: 290px;
+	 margin-left:0px;
+}
+
+   

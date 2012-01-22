@@ -58,15 +58,10 @@
 	backface-visibility: visible;
 	border: 1px #aaa solid;
 }
-#cubeLayout .face p {
-	font-size: 160px;
-	line-height: 1;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	color: rgba(0,0,0,0.75);
-}
+
 #cube .one {
+	 opacity:0.5;
+		background-image:url(../images/rubik-side.png);
 	-webkit-transform: rotateX(90deg) translateZ(100px);
 	-moz-transform: rotateX(90deg) translateZ(100px);
 	-o-transform: rotateX(90deg) translateZ(100px);
@@ -75,6 +70,10 @@
 	background-color: rgba(255, 0, 0, 0.5);
 }
 #cube .two {
+	font-size:18px;
+	color:black;
+	background-image:url(../images/rubik-side.png);
+	opacity:0.5;
 	-webkit-transform: translateZ(100px);
 	-moz-transform: translateZ(100px);
 	-o-transform: translateZ(100px);
@@ -82,6 +81,8 @@
 	transform: translateZ(100px);
 }
 #cube .three {
+	    background-clip:rgba(0,0,0,0.5);
+		background-image:url(../images/rubik-side.png);
 	-webkit-transform: rotateY(90deg) translateZ(100px);
 	-moz-transform: rotateY(90deg) translateZ(100px);
 	-o-transform: rotateY(90deg) translateZ(100px);
@@ -89,6 +90,10 @@
 	transform: rotateY(90deg) translateZ(100px);
 }
 #cube .four {
+	font-size: 18px;
+	color:green;
+		 opacity:0.75;
+		background-image:url(../images/rubik-side.png);
 	background-color: yellow;
 	-webkit-transform: rotateY(180deg) translateZ(100px);
 	-moz-transform: rotateY(180deg) translateZ(100px);
@@ -98,6 +103,9 @@
 	background-color: rgba(0, 255, 0, 0.5);
 }
 #cube .five {
+	
+		background-image:url(../images/rubik-side.png);
+	background-image:url(../images/rubik-side.png);
 	-webkit-transform: rotateY(-90deg) translateZ(100px);
 	-moz-transform: rotateY(-90deg) translateZ(100px);
 	-o-transform: rotateY(-90deg) translateZ(100px);
@@ -105,22 +113,12 @@
 	transform: rotateY(-90deg) translateZ(100px);
 }
 #cube .six {
+
+		background-image:url(../images/rubik-side.png);
 	-webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
 	-moz-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
 	-o-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
 	-ms-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
 	transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
 	background-color: rgba(0, 0, 255, 0.5);
-}
-#td3controls {
-	width: 300px;
-	float: right;
-}
-#td3controls label {
-	float: left;
-	width: 150px;
-}
-#td3controls input {
-	float: left;
-	width: 150px;
 }

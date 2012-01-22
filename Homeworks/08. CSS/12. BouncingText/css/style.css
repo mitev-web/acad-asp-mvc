@@ -1,0 +1,53 @@
+﻿body {
+	margin: 200px 0 0 0;
+	background-color: black;
+	font-size: 22px;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+}
+@-webkit-keyframes bounce {
+	0% {
+		color: rgba(255,0,0,0.7);
+		padding: 0;
+	}
+
+	25% {
+
+		color: rgba(0,255,0,0.7);	
+		padding:100px 0 0 0;
+	}
+		50% {
+
+		color: rgba(0,255,0,0.7);	
+		padding:0 0 0 160px;
+	}
+
+	75% {
+		color: rgba(0,0,255,0.7);
+		padding:0 100px 0 0 ;
+	}
+
+}
+p {
+	color: white;
+}
+#bounce {
+	height: 500px;
+	width: 500px;
+	border: 1px solid red;
+	margin: 0 auto;
+}
+#bounce #box {
+	color: rgba(0,255,255,0.8);
+	font-weight: bold;
+	font-size: 32px;
+	position: absolute;
+	margin: 0 auto;
+}
+#bounce:hover #box {
+	-webkit-animation-name: bounce;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}

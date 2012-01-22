@@ -11,10 +11,8 @@
 	
 	function rotate_cube(e) {
 			$('#Ycube').css(vP+"transform","rotateY("+e+"deg)");
-			e = e+2;
-			rotation_init(e);
+			e = e+0.5;
+			setTimeout('rotate_cube('+e+')', 10);
 	}
 	
-	function rotation_init(e) {
-		setTimeout('rotate_cube('+e+')', 50);
-	}
+	
