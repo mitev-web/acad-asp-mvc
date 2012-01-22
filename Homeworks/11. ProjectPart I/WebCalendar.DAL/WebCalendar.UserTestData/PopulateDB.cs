@@ -11,10 +11,10 @@ namespace WebCalendar.UserTestData
             /// <summary>
             /// Generate Test User data for a number of Users
             /// by default for every user are added:
-            /// 30 Contacts, 5 Categories and 15 Meetings
+            ///  30 Contacts and 15 Meetings with Categories for each Contact
             /// </summary>
        
-            GenerateTestData.GenerateUserData(30);
+            GenerateTestData.GenerateUserData(20);
         }
     }
 }

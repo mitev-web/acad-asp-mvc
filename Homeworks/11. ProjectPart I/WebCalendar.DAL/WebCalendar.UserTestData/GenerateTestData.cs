@@ -11,7 +11,7 @@ namespace WebCalendar.UserTestData
         /// <summary>
         /// Generates Test User data for a number of Users
         /// by default for every user are added:
-        /// 30 Contacts, 5 Categories and 15 Meetings
+        /// 30 Contacts and 15 Meetings with Categories for each Contact
         /// </summary>
         /// <param name="numberOfUsers">The number of users for which test data will be generated</param>
         public static void GenerateUserData(int numberOfUsers)
