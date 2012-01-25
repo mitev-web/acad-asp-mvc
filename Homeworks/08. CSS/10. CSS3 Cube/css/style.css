@@ -72,8 +72,9 @@
 #cube .two {
 	font-size:18px;
 	color:black;
+	opacity:0.25;
 	background-image:url(../images/rubik-side.png);
-	opacity:0.5;
+
 	-webkit-transform: translateZ(100px);
 	-moz-transform: translateZ(100px);
 	-o-transform: translateZ(100px);
@@ -81,8 +82,12 @@
 	transform: translateZ(100px);
 }
 #cube .three {
-	    background-clip:rgba(0,0,0,0.5);
-		background-image:url(../images/rubik-side.png);
+		font-size:18px;
+	color:black;
+		opacity:0.5;
+
+	background-clip:rgba(0,0,0,0.5);
+	background-image:url(../images/rubik-side.png);
 	-webkit-transform: rotateY(90deg) translateZ(100px);
 	-moz-transform: rotateY(90deg) translateZ(100px);
 	-o-transform: rotateY(90deg) translateZ(100px);
@@ -103,8 +108,8 @@
 	background-color: rgba(0, 255, 0, 0.5);
 }
 #cube .five {
-	
-		background-image:url(../images/rubik-side.png);
+	font-size: 18px;
+	background-image:url(../images/rubik-side.png);
 	background-image:url(../images/rubik-side.png);
 	-webkit-transform: rotateY(-90deg) translateZ(100px);
 	-moz-transform: rotateY(-90deg) translateZ(100px);
