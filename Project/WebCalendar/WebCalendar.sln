@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar.DAL", "WebCalen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar.UserTestData", "WebCalendar.UserTestData\WebCalendar.UserTestData.csproj", "{E94C565B-7DF4-4E78-8F17-917727764072}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalendar_bak", "WebCalendar_bak\WebCalendar_bak.csproj", "{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,16 @@ Global
 		{E94C565B-7DF4-4E78-8F17-917727764072}.Release|Mixed Platforms.Build.0 = Release|x86
 		{E94C565B-7DF4-4E78-8F17-917727764072}.Release|x86.ActiveCfg = Release|x86
 		{E94C565B-7DF4-4E78-8F17-917727764072}.Release|x86.Build.0 = Release|x86
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B89DB4C1-A11D-4D1D-ABBF-DEC35BABEA4F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

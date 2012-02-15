@@ -147,7 +147,7 @@ namespace WebCalendar.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {//amended
-                    //FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
                     //return RedirectToAction("Index", "Home"); 
                     return RedirectToAction("Wellcome", "Home");
                 }
