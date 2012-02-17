@@ -1,4 +1,5 @@
 ﻿@using WebCalendar;
+@model WebCalendar.Models.LogOnModel
 
 
 @{
@@ -6,20 +7,47 @@
 }
 
 <header class="header-guest">
-<span>Wellcome to your private Web Calendar!</span>
+  <span>
+    Wellcome to your private Web Calendar!
+  </span>
 </header>
 <div id="login-form">
-<h2>Hello Stranger! Please login or register!</h2>
-	<div class="description">To login into your Web Calendar, type your credentials below.</div>
-	<form accept-charset="UTF-8" action="home.html" method="post">
-		<p>Username </p>
-		<input class="form-text" maxlength="128" name="mail" size="60" type="text" value="" />
-		<p>Password </p>
-		<input class="form-text" maxlength="128" name="pass" size="60" type="password" />
-	<div class="description">Don&#39;t have an account? @Html.ActionLink("Register", "Register", "Account").</div>
-		<input class="link-button" type="submit" value="Log in" />
-	</form>
+  <h2>
+    Hello Stranger! Please login or register!
+  </h2>
+
+
+  @using (Html.BeginForm())
+  {
+        <div class="description">
+          To login into your Web Calendar, type your credentials below.
+        </div>
+        @Html.ValidationSummary(true, "Login was insuccessful. Please fix yourself!")
+        <p>
+          @Html.LabelFor(m => m.UserName)
+        </p>
+
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-text" })
+
+        <p>
+          @Html.LabelFor(m => m.Password)
+        </p>
+
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-text" })
+        @Html.LabelFor(m => m.RememberMe)
+        @Html.CheckBoxFor(m => m.RememberMe)
+               
+        <input class="link-button" type="submit" value="Log in" />
+                    
+
+         
+  }
+  <div class="description">
+    Don&#39;t have an account? @Html.ActionLink("Register", "Register", "Account").
+  </div>
+
 </div>
+
 
 <footer class="footer-guest">
 </footer>
