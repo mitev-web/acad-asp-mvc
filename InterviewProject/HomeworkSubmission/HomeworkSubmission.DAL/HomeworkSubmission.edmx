@@ -37,7 +37,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
@@ -63,7 +63,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="StudentID" Type="int" Nullable="false" />
           <Property Name="TopicID" Type="int" Nullable="false" />
           <Property Name="UploadDate" Type="date" Nullable="false" />
@@ -84,7 +84,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CourseID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nchar" Nullable="false" MaxLength="100" />
           <Property Name="IsActive" Type="bit" Nullable="false" />

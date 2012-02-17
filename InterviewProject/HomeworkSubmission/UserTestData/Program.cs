@@ -7,7 +7,9 @@ namespace UserTestData
     {
         static void Main(string[] args)
         {
-            GenerateTestData.GenerateStudents(400);
+            //GenerateTestData.GenerateStudents(400);
+
+            GenerateTestData.GenerateCourses(30);
         }
     }
 }

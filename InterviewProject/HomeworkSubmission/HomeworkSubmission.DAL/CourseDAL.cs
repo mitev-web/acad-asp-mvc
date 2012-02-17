@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Objects.DataClasses;
 using System.Linq;
 
 namespace HomeworkSubmission.DAL
@@ -45,6 +46,7 @@ namespace HomeworkSubmission.DAL
             c.IsActive = isActive;
 
             db.AddToCourses(c);
+            db.SaveChanges();
         }
 
         /// <summary>
@@ -69,6 +71,16 @@ namespace HomeworkSubmission.DAL
         {
             course.Students.Add(student);
             db.SaveChanges();
+        }
+
+        public static void AddTopicsToCourse(Cours course, List<Topic> topics)
+        {
+            var entityCollectionTopics = new EntityCollection<Topic>();
+            foreach (var topic in topics)
+            {
+                entityCollectionTopics.Add(topic);
+            }
+            course.Topics = entityCollectionTopics;
         }
 
         /// <summary>
@@ -103,6 +115,11 @@ namespace HomeworkSubmission.DAL
                                                                   "Make sure that Cours exists.\n",
                     CoursKey.EntityKeyValues[0].Value));
             }
+        }
+
+        public static void PopulateCourses(List<Topic> topics)
+        {
+
         }
     }
 }
