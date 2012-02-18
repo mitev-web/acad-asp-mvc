@@ -50,11 +50,11 @@ namespace HomeworkSubmission.DAL
         }
 
         /// <summary>
-        /// Changes the course.
+        /// Adds to course.
         /// </summary>
         /// <param name="topic">The topic.</param>
         /// <param name="course">The course.</param>
-        public static void ChangeCourse(Topic topic, Cours course)
+        public static void AddToCourse(Topic topic, Cours course)
         {
             topic.Cours = course;
             db.SaveChanges();

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace HomeworkSubmission.DAL
 {
-    class SubmissionDAL : DAO
+   public class SubmissionDAL : DAO
     {
         /// <summary>
         /// Gets all Submissions
@@ -65,6 +65,30 @@ namespace HomeworkSubmission.DAL
             s.FileData = fileData;
 
             db.AddToSubmissions(s);
+        }
+
+    
+
+        public static void AddSubmissions(List<Submission> submissions)
+        {
+            foreach (Submission submission in submissions)
+            {
+                db.AddToSubmissions(submission);
+                db.SaveChanges();
+            
+            }
+            
+        }
+
+        /// <summary>
+        /// Adds submission to topic.
+        /// </summary>
+        /// <param name="topic">The topic.</param>
+        /// <param name="submission">The submission.</param>
+        public static void AddToTopic(Topic topic, Submission submission)
+        {
+            submission.Topic = topic;
+            db.SaveChanges();
         }
     }
 }

@@ -64,11 +64,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="StudentID" Type="int" Nullable="false" />
-          <Property Name="TopicID" Type="int" Nullable="false" />
-          <Property Name="UploadDate" Type="date" Nullable="false" />
-          <Property Name="MIMEType" Type="nchar" Nullable="false" MaxLength="50" />
-          <Property Name="FileData" Type="varbinary(max)" Nullable="false" />
+          <Property Name="StudentID" Type="int" />
+          <Property Name="TopicID" Type="int" />
+          <Property Name="UploadDate" Type="date" />
+          <Property Name="MIMEType" Type="nchar" MaxLength="50" />
+          <Property Name="FileData" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -116,7 +116,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Submissions_Students">
-          <End Role="Students" Type="HomeworkSubmissionModel.Store.Students" Multiplicity="1" />
+          <End Role="Students" Type="HomeworkSubmissionModel.Store.Students" Multiplicity="0..1" />
           <End Role="Submissions" Type="HomeworkSubmissionModel.Store.Submissions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
@@ -128,7 +128,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Submissions_Topics">
-          <End Role="Topics" Type="HomeworkSubmissionModel.Store.Topics" Multiplicity="1" />
+          <End Role="Topics" Type="HomeworkSubmissionModel.Store.Topics" Multiplicity="0..1" />
           <End Role="Submissions" Type="HomeworkSubmissionModel.Store.Submissions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Topics">
@@ -182,7 +182,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Topics" Relationship="HomeworkSubmissionModel.FK_Topics_Courses" FromRole="Courses" ToRole="Topics" />
@@ -192,7 +192,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="true" />
@@ -204,7 +204,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StudentID" Type="Int32" Nullable="false" />
           <Property Name="TopicID" Type="Int32" Nullable="false" />
           <Property Name="UploadDate" Type="DateTime" Nullable="false" />
@@ -227,7 +227,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CourseID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
@@ -348,8 +348,8 @@
       <Diagram Name="HomeworkSubmission">
         <EntityTypeShape EntityType="HomeworkSubmissionModel.Cours" Width="1.5" PointX="0.75" PointY="2.75" Height="1.7566536458333339" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeworkSubmissionModel.Student" Width="1.5" PointX="3" PointY="1.125" Height="2.0853483072916656" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.Submission" Width="1.5" PointX="5.25" PointY="2.5" Height="2.2496956380208335" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.sysdiagram" Width="1.5" PointX="9.375" PointY="4.875" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.Submission" Width="1.5" PointX="5.25" PointY="2.5" Height="2.2496956380208326" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" Height="1.7566536458333335" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeworkSubmissionModel.Topic" Width="1.5" PointX="3" PointY="3.875" Height="2.2496956380208335" IsExpanded="true" />
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Topics_Courses" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="4.1908268229166667" />
@@ -360,8 +360,8 @@
           <ConnectorPoint PointX="5.25" PointY="2.8551741536458328" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Submissions_Topics" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="4.3123478190104167" />
-          <ConnectorPoint PointX="5.25" PointY="4.3123478190104167" />
+          <ConnectorPoint PointX="4.5" PointY="4.3123478190104159" />
+          <ConnectorPoint PointX="5.25" PointY="4.3123478190104159" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.StudentsCourses" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.9801741536458328" />
