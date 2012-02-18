@@ -4,13 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HomeworkSubmissionModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+      <Schema Namespace="HomeworkSubmissionModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="HomeworkSubmissionModelStoreContainer">
           <EntitySet Name="Courses" EntityType="HomeworkSubmissionModel.Store.Courses" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Students" EntityType="HomeworkSubmissionModel.Store.Students" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="StudentsCourses" EntityType="HomeworkSubmissionModel.Store.StudentsCourses" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Submissions" EntityType="HomeworkSubmissionModel.Store.Submissions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="HomeworkSubmissionModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Topics" EntityType="HomeworkSubmissionModel.Store.Topics" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_StudentsCourses_Courses" Association="HomeworkSubmissionModel.Store.FK_StudentsCourses_Courses">
             <End Role="Courses" EntitySet="Courses" />
@@ -64,21 +63,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="StudentID" Type="int" />
-          <Property Name="TopicID" Type="int" />
-          <Property Name="UploadDate" Type="date" />
-          <Property Name="MIMEType" Type="nchar" MaxLength="50" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="TopicID" Type="int" Nullable="false" />
+          <Property Name="UploadDate" Type="date" Nullable="false" />
+          <Property Name="MIMEType" Type="nchar" Nullable="false" MaxLength="50" />
           <Property Name="FileData" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Topics">
           <Key>
@@ -116,7 +105,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Submissions_Students">
-          <End Role="Students" Type="HomeworkSubmissionModel.Store.Students" Multiplicity="0..1" />
+          <End Role="Students" Type="HomeworkSubmissionModel.Store.Students" Multiplicity="1" />
           <End Role="Submissions" Type="HomeworkSubmissionModel.Store.Submissions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
@@ -128,7 +117,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Submissions_Topics">
-          <End Role="Topics" Type="HomeworkSubmissionModel.Store.Topics" Multiplicity="0..1" />
+          <End Role="Topics" Type="HomeworkSubmissionModel.Store.Topics" Multiplicity="1" />
           <End Role="Submissions" Type="HomeworkSubmissionModel.Store.Submissions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Topics">
@@ -151,7 +140,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HomeworkSubmissionModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -159,7 +149,6 @@
           <EntitySet Name="Courses" EntityType="HomeworkSubmissionModel.Cours" />
           <EntitySet Name="Students" EntityType="HomeworkSubmissionModel.Student" />
           <EntitySet Name="Submissions" EntityType="HomeworkSubmissionModel.Submission" />
-          <EntitySet Name="sysdiagrams" EntityType="HomeworkSubmissionModel.sysdiagram" />
           <EntitySet Name="Topics" EntityType="HomeworkSubmissionModel.Topic" />
           <AssociationSet Name="FK_Topics_Courses" Association="HomeworkSubmissionModel.FK_Topics_Courses">
             <End Role="Courses" EntitySet="Courses" />
@@ -209,19 +198,9 @@
           <Property Name="TopicID" Type="Int32" Nullable="false" />
           <Property Name="UploadDate" Type="DateTime" Nullable="false" />
           <Property Name="MIMEType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
-          <Property Name="FileData" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Student" Relationship="HomeworkSubmissionModel.FK_Submissions_Students" FromRole="Submissions" ToRole="Students" />
           <NavigationProperty Name="Topic" Relationship="HomeworkSubmissionModel.FK_Submissions_Topics" FromRole="Submissions" ToRole="Topics" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Topic">
           <Key>
@@ -302,13 +281,6 @@
             <ScalarProperty Name="MIMEType" ColumnName="MIMEType" />
             <ScalarProperty Name="FileData" ColumnName="FileData" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="HomeworkSubmissionModel.sysdiagram"><MappingFragment StoreEntitySet="sysdiagrams">
-            <ScalarProperty Name="name" ColumnName="name" />
-            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-            <ScalarProperty Name="version" ColumnName="version" />
-            <ScalarProperty Name="definition" ColumnName="definition" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Topics"><EntityTypeMapping TypeName="HomeworkSubmissionModel.Topic"><MappingFragment StoreEntitySet="Topics">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="CourseID" ColumnName="CourseID" />
@@ -348,8 +320,7 @@
       <Diagram Name="HomeworkSubmission">
         <EntityTypeShape EntityType="HomeworkSubmissionModel.Cours" Width="1.5" PointX="0.75" PointY="2.75" Height="1.7566536458333339" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeworkSubmissionModel.Student" Width="1.5" PointX="3" PointY="1.125" Height="2.0853483072916656" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.Submission" Width="1.5" PointX="5.25" PointY="2.5" Height="2.2496956380208326" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.Submission" Width="1.5" PointX="5.25" PointY="2.5" Height="2.2496956380208335" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeworkSubmissionModel.Topic" Width="1.5" PointX="3" PointY="3.875" Height="2.2496956380208335" IsExpanded="true" />
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Topics_Courses" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="4.1908268229166667" />
@@ -360,8 +331,8 @@
           <ConnectorPoint PointX="5.25" PointY="2.8551741536458328" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Submissions_Topics" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="4.3123478190104159" />
-          <ConnectorPoint PointX="5.25" PointY="4.3123478190104159" />
+          <ConnectorPoint PointX="4.5" PointY="4.3123478190104167" />
+          <ConnectorPoint PointX="5.25" PointY="4.3123478190104167" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.StudentsCourses" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.9801741536458328" />

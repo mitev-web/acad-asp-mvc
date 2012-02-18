@@ -1,0 +1,15 @@
+﻿@using HomeworkSubmission.MVC.Models
+@model StudentViewModel
+
+@{
+    ViewBag.Title = "My Courses";
+}
+
+@ViewBag.Hello
+
+@Html.DropDownListFor(c=>c, new SelectList(Model.Courses, "id", "Name", StudentViewModel), "-- Select State --")
+          
+     @foreach (StudentViewModel s in Model)
+{
+    <p>@s.FirstName @s.LastName</p>
+}

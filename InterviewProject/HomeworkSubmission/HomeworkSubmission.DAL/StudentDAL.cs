@@ -31,6 +31,14 @@ namespace HomeworkSubmission.DAL
             return Student;
         }
 
+        public static Student GetByAcademyID(string academyID)
+        {
+            Student Student = (from c in db.Students where c.AcademyID == academyID 
+                               select c).FirstOrDefault();
+
+            return Student;
+        }
+
         /// <summary>
         /// Adds student to course.
         /// </summary>

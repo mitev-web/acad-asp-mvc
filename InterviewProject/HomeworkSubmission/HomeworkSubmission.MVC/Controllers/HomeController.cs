@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HomeworkSubmission.DAL;
+using HomeworkSubmission.MVC.Models;
 
 namespace HomeworkSubmission.MVC.Controllers
 {
@@ -10,10 +12,12 @@ namespace HomeworkSubmission.MVC.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to kick-start your ASP.NET MVC application.";
+            ViewBag.Message = "Please submit your Homework";
 
             return View();
         }
+
+ 
 
         public ActionResult About()
         {
@@ -22,11 +26,22 @@ namespace HomeworkSubmission.MVC.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Home(string academyID)
         {
-            ViewBag.Message = "Your quintessential contact page.";
+            Student student = StudentDAL.GetByAcademyID(academyID);
+            ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
 
-            return View();
+            //List<Student> students = StudentDAL.GetAll().ToList();
+            //List<StudentViewModel> viewModel = new List<StudentViewModel>();
+
+            //foreach (Student s in students)
+            //{
+            //    viewModel.Add(new StudentViewModel(s));
+            //}
+
+
+
+            return View(student);
         }
     }
 }

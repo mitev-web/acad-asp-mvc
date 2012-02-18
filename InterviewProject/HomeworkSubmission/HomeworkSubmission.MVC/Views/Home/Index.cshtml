@@ -6,4 +6,10 @@
 
 
 
-@Html.TextBox("Name")
+    <p>Please enter your Academy ID (ex. 3_MAMA) :</p>
+    @using (Html.BeginForm("Home", "Home", FormMethod.Get))
+    {
+    @Html.TextBox("AcademyID")
+
+     <input type="submit" value="view my courses" />
+    }
