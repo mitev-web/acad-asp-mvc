@@ -7,7 +7,7 @@ namespace UserTestData
     {
         static void Main(string[] args)
         {
-            //should take less than 15 seconds for generating default data
+            //should take less than 10 seconds for generating default data
             //400 Academy Students
             //30 Courses
             //30 Topics per Course
@@ -18,7 +18,7 @@ namespace UserTestData
 
             GenerateTestData.PopulateCourses(30);
 
-            GenerateTestData.PopulateCoursesWithTopics(30);
+            GenerateTestData.PopulateCoursesWithTopics(15);
 
             GenerateTestData.PopulateCoursesWithStudents(50);
 

@@ -20,6 +20,20 @@ namespace HomeworkSubmission.DAL
         }
 
         /// <summary>
+        /// Gets topics for this course.
+        /// </summary>
+        /// <param name="course">The course.</param>
+        /// <returns></returns>
+        public static IEnumerable<Topic> GetTopicsByID(int ID)
+        {
+            var t = (from c in db.Courses
+                    where c.ID == ID
+                    select c).FirstOrDefault().Topics;
+
+            return t;
+        }
+
+        /// <summary>
         /// Gets Course by ID.
         /// </summary>
         /// <param name="coursID">The course ID.</param>
@@ -28,7 +42,7 @@ namespace HomeworkSubmission.DAL
         {
             Cours course = (from c in db.Courses
                             where c.ID == courseID select c).
-                            FirstOrDefault();
+            FirstOrDefault();
 
             return course;
         }
@@ -74,8 +88,8 @@ namespace HomeworkSubmission.DAL
         /// <param name="course">The course.</param>
         public static void AddtoStudent(Student student, Cours course)
         {
-          if(!course.Students.Contains(student))
-              course.Students.Add(student);
+            if (!course.Students.Contains(student))
+                course.Students.Add(student);
     
             db.SaveChanges();
         }

@@ -26,22 +26,30 @@ namespace HomeworkSubmission.MVC.Controllers
             return View();
         }
 
-        public ActionResult Home(string academyID)
+        public ActionResult Home(int? courses, string academyID)
         {
+        
             Student student = StudentDAL.GetByAcademyID(academyID);
             ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
+            ViewBag.CourseID = courses;
+            if (courses == null)
+            { 
+                courses = student.Courses.FirstOrDefault().ID;
+            }
 
-            //List<Student> students = StudentDAL.GetAll().ToList();
-            //List<StudentViewModel> viewModel = new List<StudentViewModel>();
+            List<Topic> topics = CourseDAL.GetTopicsByID((int)courses).ToList();
+            List<TopicViewModel> topicViewModels = new List<TopicViewModel>();
 
-            //foreach (Student s in students)
-            //{
-            //    viewModel.Add(new StudentViewModel(s));
-            //}
+            foreach (Topic topic in topics)
+            {
+                topicViewModels.Add(new TopicViewModel(topic));
+            }
 
+            ViewBag.Topics = topicViewModels;
 
+            StudentViewModel studentViewModel = new StudentViewModel(student);
 
-            return View(student);
+            return View(studentViewModel);
         }
     }
 }

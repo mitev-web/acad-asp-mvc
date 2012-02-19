@@ -35,6 +35,20 @@ namespace HomeworkSubmission.DAL
         }
 
         /// <summary>
+        /// Gets all topics by course.
+        /// </summary>
+        /// <param name="course">The course.</param>
+        /// <returns></returns>
+        public static IEnumerable<Topic> GetAllByCourse(Cours course)
+        {
+            IEnumerable<Topic> topics = from t in db.Topics
+                            where t.Cours.ID == course.ID
+                            select t;
+
+            return topics;
+        }
+
+        /// <summary>
         /// Creates new Topic
         /// </summary>
         /// <param name="name">Topic name</param>

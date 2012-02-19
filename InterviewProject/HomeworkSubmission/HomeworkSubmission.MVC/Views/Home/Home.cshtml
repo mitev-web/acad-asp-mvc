@@ -5,11 +5,27 @@
     ViewBag.Title = "My Courses";
 }
 
-@ViewBag.Hello
+<p>@ViewBag.Hello</p>
 
-@Html.DropDownListFor(c=>c, new SelectList(Model.Courses, "id", "Name", StudentViewModel), "-- Select State --")
-          
-     @foreach (StudentViewModel s in Model)
+<h3>
+  Please select a course:
+</h3>
+@using (Html.BeginForm("Home", "Home", FormMethod.Get))
 {
-    <p>@s.FirstName @s.LastName</p>
+    @Html.DropDownListFor(x => x.Courses, new SelectList(Model.Courses, "ID", "Name"),
+        "---Select a Course---", new { onchange = "this.form.submit();" })
+    <h3>
+  Select a topic for this course:
+</h3>
+    @Html.DropDownList("Topics", new SelectList(ViewBag.Topics, "ID", "Name"), "--Select a Topic---");
+
+
+    
+    @Html.Hidden("academyID", Model.AcademyID)
+
+
 }
+
+
+
+

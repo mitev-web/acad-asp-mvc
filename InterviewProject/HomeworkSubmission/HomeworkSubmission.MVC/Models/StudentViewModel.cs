@@ -10,13 +10,17 @@ namespace HomeworkSubmission.MVC.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<Cours> Courses { get; set; }
+        public string AcademyID { get; set; }
+        public List<CourseViewModel> Courses { get; set; }
         public List<Submission> Submissions { get; set; }
 
-        public StudentViewModel(string firstName, string lastName, List<Cours> courses, List<Submission> submissions)
+
+
+        public StudentViewModel(string firstName, string lastName, string academyID, List<CourseViewModel> courses, List<Submission> submissions)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.AcademyID = academyID;
             this.Courses = courses;
             this.Submissions = submissions;
         }
@@ -25,7 +29,12 @@ namespace HomeworkSubmission.MVC.Models
         {
             this.FirstName = student.FirstName;
             this.LastName = student.LastName;
-            this.Courses = student.Courses.ToList();
+            this.AcademyID = student.AcademyID;
+            this.Courses = new List<CourseViewModel>();
+            foreach (Cours course in student.Courses)
+            {
+                this.Courses.Add(new CourseViewModel(course));
+            }
             this.Submissions = student.Submissions.ToList();
         }
     }

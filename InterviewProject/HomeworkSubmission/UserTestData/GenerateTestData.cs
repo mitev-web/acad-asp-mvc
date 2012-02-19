@@ -112,14 +112,23 @@ namespace UserTestData
         {
             for (int i = 0; i < numberCourses; i++)
             {
-                string name = Faker.CompanyFaker.BS();
+                string name = UppercaseFirst(Faker.CompanyFaker.BS());
                 bool isActive = true;
 
                 CourseDAL.Create(name, isActive);
             }
         }
 
-
+       public static string UppercaseFirst(string s)
+        {
+            // Check for empty string.
+            if (string.IsNullOrEmpty(s))
+            {
+                return string.Empty;
+            }
+            // Return char and concat substring.
+            return char.ToUpper(s[0]) + s.Substring(1);
+        }
 
 
 
@@ -140,6 +149,10 @@ namespace UserTestData
                     s.Student = student;
                     s.MIMEType = "application/zip";
                     s.UploadDate = Faker.DateTimeFaker.DateTime();
+                    byte[] buffer = new byte[7];
+                    for (int k = 0; k < buffer.Length; k++)
+                    buffer[k] = 0;
+                    s.FileData = buffer;
                     submissions.Add(s);
                 }
             }
@@ -182,7 +195,7 @@ namespace UserTestData
                 DateTime startDate = Faker.DateTimeFaker.DateTimeBetweenMonths(2, 3);
                 DateTime endDate = Faker.DateTimeFaker.DateTimeBetweenMonths(3, 5);
                 bool isActive = true;
-                string name = Faker.CompanyFaker.BS();
+                string name = UppercaseFirst(Faker.CompanyFaker.BS());
 
                 t.ActiveFrom = startDate;
                 t.ActiveTo = endDate;

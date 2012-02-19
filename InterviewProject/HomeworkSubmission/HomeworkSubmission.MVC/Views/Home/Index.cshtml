@@ -2,14 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-
-
-
-
-    <p>Please enter your Academy ID (ex. 3_MAMA) :</p>
-    @using (Html.BeginForm("Home", "Home", FormMethod.Get))
-    {
-    @Html.TextBox("AcademyID")
-
-     <input type="submit" value="view my courses" />
-    }
+<p>Please enter your Academy ID (ex. 17_MAJO) :</p>
+@using (Html.BeginForm("Home", "Home", FormMethod.Get))
+{
+@Html.TextBox("AcademyID")
+    <input type="submit" value="view my courses" />
+}
