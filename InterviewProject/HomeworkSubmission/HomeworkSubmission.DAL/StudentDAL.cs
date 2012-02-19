@@ -71,6 +71,17 @@ namespace HomeworkSubmission.DAL
         }
 
         /// <summary>
+        /// Gets the random student.
+        /// </summary>
+        /// <returns></returns>
+        public static Student GetRandomStudent()
+        {
+            Random rand = new Random();
+            int studentNumber = rand.Next(0, GetAll().Count() - 1);
+            return GetByID(studentNumber);
+        }
+
+        /// <summary>
         /// Adds the academy ID.
         /// </summary>
         /// <param name="student">The student.</param>

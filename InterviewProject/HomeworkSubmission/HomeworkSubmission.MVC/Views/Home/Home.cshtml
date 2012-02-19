@@ -4,28 +4,46 @@
 @{
     ViewBag.Title = "My Courses";
 }
+<script>
+    $(document).ready(function () {
+        $('#courseID').val($('#Courses option:selected').val());
 
+        $('#Topics').change(function () {
+        $('#topicID').val($(this).attr('value'));
+        });
+
+    });
+</script>
 <p>@ViewBag.Hello</p>
+<div class=message-error>@ViewBag.Message</div>
 
 <h3>
   Please select a course:
 </h3>
-@using (Html.BeginForm("Home", "Home", FormMethod.Get))
+@using (Html.BeginForm("Home", "Home", FormMethod.Get, new { enctype = "multipart/form-data" }))
 {
     @Html.DropDownListFor(x => x.Courses, new SelectList(Model.Courses, "ID", "Name"),
         "---Select a Course---", new { onchange = "this.form.submit();" })
     <h3>
-  Select a topic for this course:
-</h3>
+      Select a topic for this course:
+    </h3>
     @Html.DropDownList("Topics", new SelectList(ViewBag.Topics, "ID", "Name"), "--Select a Topic---");
 
-
-    
     @Html.Hidden("academyID", Model.AcademyID)
-
 
 }
 
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Hidden("academyID", Model.AcademyID)
+    @Html.Hidden("courseID", "")
+    @Html.Hidden("topicID", "")
+    <label for="file">Filename:</label>
+    <input type="file" name="file" id="file" />
+
+    <input type="submit" />
+}
 
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,12 +13,14 @@ namespace HomeworkSubmission.MVC.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Please submit your Homework";
+          // Response.Redirect("Home/Home?AcademyID=10_DADA");
 
-            return View();
+           ViewBag.RandomID =  StudentDAL.GetRandomStudent().AcademyID;
+
+
+
+           return View();
         }
-
- 
 
         public ActionResult About()
         {
@@ -26,30 +29,85 @@ namespace HomeworkSubmission.MVC.Controllers
             return View();
         }
 
+        public ActionResult Upload(HttpPostedFileBase file, string topicID,
+            string courseID, string academyID)
+        {
+            bool success = true;
+            string errors = string.Empty;
+            if (courseID.Length == 0)
+            {
+                errors += "You need to select a category!";
+                success = false;
+            }
+            if (topicID.Length == 0)
+            {
+                errors += "You need to select a topic!\n";
+                success = false;
+            }
+            if (academyID.Length == 0)
+            {
+                errors += "Invalid Academy ID\n";
+                success = false;
+            }
+            if (file == null)
+            {
+                errors += "You must upload a file!\n";
+                success = false;
+            }
+            if (success == false)
+            {
+                ViewBag.Message = errors;
+                return View();
+            }
+
+            ViewBag.topic = topicID;
+            ViewBag.courseID = courseID;
+            ViewBag.academyID = academyID;
+
+            if (file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
+                file.SaveAs(path);
+            }
+
+            return View();
+        }
+
         public ActionResult Home(int? courses, string academyID)
         {
-        
-            Student student = StudentDAL.GetByAcademyID(academyID);
-            ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
-            ViewBag.CourseID = courses;
-            if (courses == null)
-            { 
-                courses = student.Courses.FirstOrDefault().ID;
-            }
-
-            List<Topic> topics = CourseDAL.GetTopicsByID((int)courses).ToList();
-            List<TopicViewModel> topicViewModels = new List<TopicViewModel>();
-
-            foreach (Topic topic in topics)
+            try
             {
-                topicViewModels.Add(new TopicViewModel(topic));
+                Student student = StudentDAL.GetByAcademyID(academyID);
+          
+                ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
+                ViewBag.CourseID = courses;
+                if (courses == null)
+                { 
+                    courses = student.Courses.FirstOrDefault().ID;
+                }
+
+                List<Topic> topics = CourseDAL.GetTopicsByID((int)courses).ToList();
+                List<TopicViewModel> topicViewModels = new List<TopicViewModel>();
+
+                foreach (Topic topic in topics)
+                    topicViewModels.Add(new TopicViewModel(topic));
+
+                int counter = 0;
+                foreach(TopicViewModel tvm in topicViewModels)
+                    tvm.Name = (++counter).ToString()+". " + tvm.Name;
+                
+                ViewBag.Topics = topicViewModels;
+
+                StudentViewModel studentViewModel = new StudentViewModel(student);
+
+                return View(studentViewModel);
             }
-
-            ViewBag.Topics = topicViewModels;
-
-            StudentViewModel studentViewModel = new StudentViewModel(student);
-
-            return View(studentViewModel);
+            catch(Exception)
+            {
+                ViewBag.Message = "Invalid Academy ID";
+                return View("Index");
+            }
         }
     }
 }

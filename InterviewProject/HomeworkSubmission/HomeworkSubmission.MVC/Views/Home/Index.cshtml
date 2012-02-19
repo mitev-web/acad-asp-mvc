@@ -1,8 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div class=message-error>@ViewBag.Message</div>
 
-<p>Please enter your Academy ID (ex. 17_MAJO) :</p>
+<p>Please enter your Academy ID (ex. @ViewBag.RandomID) :</p>
 @using (Html.BeginForm("Home", "Home", FormMethod.Get))
 {
 @Html.TextBox("AcademyID")
