@@ -188,12 +188,9 @@ namespace UserTestData
                 {
                     Submission s = new Submission();
                     s.Student = student;
-                    s.MIMEType = "application/zip";
+                    s.MIMEType = "zip";
                     s.UploadDate = Faker.DateTimeFaker.DateTime();
-                    byte[] buffer = new byte[7];
-                    for (int k = 0; k < buffer.Length; k++)
-                    buffer[k] = 0;
-                    s.FileData = buffer;
+
                     submissions.Add(s);
                 }
             }

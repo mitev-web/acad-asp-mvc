@@ -28,48 +28,48 @@ namespace HomeworkSubmission.MVC.Controllers
 
         public ActionResult Home(int courses=0, string academyID="")
         {
-            //try
-            //{
-
-            Student student;
-            if (academyID.Length != 0)
+            try
             {
-                student = StudentDAL.GetByAcademyID(academyID);
-            }
-            else
-            {
-                student = StudentDAL.GetByAcademyID(Session["AcademyID"].ToString());
-            }
-            ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
-            ViewBag.CourseID = courses;
-            if (courses == 0)
-            {
-                courses = student.Courses.FirstOrDefault().ID;
-            }
+                Student student;
+                if (academyID.Length != 0)
+                {
+                    student = StudentDAL.GetByAcademyID(academyID);
+                }
+                else
+                {
+                    student = StudentDAL.GetByAcademyID(Session["AcademyID"].ToString());
+                }
+                ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
+                ViewBag.CourseID = courses;
+                if (courses == 0)
+                {
+                    courses = student.Courses.FirstOrDefault().ID;
+                }
           
+                List<Topic> topics = CourseDAL.GetTopicsByID(courses).ToList();
+                List<TopicViewModel> topicViewModels = new List<TopicViewModel>();
 
-            List<Topic> topics = CourseDAL.GetTopicsByID(courses).ToList();
-            List<TopicViewModel> topicViewModels = new List<TopicViewModel>();
+                foreach (Topic topic in topics)
+                    topicViewModels.Add(new TopicViewModel(topic));
 
-            foreach (Topic topic in topics)
-                topicViewModels.Add(new TopicViewModel(topic));
-
-            int counter = 0;
-            foreach (TopicViewModel tvm in topicViewModels)
-                tvm.Name = (++counter).ToString() + ". " + tvm.Name;
+                int counter = 0;
+                foreach (TopicViewModel tvm in topicViewModels)
+                    tvm.Name = (++counter).ToString() + ". " + tvm.Name;
                 
-            ViewBag.Topics = topicViewModels;
+                //topics data for dropdown
+                ViewBag.Topics = topicViewModels;
 
-            StudentViewModel studentViewModel = new StudentViewModel(student);
+                //loading student to pass to view
+                StudentViewModel studentViewModel = new StudentViewModel(student);
 
-            Session["academyID"] = studentViewModel.AcademyID;
-            return View(studentViewModel);
-            //}
-            //catch (Exception)
-            //{
-            //    ViewBag.Message = "Invalid Academy ID";
-            //    return View("Index");
-            //}
+                Session["academyID"] = studentViewModel.AcademyID;
+                return View(studentViewModel);
+            }
+            catch (Exception)
+            {
+                ViewBag.Message = "Invalid Academy ID";
+                return View("Index");
+            }
         }
     }
 }

@@ -100,6 +100,8 @@ namespace HomeworkSubmission.MVC.Controllers
             
                 // var fileName = Path.GetFileName(model.FileUpload.FileName);
                 model.FileUpload.SaveAs(path);
+                SubmissionDAL.Create(StudentDAL.GetByAcademyID(model.StudentAcademyID)
+                    , TopicDAL.GetByID(int.Parse(model.TopicID)), DateTime.Now, extension);
             }
             else
             {

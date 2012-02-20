@@ -692,30 +692,6 @@ namespace HomeworkSubmission.DAL
         private global::System.String _MIMEType;
         partial void OnMIMETypeChanging(global::System.String value);
         partial void OnMIMETypeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] FileData
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_FileData);
-            }
-            set
-            {
-                OnFileDataChanging(value);
-                ReportPropertyChanging("FileData");
-                _FileData = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("FileData");
-                OnFileDataChanged();
-            }
-        }
-        private global::System.Byte[] _FileData;
-        partial void OnFileDataChanging(global::System.Byte[] value);
-        partial void OnFileDataChanged();
 
         #endregion
     

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace HomeworkSubmission.DAL
 {
-   public class SubmissionDAL : DAO
+    public class SubmissionDAL : DAO
     {
         /// <summary>
         /// Gets all Submissions
@@ -55,19 +55,17 @@ namespace HomeworkSubmission.DAL
         /// <param name="uploadDate">The upload date.</param>
         /// <param name="mimeType">Type of the MIME.</param>
         /// <param name="fileData">The file data.</param>
-        public static void Create(Student student, Topic topic, DateTime uploadDate, string mimeType, byte[] fileData)
+        public static void Create(Student student, Topic topic, DateTime uploadDate, string mimeType)
         {
             Submission s = new Submission();
             s.Student = student;
             s.Topic = topic;
             s.UploadDate = uploadDate;
             s.MIMEType = mimeType;
-            s.FileData = fileData;
 
-            db.AddToSubmissions(s);
+            db.Submissions.AddObject(s);
+            db.SaveChanges();
         }
-
-    
 
         public static void AddSubmissions(List<Submission> submissions)
         {
@@ -75,9 +73,7 @@ namespace HomeworkSubmission.DAL
             {
                 db.AddToSubmissions(submission);
                 db.SaveChanges();
-            
             }
-            
         }
 
         /// <summary>

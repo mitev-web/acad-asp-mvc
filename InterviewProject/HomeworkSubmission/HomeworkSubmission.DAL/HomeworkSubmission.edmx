@@ -67,7 +67,6 @@
           <Property Name="TopicID" Type="int" Nullable="false" />
           <Property Name="UploadDate" Type="date" Nullable="false" />
           <Property Name="MIMEType" Type="nchar" Nullable="false" MaxLength="50" />
-          <Property Name="FileData" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Topics">
           <Key>
@@ -198,7 +197,6 @@
           <Property Name="TopicID" Type="Int32" Nullable="false" />
           <Property Name="UploadDate" Type="DateTime" Nullable="false" />
           <Property Name="MIMEType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
-          <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Student" Relationship="HomeworkSubmissionModel.FK_Submissions_Students" FromRole="Submissions" ToRole="Students" />
           <NavigationProperty Name="Topic" Relationship="HomeworkSubmissionModel.FK_Submissions_Topics" FromRole="Submissions" ToRole="Topics" />
         </EntityType>
@@ -279,7 +277,6 @@
             <ScalarProperty Name="TopicID" ColumnName="TopicID" />
             <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
             <ScalarProperty Name="MIMEType" ColumnName="MIMEType" />
-            <ScalarProperty Name="FileData" ColumnName="FileData" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Topics"><EntityTypeMapping TypeName="HomeworkSubmissionModel.Topic"><MappingFragment StoreEntitySet="Topics">
             <ScalarProperty Name="ID" ColumnName="ID" />
@@ -318,25 +315,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="HomeworkSubmission">
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.Cours" Width="1.5" PointX="0.75" PointY="2.75" Height="1.7566536458333339" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.Student" Width="1.5" PointX="3" PointY="1.125" Height="2.0853483072916656" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.Submission" Width="1.5" PointX="5.25" PointY="2.5" Height="2.2496956380208335" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeworkSubmissionModel.Topic" Width="1.5" PointX="3" PointY="3.875" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.Cours" Width="1.5" PointX="0.75" PointY="2.75" Height="1.776770809491476" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.Student" Width="1.5" PointX="3" PointY="1.125" Height="2.1104947618643433" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.Submission" Width="1.5" PointX="5.25" PointY="2.625" Height="2.1104947618643433" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeworkSubmissionModel.Topic" Width="1.5" PointX="3" PointY="4" Height="2.2773567380507789" IsExpanded="true" />
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Topics_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="4.1908268229166667" />
-          <ConnectorPoint PointX="3" PointY="4.1908268229166667" />
+          <ConnectorPoint PointX="2.25" PointY="4.2633854047457378" />
+          <ConnectorPoint PointX="3" PointY="4.2633854047457378" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Submissions_Students" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="2.8551741536458328" />
-          <ConnectorPoint PointX="5.25" PointY="2.8551741536458328" />
+          <ConnectorPoint PointX="4.5" PointY="2.9302473809321716" />
+          <ConnectorPoint PointX="5.25" PointY="2.9302473809321716" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.FK_Submissions_Topics" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="4.3123478190104167" />
-          <ConnectorPoint PointX="5.25" PointY="4.3123478190104167" />
+          <ConnectorPoint PointX="4.5" PointY="4.3677473809321716" />
+          <ConnectorPoint PointX="5.25" PointY="4.3677473809321716" />
         </AssociationConnector>
         <AssociationConnector Association="HomeworkSubmissionModel.StudentsCourses" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.9801741536458328" />
-          <ConnectorPoint PointX="3" PointY="2.9801741536458328" />
+          <ConnectorPoint PointX="2.25" PointY="2.9927473809321716" />
+          <ConnectorPoint PointX="3" PointY="2.9927473809321716" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
