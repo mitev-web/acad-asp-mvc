@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Providers.Entities;
@@ -65,35 +66,47 @@ namespace HomeworkSubmission.MVC.Controllers
                 errors += "Invalid Academy ID\n";
                 success = false;
             }
-            if (model.FileUpload == null)
+            if (model.FileUpload == null || model.FileUpload.ContentLength <= 0)
             {
                 errors += "You must upload a file!\n";
                 success = false;
-            }else
+            }
+            else
             {
                 string fileName = model.FileUpload.FileName;
-                Response.Redirect(fileName);
+
+                if (!Regex.IsMatch(fileName, @".*\.(rar|zip)"))
+                {
+                    success = false;
+                    errors += "Invalid filetype!\n";
+                }
             }
 
-
-
-            if (success == true && model.FileUpload.ContentLength > 0)
+            if (success == true)
             {
-                var fileName = Path.GetFileName(model.FileUpload.FileName);
+                string filename = model.FileUpload.FileName.ToString();
+                string extension = filename.Substring(filename.Length - 3, 3);
+                var dir = Path.Combine(Server.MapPath("~/Uploads"),
+                    model.CourseID + "_COURSE", model.TopicID + "_TOPIC");
 
-
-
-                var path = Path.Combine(Server.MapPath("~/Uploads"), model.CourseID);
+                var path = Path.Combine(Server.MapPath("~/Uploads"),
+                    model.CourseID + "_COURSE", model.TopicID + "_TOPIC", 
+                    model.StudentAcademyID.Trim() + "." + extension);
+                
+                if (!Directory.Exists(dir)) 
+                {
+                    Directory.CreateDirectory(dir);
+                }
+            
+                // var fileName = Path.GetFileName(model.FileUpload.FileName);
                 model.FileUpload.SaveAs(path);
-            }else
+            }
+            else
             {
                 ViewBag.Message = errors;
                 return View("Index");
             }
 
-
-       
-    
             return View("Success");
         }
 

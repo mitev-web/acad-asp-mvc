@@ -43,6 +43,47 @@ namespace UserTestData
             return submissions;
         }
 
+
+        /// <summary>
+        /// Adds the courses to students.
+        /// </summary>
+        /// <param name="numberCourses">The number courses.</param>
+        public static void AddCoursesToStudents(int numberCourses)
+        {
+            List<Student> students = StudentDAL.GetAll().ToList();
+
+            foreach (Student student in students)
+            {
+                foreach (Cours course in GetRandomCourse(numberCourses))
+                {
+                    CourseDAL.AddtoStudent(student, course);
+                }
+            }
+        }
+  
+        /// <summary>
+        /// Gets random courses.
+        /// </summary>
+        /// <param name="numberCourses">The number courses.</param>
+        /// <returns></returns>
+        private static List<Cours> GetRandomCourse(int numberCourses)
+        {
+            List<Cours> courses = CourseDAL.GetAll().ToList();
+            List<Cours> randomCourses = new List<Cours>();
+
+            Random rand = new Random();
+            for (int i = 0; i < numberCourses; i++)
+            {
+                Cours nextRandomCourse = courses[rand.Next(0, courses.Count-1)];
+                if (!randomCourses.Contains(nextRandomCourse))
+                {
+                    randomCourses.Add(nextRandomCourse);
+                }
+            }
+
+            return randomCourses;
+        }
+
         /// <summary>
         /// Populates the courses with students.
         /// </summary>

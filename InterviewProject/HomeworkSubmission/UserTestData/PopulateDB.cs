@@ -23,12 +23,12 @@ namespace UserTestData
 
 
             //TODO: Add students to topics
-            //GenerateTestData.PopulateCoursesWithStudents(50);
+            //GenerateTestData.AddCoursesToStudents(10);
+
 
             //GenerateTestData.AddSubmissionsToStudents(20);
 
 
-            Console.WriteLine(CourseDAL.GetNameByID(17));
 
            
 
