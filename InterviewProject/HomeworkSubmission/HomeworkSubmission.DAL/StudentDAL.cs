@@ -31,6 +31,11 @@ namespace HomeworkSubmission.DAL
             return Student;
         }
 
+        /// <summary>
+        /// Gets the student by academy ID.
+        /// </summary>
+        /// <param name="academyID">The academy ID.</param>
+        /// <returns></returns>
         public static Student GetByAcademyID(string academyID)
         {
             Student student = (from c in db.Students where c.AcademyID == academyID 

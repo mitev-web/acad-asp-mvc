@@ -14,17 +14,19 @@ namespace HomeworkSubmission.MVC.Controllers
     {
         //
         // GET: /Submission/
-        public ActionResult Index(string academyID,string topicID="",
+        public ActionResult Index(string topicID="",
             string courseID = "")
         {
-            Session["TopicID"] = topicID;
-            Session["CourseID"] = courseID;
-            if (topicID.Length >0)
-            Session["TopicName"]  = TopicDAL.GetNameByID(int.Parse(topicID));
-            if (courseID.Length >0)
-            Session["CourseName"] = CourseDAL.GetNameByID(int.Parse(courseID));
-
-    
+            if (topicID.Length > 0)
+            {
+                Session["TopicName"] = TopicDAL.GetNameByID(int.Parse(topicID));
+                Session["TopicID"] = topicID;
+            }
+            if (courseID.Length > 0)
+            {
+                Session["CourseName"] = CourseDAL.GetNameByID(int.Parse(courseID));
+                Session["CourseID"] = courseID;
+            }
  
             return View();
         }
@@ -45,8 +47,9 @@ namespace HomeworkSubmission.MVC.Controllers
             bool success = true;
             string errors = string.Empty;
             model.StudentAcademyID = Session["AcademyID"].ToString();
+            model.TopicID = Session["TopicID"].ToString();
+            model.CourseID = Session["CourseID"].ToString();
             
-
             if (model.CourseID.Length == 0)
             {
                 errors += "You need to select a course!";
@@ -66,26 +69,33 @@ namespace HomeworkSubmission.MVC.Controllers
             {
                 errors += "You must upload a file!\n";
                 success = false;
-            }
-            if (success == false)
+            }else
             {
-                ViewBag.Message = errors;
-                return View();
-            }
-            
-           
-            if (model.FileUpload.ContentLength > 0)
-            {
-                var fileName = Path.GetFileName(model.FileUpload.FileName);
-                var path = Path.Combine(Server.MapPath("~/Uploads"), model.CourseID);
-                model.FileUpload.SaveAs(path);
+                string fileName = model.FileUpload.FileName;
+                Response.Redirect(fileName);
             }
 
-                ViewBag.Message = "y0 bro!";
+
+
+            if (success == true && model.FileUpload.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(model.FileUpload.FileName);
+
+
+
+                var path = Path.Combine(Server.MapPath("~/Uploads"), model.CourseID);
+                model.FileUpload.SaveAs(path);
+            }else
+            {
+                ViewBag.Message = errors;
+                return View("Index");
+            }
+
+
+       
     
             return View("Success");
         }
-
 
         // GET: /Submission/Edit/5
  

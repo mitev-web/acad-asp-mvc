@@ -12,17 +12,17 @@
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
+        <header >
+            <div class="content-wrapper" class="float-right" >
                 <div class="float-left">
-                    <p class="site-title"></p>
+                    <p class="site-title">Telerik Homework Submission System</p>
                 </div>
-                <div class="float-right">
+                <div >
                     <section id="login">
                         @Html.Partial("_LogOnPartial")
                     </section>
-                    <nav>
-                        <ul id="menu">
+                    <nav >
+                        <ul id="menu" >
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -40,13 +40,10 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    <p>&copy; @DateTime.Now.Year - Telerik Homework Submission System</p>
                 </div>
                 <div class="float-right">
-                    <ul id="social">
-                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
-                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
-                    </ul>
+             
                 </div>
             </div>
         </footer>

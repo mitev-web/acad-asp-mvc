@@ -21,6 +21,8 @@ namespace UserTestData
 
             //GenerateTestData.PopulateCoursesWithTopics(15);
 
+
+            //TODO: Add students to topics
             //GenerateTestData.PopulateCoursesWithStudents(50);
 
             //GenerateTestData.AddSubmissionsToStudents(20);

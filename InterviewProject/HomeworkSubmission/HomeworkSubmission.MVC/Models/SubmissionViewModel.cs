@@ -15,7 +15,7 @@ namespace HomeworkSubmission.MVC.Models
         [Required]
         public string CourseID { get; set; }
         [Required]
-        [Display(Name = "Select a file to upload")]
+        [Display(Name = " ")]
         public HttpPostedFileBase FileUpload { get; set; }
     }
 }

@@ -4,25 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>You are submitting homework for:</h2>
-<h3>Academy ID: @Session["AcademyID"]</h3>
-<h3>Course: @Session["CourseName"]</h3>
-
-<h3>Topic: @Session["TopicName"]</h3>
+<h2>
+  You are submitting homework for:
+</h2>
+<h3>
+  Academy ID: @Session["AcademyID"]
+</h3>
+<h3>
+  Course: @Session["CourseName"]
+</h3>
+<h3>
+  Topic: @Session["TopicName"]
+</h3>
 <br />
+
 
 @using (Html.BeginForm("Create", "Submission", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-@Html.ValidationSummary(true)
-@Html.HiddenFor(model => model.TopicID, @Session["TopicID"])
-@Html.HiddenFor(model => model.CourseID, @Session["Course"])
+    @Html.ValidationSummary(true)
+    <div class="editor-label">
+      @Html.LabelFor(m => m.FileUpload)
+    </div>
+    @Html.ValidationMessageFor(m => m.FileUpload)
 
-@Html.LabelFor(model => model.FileUpload)
-@Html.TextBoxFor(model => model.FileUpload, new { type = "file" })
+    @Html.TextBoxFor(m => m.FileUpload, new { type = "file" })
 
 
 
-<input type="submit" />
+    <input type="submit" />
     
-  <p>* only zip / rar allowed, limit 4MB</p>
+    <p>
+      * only zip / rar allowed, limit 4MB
+    </p>
 }
