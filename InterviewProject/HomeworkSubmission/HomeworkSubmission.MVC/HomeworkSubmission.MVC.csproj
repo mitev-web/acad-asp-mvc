@@ -201,7 +201,9 @@
   <ItemGroup>
     <Content Include="App.Config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Submission\Success.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Submission\Index.cshtml" />
   </ItemGroup>

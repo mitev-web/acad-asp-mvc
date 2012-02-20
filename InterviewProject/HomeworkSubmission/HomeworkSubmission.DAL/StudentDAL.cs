@@ -33,10 +33,10 @@ namespace HomeworkSubmission.DAL
 
         public static Student GetByAcademyID(string academyID)
         {
-            Student Student = (from c in db.Students where c.AcademyID == academyID 
+            Student student = (from c in db.Students where c.AcademyID == academyID 
                                select c).FirstOrDefault();
 
-            return Student;
+            return student;
         }
 
         /// <summary>

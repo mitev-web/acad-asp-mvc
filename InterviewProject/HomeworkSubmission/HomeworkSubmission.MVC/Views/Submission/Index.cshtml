@@ -1,23 +1,26 @@
-﻿@{
+﻿@using HomeworkSubmission.MVC.Models
+@model SubmissionViewModel
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>You are submitting homework for:</h2>
+<h3>Academy ID: @Session["AcademyID"]</h3>
+<h3>Course: @Session["CourseName"]</h3>
 
-<h3>Course: @ViewBag.CourseName</h3>
-
-<h3>Topic: @ViewBag.TopicName</h3>
+<h3>Topic: @Session["TopicName"]</h3>
 <br />
 
 @using (Html.BeginForm("Create", "Submission", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-  
-@Html.Hidden("academyID", @Html.Raw((String)ViewBag.academyID))
-@Html.Hidden("courseID", @Html.Raw((String)ViewBag.topicID))
-@Html.Hidden("topicID", @Html.Raw((String)ViewBag.courseID))
+@Html.ValidationSummary(true)
+@Html.HiddenFor(model => model.TopicID, @Session["TopicID"])
+@Html.HiddenFor(model => model.CourseID, @Session["Course"])
 
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file" />
+@Html.LabelFor(model => model.FileUpload)
+@Html.TextBoxFor(model => model.FileUpload, new { type = "file" })
+
+
 
 <input type="submit" />
     

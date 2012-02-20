@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Providers.Entities;
 using HomeworkSubmission.DAL;
+using HomeworkSubmission.MVC.Models;
 
 namespace HomeworkSubmission.MVC.Controllers
 {
@@ -11,16 +14,18 @@ namespace HomeworkSubmission.MVC.Controllers
     {
         //
         // GET: /Submission/
-
-        public ActionResult Index(string topicID,
-            string courseID, string academyID)
+        public ActionResult Index(string academyID,string topicID="",
+            string courseID = "")
         {
-            ViewBag.topicID = topicID;
-            ViewBag.courseID = courseID;
-            ViewBag.academyID = academyID;
-            ViewBag.TopicName = TopicDAL.GetNameByID(int.Parse(topicID));
-            ViewBag.CourseName = CourseDAL.GetNameByID(int.Parse(courseID));
+            Session["TopicID"] = topicID;
+            Session["CourseID"] = courseID;
+            if (topicID.Length >0)
+            Session["TopicName"]  = TopicDAL.GetNameByID(int.Parse(topicID));
+            if (courseID.Length >0)
+            Session["CourseName"] = CourseDAL.GetNameByID(int.Parse(courseID));
 
+    
+ 
             return View();
         }
 
@@ -35,30 +40,53 @@ namespace HomeworkSubmission.MVC.Controllers
         //
         // GET: /Submission/Create
 
-        public ActionResult Create()
+        public ActionResult Create(SubmissionViewModel model)
         {
-            return View();
-        } 
+            bool success = true;
+            string errors = string.Empty;
+            model.StudentAcademyID = Session["AcademyID"].ToString();
+            
 
-        //
-        // POST: /Submission/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            if (model.CourseID.Length == 0)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                errors += "You need to select a course!";
+                success = false;
             }
-            catch
+            if (model.TopicID.Length == 0)
             {
+                errors += "You need to select a topic!\n";
+                success = false;
+            }
+            if (model.StudentAcademyID.Length == 0)
+            {
+                errors += "Invalid Academy ID\n";
+                success = false;
+            }
+            if (model.FileUpload == null)
+            {
+                errors += "You must upload a file!\n";
+                success = false;
+            }
+            if (success == false)
+            {
+                ViewBag.Message = errors;
                 return View();
             }
+            
+           
+            if (model.FileUpload.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(model.FileUpload.FileName);
+                var path = Path.Combine(Server.MapPath("~/Uploads"), model.CourseID);
+                model.FileUpload.SaveAs(path);
+            }
+
+                ViewBag.Message = "y0 bro!";
+    
+            return View("Success");
         }
-        
-        //
+
+
         // GET: /Submission/Edit/5
  
         public ActionResult Edit(int id)
@@ -75,7 +103,6 @@ namespace HomeworkSubmission.MVC.Controllers
             try
             {
                 // TODO: Add update logic here
- 
                 return RedirectToAction("Index");
             }
             catch
@@ -101,7 +128,6 @@ namespace HomeworkSubmission.MVC.Controllers
             try
             {
                 // TODO: Add delete logic here
- 
                 return RedirectToAction("Index");
             }
             catch

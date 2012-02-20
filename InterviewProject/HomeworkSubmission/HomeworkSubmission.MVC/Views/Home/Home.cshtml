@@ -23,7 +23,6 @@
 </h3>
 @using (Html.BeginForm("Home", "Home", FormMethod.Get, new { enctype = "multipart/form-data" }))
 {
-    @Html.Hidden("academyID", Model.AcademyID)
     @Html.DropDownListFor(x => x.Courses, new SelectList(Model.Courses, "ID", "Name"),
         new { onchange = "this.form.submit();" })
 }
@@ -33,7 +32,6 @@
 @using (Html.BeginForm("Index", "Submission", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.DropDownList("Topics", new SelectList(ViewBag.Topics, "ID", "Name"), "--Select a Topic---");
-    @Html.Hidden("academyID", Model.AcademyID)
     @Html.Hidden("courseID", "")
     @Html.Hidden("topicID", "")
     
@@ -44,16 +42,6 @@
 
 
 
-@*@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-@Html.Hidden("academyID", Model.AcademyID)
-
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file" />
-
-<input type="submit" />
-}
-*@
 
 
 
