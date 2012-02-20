@@ -101,6 +101,9 @@ namespace HomeworkSubmission.MVC.Controllers
 
                 StudentViewModel studentViewModel = new StudentViewModel(student);
 
+                //var tuple =  new Tuple<StudentViewModel, SubmissionViewModel>
+                //    (studentViewModel, new SubmissionViewModel());
+
                 return View(studentViewModel);
             }
             catch(Exception)

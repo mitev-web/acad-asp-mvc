@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>You are submitting homework for:</h2>
+
+<h3>Course: @ViewBag.CourseName</h3>
+
+<h3>Topic: @ViewBag.TopicName</h3>
+<br />
+
+@using (Html.BeginForm("Create", "Submission", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+  
+@Html.Hidden("academyID", @Html.Raw((String)ViewBag.academyID))
+@Html.Hidden("courseID", @Html.Raw((String)ViewBag.topicID))
+@Html.Hidden("topicID", @Html.Raw((String)ViewBag.courseID))
+
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" />
+
+<input type="submit" />
+    
+  <p>* only zip / rar allowed, limit 4MB</p>
+}

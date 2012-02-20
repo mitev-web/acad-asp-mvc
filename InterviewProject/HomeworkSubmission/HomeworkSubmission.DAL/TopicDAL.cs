@@ -48,6 +48,16 @@ namespace HomeworkSubmission.DAL
             return topics;
         }
 
+
+        public static string GetNameByID(int ID)
+        {
+            var name = (from t in db.Topics
+                       where t.ID == ID
+                       select t.Name).FirstOrDefault();
+
+            return name;
+        }
+
         /// <summary>
         /// Creates new Topic
         /// </summary>

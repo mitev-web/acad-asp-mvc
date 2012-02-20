@@ -7,6 +7,15 @@ namespace HomeworkSubmission.DAL
 {
     public class CourseDAL : DAO
     {
+        public static string GetNameByID(int ID)
+        {
+            var name = (from t in db.Courses
+                        where t.ID == ID
+                        select t.Name).FirstOrDefault();
+
+            return name;
+        }
+
         /// <summary>
         /// Gets all Courses
         /// </summary>

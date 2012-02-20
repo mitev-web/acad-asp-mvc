@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using HomeworkSubmission.DAL;
 
 namespace UserTestData
 {
@@ -14,15 +15,18 @@ namespace UserTestData
             //50 Students per Course
             //20 Submissions per Student
 
-            GenerateTestData.PopulateStudents(400);
+            //GenerateTestData.PopulateStudents(400);
 
-            GenerateTestData.PopulateCourses(30);
+            //GenerateTestData.PopulateCourses(30);
 
-            GenerateTestData.PopulateCoursesWithTopics(15);
+            //GenerateTestData.PopulateCoursesWithTopics(15);
 
-            GenerateTestData.PopulateCoursesWithStudents(50);
+            //GenerateTestData.PopulateCoursesWithStudents(50);
 
-            GenerateTestData.AddSubmissionsToStudents(20);
+            //GenerateTestData.AddSubmissionsToStudents(20);
+
+
+            Console.WriteLine(CourseDAL.GetNameByID(17));
 
            
 
