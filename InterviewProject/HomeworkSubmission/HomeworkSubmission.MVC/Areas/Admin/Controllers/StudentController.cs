@@ -8,8 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using HomeworkSubmission.DAL;
 
-namespace HomeworkSubmission.MVC.Controllers
-{
+namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
+{ 
     [Authorize]
     public class StudentController : Controller
     {

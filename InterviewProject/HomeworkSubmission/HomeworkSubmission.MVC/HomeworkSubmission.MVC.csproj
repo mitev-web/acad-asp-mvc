@@ -94,12 +94,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\MyMembershipProvider.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
-    <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,9 +187,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -209,31 +208,47 @@
     <Content Include="App.Config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Student\GridData.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\GridData.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Topic\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Topic\GridData.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\GridData.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Topic\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\GridData.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\GridData.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

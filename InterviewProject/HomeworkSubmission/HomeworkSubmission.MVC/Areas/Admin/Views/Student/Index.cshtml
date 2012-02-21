@@ -1,18 +1,21 @@
 ﻿@using System.Data.Entity;
 @model IEnumerable<HomeworkSubmission.DAL.Student>
 @{
-    ViewBag.Title = "Student";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+   ViewBag.Title = "Student";
+   
 }
 @{
 
     ViewBag.ItemsPerPage = ViewBag.ItemsPerPage ?? 20;
-    ViewBag.ItemsPerPageOptions = ViewBag.ItemsPerPageOptions ?? new List<int>{ 10, 20, 50, 100 };
+    ViewBag.ItemsPerPageOptions = ViewBag.ItemsPerPageOptions ?? new List<int> { 10, 20, 50, 100 };
 
     int currentPage = ViewBag.Start / ViewBag.ItemsPerPage + 1;
     int pageCount = (ViewBag.Count - 1) / ViewBag.ItemsPerPage + 1;
     ViewBag.Start = (currentPage - 1) * ViewBag.ItemsPerPage;
 
-    RouteValueDictionary currentRouteValues = new RouteValueDictionary(new {
+    RouteValueDictionary currentRouteValues = new RouteValueDictionary(new
+    {
         start = ViewBag.Start,
         itemsPerPage = ViewBag.ItemsPerPage,
         orderBy = ViewBag.OrderBy,

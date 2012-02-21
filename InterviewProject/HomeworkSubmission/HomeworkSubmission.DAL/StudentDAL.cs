@@ -14,6 +14,7 @@ namespace HomeworkSubmission.DAL
         /// <returns>Collection of Students</returns>
         public static IEnumerable<Student> GetAll()
         {
+            db = new HomeworkSubmissionEntities();
             return db.Students;
         }
 

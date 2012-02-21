@@ -8,17 +8,17 @@ using System.Web;
 using System.Web.Mvc;
 using HomeworkSubmission.DAL;
 
-namespace HomeworkSubmission.MVC.Controllers
-{
+namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
+{ 
     public class CourseController : Controller
     {
-
+        private HomeworkSubmissionEntities db = new HomeworkSubmissionEntities();
         //
         // GET: /Course/
 
         public ViewResult Index(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
-            ViewBag.Count = DAO.db.Courses.Count();
+            ViewBag.Count = db.Courses.Count();
             ViewBag.Start = start;
             ViewBag.ItemsPerPage = itemsPerPage;
             ViewBag.OrderBy = orderBy;
@@ -32,8 +32,8 @@ namespace HomeworkSubmission.MVC.Controllers
 
         public ActionResult GridData(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
-            Response.AppendHeader("X-Total-Row-Count", DAO.db.Courses.Count().ToString());
-            ObjectQuery<Cours> courses = DAO.db.Courses;
+            Response.AppendHeader("X-Total-Row-Count", db.Courses.Count().ToString());
+            ObjectQuery<Cours> courses = db.Courses;
             courses = courses.OrderBy("it." + orderBy + (desc ? " desc" : ""));
 
             return PartialView(courses.Skip(start).Take(itemsPerPage));
@@ -44,7 +44,7 @@ namespace HomeworkSubmission.MVC.Controllers
 
         public ActionResult RowData(int id)
         {
-            Cours cours = DAO.db.Courses.Single(c => c.ID == id);
+            Cours cours = db.Courses.Single(c => c.ID == id);
             return PartialView("GridData", new Cours[] { cours });
         }
 
@@ -64,8 +64,8 @@ namespace HomeworkSubmission.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                DAO.db.Courses.AddObject(cours);
-                DAO.db.SaveChanges();
+                db.Courses.AddObject(cours);
+                db.SaveChanges();
                 return PartialView("GridData", new Cours[] { cours });
             }
 
@@ -77,7 +77,7 @@ namespace HomeworkSubmission.MVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            Cours cours = DAO.db.Courses.Single(c => c.ID == id);
+            Cours cours = db.Courses.Single(c => c.ID == id);
             return PartialView(cours);
         }
 
@@ -89,9 +89,9 @@ namespace HomeworkSubmission.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                DAO.db.Courses.Attach(cours);
-                DAO.db.ObjectStateManager.ChangeObjectState(cours, EntityState.Modified);
-                DAO.db.SaveChanges();
+                db.Courses.Attach(cours);
+                db.ObjectStateManager.ChangeObjectState(cours, EntityState.Modified);
+                db.SaveChanges();
                 return PartialView("GridData", new Cours[] { cours });
             }
 
@@ -104,14 +104,14 @@ namespace HomeworkSubmission.MVC.Controllers
         [HttpPost]
         public void Delete(int id)
         {
-            Cours cours = DAO.db.Courses.Single(c => c.ID == id);
-            DAO.db.Courses.DeleteObject(cours);
-            DAO.db.SaveChanges();
+            Cours cours = db.Courses.Single(c => c.ID == id);
+            db.Courses.DeleteObject(cours);
+            db.SaveChanges();
         }
 
         protected override void Dispose(bool disposing)
         {
-            DAO.db.Dispose();
+            db.Dispose();
             base.Dispose(disposing);
         }
     }

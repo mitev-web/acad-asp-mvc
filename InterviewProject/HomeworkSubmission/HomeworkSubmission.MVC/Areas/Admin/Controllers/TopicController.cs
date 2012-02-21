@@ -8,8 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using HomeworkSubmission.DAL;
 
-namespace HomeworkSubmission.MVC.Controllers
-{
+namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
+{ 
     public class TopicController : Controller
     {
         private HomeworkSubmissionEntities db = new HomeworkSubmissionEntities();
