@@ -9,14 +9,13 @@ using System.Web.Mvc;
 using HomeworkSubmission.DAL;
 
 namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
-{ 
-    public class TopicController : Controller
+{
+
+    public class TopicController : AdminController
     {
         private HomeworkSubmissionEntities db = new HomeworkSubmissionEntities();
 
-        //
-        // GET: /Topic/
-
+      
         public ViewResult Index(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
             ViewBag.Count = db.Topics.Count();

@@ -33,11 +33,7 @@ namespace HomeworkSubmission.DAL
 
         public static IEnumerable<Topic> GetAllActive(IEnumerable<Topic> topics)
         {
-            var activeTopics = from e in topics
-                                where e.IsActive == true
-                                select e;
-
-            return activeTopics;
+            return db.Topics.Where(x => x.IsActive == true);
         }
 
         /// <summary>
@@ -47,21 +43,15 @@ namespace HomeworkSubmission.DAL
         /// <returns></returns>
         public static IEnumerable<Topic> GetAllByCourse(Cours course)
         {
-            IEnumerable<Topic> topics = from t in db.Topics
-                            where t.Cours.ID == course.ID
-                            select t;
-
-            return topics;
+            return db.Topics.Where(x => x.CourseID == course.ID);
         }
+
+
 
 
         public static string GetNameByID(int ID)
         {
-            var name = (from t in db.Topics
-                       where t.ID == ID
-                       select t.Name).FirstOrDefault();
-
-            return name;
+            return db.Topics.FirstOrDefault(x => x.ID == ID).Name;
         }
 
         /// <summary>

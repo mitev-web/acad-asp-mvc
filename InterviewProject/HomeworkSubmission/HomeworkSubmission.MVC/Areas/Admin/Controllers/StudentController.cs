@@ -10,8 +10,7 @@ using HomeworkSubmission.DAL;
 
 namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
 { 
-    [Authorize]
-    public class StudentController : Controller
+    public class StudentController : AdminController
     {
         private HomeworkSubmissionEntities db = new HomeworkSubmissionEntities();
 

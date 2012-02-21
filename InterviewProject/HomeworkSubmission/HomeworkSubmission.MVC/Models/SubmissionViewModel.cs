@@ -10,10 +10,9 @@ namespace HomeworkSubmission.MVC.Models
     {
         [Required]
         public string StudentAcademyID { get; set; }
-        [Required]
         public string TopicID { get; set; }
-        [Required]
         public string CourseID { get; set; }
+        [Required]
         public HttpPostedFileBase FileUpload { get; set; }
 
 

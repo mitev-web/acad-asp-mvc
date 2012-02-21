@@ -11,7 +11,7 @@ using HomeworkSubmission.MVC.Models;
 
 namespace HomeworkSubmission.MVC.Controllers
 {
-    [Authorize]
+
     public class SubmissionController : Controller
     {
         //

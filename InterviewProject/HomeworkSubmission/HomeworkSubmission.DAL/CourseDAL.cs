@@ -7,13 +7,14 @@ namespace HomeworkSubmission.DAL
 {
     public class CourseDAL : DAO
     {
+        /// <summary>
+        /// Gets the course name by ID.
+        /// </summary>
+        /// <param name="ID">The ID.</param>
+        /// <returns></returns>
         public static string GetNameByID(int ID)
         {
-            var name = (from t in db.Courses
-                        where t.ID == ID
-                        select t.Name).FirstOrDefault();
-
-            return name;
+            return db.Courses.FirstOrDefault(x => x.ID == ID).Name;
         }
 
         /// <summary>
@@ -31,11 +32,7 @@ namespace HomeworkSubmission.DAL
         /// <returns>collection of courses</returns>
         public static IEnumerable<Cours> GetAllActive(IEnumerable<Cours> courses)
         {
-            var activeCourses = from e in courses
-                    where e.IsActive == true
-                    select e;
-
-            return activeCourses;
+            return db.Courses.Where(x => x.IsActive == true);
         }
 
         /// <summary>
@@ -45,10 +42,7 @@ namespace HomeworkSubmission.DAL
         /// <returns></returns>
         public static IEnumerable<Topic> GetTopicsByID(int ID)
         {
-            var t = (from c in db.Courses
-                    where c.ID == ID
-                    select c).FirstOrDefault().Topics;
-            return t;
+            return db.Courses.FirstOrDefault(x => x.ID == ID).Topics;
         }
 
         /// <summary>
@@ -58,11 +52,7 @@ namespace HomeworkSubmission.DAL
         /// <returns>The Course with the same ID</returns>
         public static Cours GetByID(int courseID)
         {
-            Cours course = (from c in db.Courses
-                            where c.ID == courseID select c).
-            FirstOrDefault();
-
-            return course;
+            return db.Courses.FirstOrDefault(x => x.ID == courseID);
         }
 
         public static void AddStudentToCourse(Student student, Cours course)

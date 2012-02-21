@@ -124,22 +124,6 @@ namespace HomeworkSubmission.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Topic> Topics
-        {
-            get
-            {
-                if ((_Topics == null))
-                {
-                    _Topics = base.CreateObjectSet<Topic>("Topics");
-                }
-                return _Topics;
-            }
-        }
-        private ObjectSet<Topic> _Topics;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<sysdiagram> sysdiagrams
         {
             get
@@ -152,6 +136,22 @@ namespace HomeworkSubmission.DAL
             }
         }
         private ObjectSet<sysdiagram> _sysdiagrams;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Topic> Topics
+        {
+            get
+            {
+                if ((_Topics == null))
+                {
+                    _Topics = base.CreateObjectSet<Topic>("Topics");
+                }
+                return _Topics;
+            }
+        }
+        private ObjectSet<Topic> _Topics;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -197,19 +197,19 @@ namespace HomeworkSubmission.DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Topics EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToTopics(Topic topic)
-        {
-            base.AddObject("Topics", topic);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTosysdiagrams(sysdiagram sysdiagram)
         {
             base.AddObject("sysdiagrams", sysdiagram);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Topics EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTopics(Topic topic)
+        {
+            base.AddObject("Topics", topic);
         }
     
         /// <summary>
@@ -604,8 +604,7 @@ namespace HomeworkSubmission.DAL
         /// <param name="topicID">Initial value of the TopicID property.</param>
         /// <param name="uploadDate">Initial value of the UploadDate property.</param>
         /// <param name="mIMEType">Initial value of the MIMEType property.</param>
-        /// <param name="fileData">Initial value of the FileData property.</param>
-        public static Submission CreateSubmission(global::System.Int32 id, global::System.Int32 studentID, global::System.Int32 topicID, global::System.DateTime uploadDate, global::System.String mIMEType, global::System.Byte[] fileData)
+        public static Submission CreateSubmission(global::System.Int32 id, global::System.Int32 studentID, global::System.Int32 topicID, global::System.DateTime uploadDate, global::System.String mIMEType)
         {
             Submission submission = new Submission();
             submission.ID = id;
@@ -613,7 +612,6 @@ namespace HomeworkSubmission.DAL
             submission.TopicID = topicID;
             submission.UploadDate = uploadDate;
             submission.MIMEType = mIMEType;
-            submission.FileData = fileData;
             return submission;
         }
 
@@ -746,26 +744,26 @@ namespace HomeworkSubmission.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Byte[] FileData
+        public global::System.String FilePath
         {
             get
             {
-                return StructuralObject.GetValidValue(_FileData);
+                return _FilePath;
             }
             set
             {
-                OnFileDataChanging(value);
-                ReportPropertyChanging("FileData");
-                _FileData = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("FileData");
-                OnFileDataChanged();
+                OnFilePathChanging(value);
+                ReportPropertyChanging("FilePath");
+                _FilePath = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("FilePath");
+                OnFilePathChanged();
             }
         }
-        private global::System.Byte[] _FileData;
-        partial void OnFileDataChanging(global::System.Byte[] value);
-        partial void OnFileDataChanged();
+        private global::System.String _FilePath;
+        partial void OnFilePathChanging(global::System.String value);
+        partial void OnFilePathChanged();
 
         #endregion
     

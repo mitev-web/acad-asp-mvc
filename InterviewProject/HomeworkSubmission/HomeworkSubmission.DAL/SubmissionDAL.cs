@@ -22,11 +22,7 @@ namespace HomeworkSubmission.DAL
         /// <returns></returns>
         public static IEnumerable<Submission> GetAllByStudentID(int studentID)
         {
-            var e = from c in db.Submissions
-                    where c.Student.ID == studentID
-                    select c;
-
-            return e;
+            return db.Submissions.Where(x => x.StudentID == studentID);
         }
 
         /// <summary>

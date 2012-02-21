@@ -23,11 +23,9 @@ namespace HomeworkSubmission.DAL
         /// </summary>
         /// <param name="StudentID">The Student ID.</param>
         /// <returns>The Student with the same ID</returns>
-        public static Student GetByID(int studentID)
+        public static Student GetByID(int ID)
         {
-            Student Student = (from c in db.Students where c.ID == studentID select c).FirstOrDefault();
-
-            return Student;
+            return db.Students.FirstOrDefault(x => x.ID == ID);
         }
 
         /// <summary>
@@ -37,10 +35,7 @@ namespace HomeworkSubmission.DAL
         /// <returns></returns>
         public static Student GetByAcademyID(string academyID)
         {
-            Student student = (from c in db.Students where c.AcademyID == academyID 
-                               select c).FirstOrDefault();
-
-            return student;
+            return db.Students.FirstOrDefault(x => x.AcademyID == academyID);
         }
 
         /// <summary>
@@ -91,7 +86,7 @@ namespace HomeworkSubmission.DAL
         /// <param name="student">The student.</param>
         public static void AddAcademyID(Student student)
         {
-            string code = (student.ID+1 + "_" + student.FirstName.Substring(0, 2) +
+            string code = (student.ID + "_" + student.FirstName.Substring(0, 2) +
                           student.LastName.Substring(0, 2)).ToUpper();
             student.AcademyID = code;
             db.SaveChanges();

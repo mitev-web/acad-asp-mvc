@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
 using HomeworkSubmission.DAL;
 
 namespace HomeworkSubmission.MVC.Models
@@ -29,6 +26,7 @@ namespace HomeworkSubmission.MVC.Models
             this.ActiveTo = activeTo;
         }
 
+
         public TopicViewModel(Topic topic)
         {
             this.ID = topic.ID;
@@ -38,5 +36,8 @@ namespace HomeworkSubmission.MVC.Models
             this.ActiveFrom = topic.ActiveFrom;
             this.ActiveTo = topic.ActiveTo;
         }
+
+
+
     }
 }

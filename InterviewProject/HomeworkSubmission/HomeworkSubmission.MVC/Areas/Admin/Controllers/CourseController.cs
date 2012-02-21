@@ -10,12 +10,12 @@ using HomeworkSubmission.DAL;
 
 namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
 { 
-    public class CourseController : Controller
+    public class CourseController : AdminController
     {
         private HomeworkSubmissionEntities db = new HomeworkSubmissionEntities();
         //
         // GET: /Course/
-
+        [Authorize]
         public ViewResult Index(int start = 0, int itemsPerPage = 20, string orderBy = "ID", bool desc = false)
         {
             ViewBag.Count = db.Courses.Count();
