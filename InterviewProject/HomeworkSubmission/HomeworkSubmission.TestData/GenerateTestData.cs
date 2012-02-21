@@ -24,12 +24,22 @@ namespace UserTestData
 
             return submissions;
         }
-  
-        /// <summary>
-        /// Adds the topics to submissions.
-        /// </summary>
-        /// <param name="submissions">The submissions.</param>
-        /// <returns></returns>
+
+        public static void PopulateAdminUsers(int numberOfUsers)
+        {
+            for (int i = 0; i < numberOfUsers; i++)
+            {
+                string username = Faker.NameFaker.FirstName() + Faker.StringFaker.Alpha(3) + Faker.NumberFaker.Number(20);
+
+                User newUser = UserDAL.Create(username, username, Faker.StringFaker.Alpha(3) + Faker.InternetFaker.Email(), Faker.NameFaker.FirstName(), Faker.NameFaker.LastName());
+            }
+        }
+
+            /// <summary>
+            /// Adds the topics to submissions.
+            /// </summary>
+            /// <param name="submissions">The submissions.</param>
+            /// <returns></returns>
         private static List<Submission> AddTopicsToSubmissions(List<Submission> submissions)
         {
             List<Topic> topics = TopicDAL.GetAll().ToList();
@@ -42,7 +52,6 @@ namespace UserTestData
 
             return submissions;
         }
-
 
         /// <summary>
         /// Adds the courses to students.
@@ -74,7 +83,7 @@ namespace UserTestData
             Random rand = new Random();
             for (int i = 0; i < numberCourses; i++)
             {
-                Cours nextRandomCourse = courses[rand.Next(0, courses.Count-1)];
+                Cours nextRandomCourse = courses[rand.Next(0, courses.Count - 1)];
                 if (!randomCourses.Contains(nextRandomCourse))
                 {
                     randomCourses.Add(nextRandomCourse);
@@ -105,6 +114,7 @@ namespace UserTestData
                 }
             }
         }
+
         /// <summary>
         /// Gets the random students.
         /// </summary>
@@ -160,7 +170,7 @@ namespace UserTestData
             }
         }
 
-       public static string UppercaseFirst(string s)
+        public static string UppercaseFirst(string s)
         {
             // Check for empty string.
             if (string.IsNullOrEmpty(s))
@@ -170,8 +180,6 @@ namespace UserTestData
             // Return char and concat substring.
             return char.ToUpper(s[0]) + s.Substring(1);
         }
-
-
 
         /// <summary>
         /// Generates submissions.
@@ -220,7 +228,6 @@ namespace UserTestData
                     //Console.WriteLine(numberOfSubmissions);
                 }
             }
-           
         }
 
         public static List<Topic> GenerateTopics(int numberTopics)

@@ -12,10 +12,7 @@ namespace HomeworkSubmission.DAL
         /// <returns>Collection of Submissions</returns>
         public static IEnumerable<Submission> GetAll()
         {
-            var e = from c in db.Submissions
-                    select c;
-
-            return e;
+            return db.Submissions;
         }
 
         /// <summary>

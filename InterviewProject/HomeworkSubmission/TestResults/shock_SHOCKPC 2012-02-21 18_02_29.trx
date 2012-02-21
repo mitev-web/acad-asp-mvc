@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="65bbb75e-84e9-4a6b-90d6-36660275dbfc" name="shock@SHOCKPC 2012-02-21 18:02:29" runUser="shockpc\shock" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1e830c3d-158f-447d-90e0-499b1a739c9f">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="shock_SHOCKPC 2012-02-21 18_02_29">
+      <DeploymentItem filename="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Web.WebPages\v4.0_2.0.0.0__31bf3856ad364e35\System.Web.WebPages.dll" />
+      <DeploymentItem filename="T:\01. ASP-MVC\Data\InterviewProject\HomeworkSubmission\HomeworkSubmission.MVC\bin\HomeworkSubmission.MVC.dll" />
+      <DeploymentItem filename="T:\01. ASP-MVC\Data\InterviewProject\HomeworkSubmission\packages\System.Web.Providers.1.0.1\lib\Net40\System.Web.Providers.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="T:\01. ASP-MVC\Data\InterviewProject\HomeworkSubmission\HomeworkSubmission.DAL\bin\Debug\HomeworkSubmission.DAL.dll" />
+      <DeploymentItem filename="T:\01. ASP-MVC\Data\InterviewProject\HomeworkSubmission\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.Helpers.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.Razor.dll" />
+      <DeploymentItem filename="T:\01. ASP-MVC\Data\InterviewProject\HomeworkSubmission\packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-21T18:02:29.2359855+02:00" queuing="2012-02-21T18:02:29.4229962+02:00" start="2012-02-21T18:02:29.4279965+02:00" finish="2012-02-21T18:02:29.8570210+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CreateTest" storage="t:\01. asp-mvc\data\interviewproject\homeworksubmission\homeworksubmission.mvc.tests\bin\debug\homeworksubmission.mvc.tests.dll" id="fff6fe82-a045-f6ac-a835-67de1ae3dde2">
+      <Execution id="62ed7308-b255-4f93-b282-f0d8532267f9" />
+      <TestMethod codeBase="T:/01. ASP-MVC/Data/InterviewProject/HomeworkSubmission/HomeworkSubmission.MVC.Tests/bin/Debug/HomeworkSubmission.MVC.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="HomeworkSubmission.MVC.Tests.SubmissionControllerTest, HomeworkSubmission.MVC.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateTest" />
+      <AspNet webSiteUrl="http://localhost:777/Submission">
+        <Host pathToWebApp="T:\01. ASP-MVC\Data\InterviewProject\HomeworkSubmission\HomeworkSubmission.MVC" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fff6fe82-a045-f6ac-a835-67de1ae3dde2" executionId="62ed7308-b255-4f93-b282-f0d8532267f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="62ed7308-b255-4f93-b282-f0d8532267f9" testId="fff6fe82-a045-f6ac-a835-67de1ae3dde2" testName="CreateTest" computerName="SHOCKPC" startTime="2012-02-21T18:02:29.4289965+02:00" endTime="2012-02-21T18:02:29.6450089+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62ed7308-b255-4f93-b282-f0d8532267f9">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web request 'http://localhost:777/Submission' completed successfully without running the test. This can occur when configuring the Web application for testing fails (an ASP.NET server error occurs when processing the request), or when no ASP.NET page is executed (the URL may point to an HTML page, a Web service, or a directory listing). Running tests in ASP.NET requires the URL to resolve to an ASP.NET page and for the page to execute properly up to the Load event. The response from the request is stored in the file 'WebRequestResponse_CreateTest.html' with the test results; typically this file can be opened with a Web browser to view its contents.</Message>
+        </ErrorInfo>
+      </Output>
+      <ResultFiles>
+        <ResultFile path="SHOCKPC\WebRequestResponse_CreateTest.html" />
+      </ResultFiles>
+    </UnitTestResult>
+  </Results>
+</TestRun>

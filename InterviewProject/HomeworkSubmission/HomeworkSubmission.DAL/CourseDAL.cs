@@ -22,10 +22,20 @@ namespace HomeworkSubmission.DAL
         /// <returns>Collection of Courses</returns>
         public static IEnumerable<Cours> GetAll()
         {
-            var e = from c in db.Courses
-                    select c;
+          return  db.Courses;
+        }
 
-            return e;
+        /// <summary>
+        /// Gets all active courses.
+        /// </summary>
+        /// <returns>collection of courses</returns>
+        public static IEnumerable<Cours> GetAllActive(IEnumerable<Cours> courses)
+        {
+            var activeCourses = from e in courses
+                    where e.IsActive == true
+                    select e;
+
+            return activeCourses;
         }
 
         /// <summary>
@@ -38,7 +48,6 @@ namespace HomeworkSubmission.DAL
             var t = (from c in db.Courses
                     where c.ID == ID
                     select c).FirstOrDefault().Topics;
-
             return t;
         }
 

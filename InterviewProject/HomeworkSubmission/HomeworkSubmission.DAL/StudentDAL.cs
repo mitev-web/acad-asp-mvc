@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Data.Entity;
 
 namespace HomeworkSubmission.DAL
 {
@@ -13,10 +14,7 @@ namespace HomeworkSubmission.DAL
         /// <returns>Collection of Students</returns>
         public static IEnumerable<Student> GetAll()
         {
-            var e = from c in db.Students
-                    select c;
-
-            return e;
+            return db.Students;
         }
 
         /// <summary>
@@ -94,9 +92,7 @@ namespace HomeworkSubmission.DAL
         {
             string code = (student.ID+1 + "_" + student.FirstName.Substring(0, 2) +
                           student.LastName.Substring(0, 2)).ToUpper();
-
             student.AcademyID = code;
-
             db.SaveChanges();
         }
 

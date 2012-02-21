@@ -1,0 +1,21 @@
+﻿@model HomeworkSubmission.DAL.Cours
+
+<tr @if (Model != null) {
+    @:data-pkey="@Model.ID"
+}>
+    <td>
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.IsActive)
+        @Html.ValidationMessageFor(model => model.IsActive)
+    </td>
+    <td>
+@if (ViewContext.RouteData.Values["Action"].ToString() == "Edit") {
+        <button class="editRow">Save</button><button class="cancelEditRow">Cancel</button>
+} else {
+        <button class="createRow">Create</button><button class="cancelCreateRow">Cancel</button>
+}
+    </td>
+</tr>

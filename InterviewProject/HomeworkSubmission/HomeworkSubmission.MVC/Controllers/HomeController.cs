@@ -19,12 +19,7 @@ namespace HomeworkSubmission.MVC.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your quintessential app description page.";
 
-            return View();
-        }
 
         public ActionResult Home(int courses=0, string academyID="")
         {
@@ -45,8 +40,8 @@ namespace HomeworkSubmission.MVC.Controllers
                 {
                     courses = student.Courses.FirstOrDefault().ID;
                 }
-          
-                List<Topic> topics = CourseDAL.GetTopicsByID(courses).ToList();
+
+                List<Topic> topics = TopicDAL.GetAllActive(CourseDAL.GetTopicsByID(courses)).ToList();
                 List<TopicViewModel> topicViewModels = new List<TopicViewModel>();
 
                 foreach (Topic topic in topics)

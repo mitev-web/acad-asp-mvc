@@ -13,10 +13,7 @@ namespace HomeworkSubmission.DAL
         /// <returns>Collection of Topics</returns>
         public static IEnumerable<Topic> GetAll()
         {
-            var e = from c in db.Topics
-                    select c;
-
-            return e;
+            return db.Topics;
         }
 
         /// <summary>
@@ -32,6 +29,15 @@ namespace HomeworkSubmission.DAL
             FirstOrDefault();
 
             return topic;
+        }
+
+        public static IEnumerable<Topic> GetAllActive(IEnumerable<Topic> topics)
+        {
+            var activeTopics = from e in topics
+                                where e.IsActive == true
+                                select e;
+
+            return activeTopics;
         }
 
         /// <summary>
