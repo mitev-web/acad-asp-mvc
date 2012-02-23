@@ -83,25 +83,6 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
             return View(cours);
         }
 
-        //
-        // GET: /Admin/Courses/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            Cours cours = db.Courses.Single(c => c.ID == id);
-            return View(cours);
-        }
 
-        //
-        // POST: /Admin/Courses/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        { 
-            Cours cours = db.Courses.Single(c => c.ID == id);
-            db.Courses.DeleteObject(cours);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
     }
 }

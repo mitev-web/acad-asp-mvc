@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
 }
-
+    .deleteRow 
+    {
+        display:none;
+    }
 body {
     background-color: #fff;
     border-top: solid 10px #fff;

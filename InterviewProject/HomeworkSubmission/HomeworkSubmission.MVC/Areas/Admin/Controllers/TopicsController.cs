@@ -102,21 +102,6 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
             return PartialView(topic);
         }
 
-        //
-        // POST: /Topic/Delete/5
 
-        [HttpPost]
-        public void Delete(int id)
-        {
-            Topic topic = db.Topics.Single(t => t.ID == id);
-            db.Topics.DeleteObject(topic);
-            db.SaveChanges();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
-        }
     }
 }
