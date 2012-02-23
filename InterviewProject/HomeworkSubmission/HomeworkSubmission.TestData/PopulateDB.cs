@@ -20,6 +20,10 @@ namespace UserTestData
             GenerateTestData.AddCoursesToStudents(10);
             GenerateTestData.PopulateAdminUsers(3);
 
+            //its good that we have a default user for testing
+            GenerateTestData.AddUser("test123", "test123");
+  
+
 
 
         }

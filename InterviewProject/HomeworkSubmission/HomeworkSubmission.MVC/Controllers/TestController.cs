@@ -12,7 +12,7 @@ namespace HomeworkSubmission.MVC.Controllers
         //
         // GET: /Test/
 
-        public ActionResult Index()
+        public ActionResult index(int id)
         {
             ViewBag.Topics = SubmissionDAL.GetAllByStudentID(33);
 

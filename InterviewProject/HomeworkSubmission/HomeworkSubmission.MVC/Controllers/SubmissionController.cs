@@ -11,11 +11,8 @@ using HomeworkSubmission.MVC.Models;
 
 namespace HomeworkSubmission.MVC.Controllers
 {
-
     public class SubmissionController : Controller
     {
-        //
-        // GET: /Submission/
         public ActionResult Index(string topicID="",
             string courseID = "")
         {
@@ -32,17 +29,6 @@ namespace HomeworkSubmission.MVC.Controllers
  
             return View();
         }
-
-        //
-        // GET: /Submission/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /Submission/Create
 
         public ActionResult Create(SubmissionViewModel model)
         {
@@ -91,18 +77,31 @@ namespace HomeworkSubmission.MVC.Controllers
                     model.CourseID + "_COURSE", model.TopicID + "_TOPIC");
 
                 var path = Path.Combine(Server.MapPath("~/Uploads"),
-                    model.CourseID + "_COURSE", model.TopicID + "_TOPIC", 
+                    model.CourseID + "_COURSE", model.TopicID + "_TOPIC",
                     model.StudentAcademyID.Trim() + "." + extension);
                 
                 if (!Directory.Exists(dir)) 
                 {
                     Directory.CreateDirectory(dir);
                 }
-            
+
+                string filePath = Path.Combine(@"Uploads",
+                    model.CourseID + "_COURSE", model.TopicID + "_TOPIC",
+                    model.StudentAcademyID.Trim());
+
                 // var fileName = Path.GetFileName(model.FileUpload.FileName);
                 model.FileUpload.SaveAs(path);
-                SubmissionDAL.Create(StudentDAL.GetByAcademyID(model.StudentAcademyID)
-                    , TopicDAL.GetByID(int.Parse(model.TopicID)), DateTime.Now, extension);
+                if (SubmissionDAL.Exists(filePath))
+                {
+                    Submission existingSubmission = SubmissionDAL.GetByFilePath(filePath);
+                    SubmissionDAL.Update(existingSubmission, DateTime.Now, extension);
+                }
+                else
+                {
+                    SubmissionDAL.Create(StudentDAL.GetByAcademyID(model.StudentAcademyID),
+                        TopicDAL.GetByID(int.Parse(model.TopicID)), CourseDAL.GetByID(int.Parse(model.CourseID)), 
+                        DateTime.Now, extension, filePath);
+                }
             }
             else
             {
@@ -112,7 +111,5 @@ namespace HomeworkSubmission.MVC.Controllers
 
             return View("Success");
         }
-
-
     }
 }

@@ -14,6 +14,9 @@ namespace HomeworkSubmission.MVC.Models
         public string CourseID { get; set; }
         [Required]
         public HttpPostedFileBase FileUpload { get; set; }
+        public string FilePath { get; set; }
+
+
 
 
         public SubmissionViewModel(string studentAcademyID, string topicID, string courseID, HttpPostedFileBase fileUpload)
@@ -29,6 +32,11 @@ namespace HomeworkSubmission.MVC.Models
             this.StudentAcademyID = studentAcademyID;
             this.TopicID = topicID;
             this.CourseID = courseID;
+        }
+
+        public SubmissionViewModel()
+        {
+                	
         }
     }
 }

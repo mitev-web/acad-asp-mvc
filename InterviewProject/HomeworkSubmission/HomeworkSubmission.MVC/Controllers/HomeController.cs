@@ -36,6 +36,7 @@ namespace HomeworkSubmission.MVC.Controllers
                 }
                 ViewBag.Hello = "Hello " + student.FirstName + " " + student.LastName;
                 ViewBag.CourseID = courses;
+
                 if (courses == 0)
                 {
                     courses = student.Courses.FirstOrDefault().ID;

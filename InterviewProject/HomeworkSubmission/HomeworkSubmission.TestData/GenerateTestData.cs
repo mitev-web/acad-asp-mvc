@@ -35,6 +35,18 @@ namespace UserTestData
             }
         }
 
+        /// <summary>
+        /// Creates a single admin user.
+        /// </summary>
+        /// <param name="user">username</param>
+        /// <param name="pass">password</param>
+        public static void AddUser(string user, string pass)
+        {
+                UserDAL.Create(user, pass,
+                Faker.StringFaker.Alpha(3) + Faker.InternetFaker.Email(),
+                Faker.NameFaker.FirstName(), Faker.NameFaker.LastName());
+        }
+
             /// <summary>
             /// Adds the topics to submissions.
             /// </summary>

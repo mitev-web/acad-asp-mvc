@@ -31,9 +31,10 @@
               @if (Request.IsAuthenticated)
               {
                   
-                    <li>@Html.ActionLink("Students", "Index", "Student", new { area = "Admin" }, null)</li>
-                    <li>@Html.ActionLink("Courses", "Index", "Course", new { area = "Admin" }, null)</li>
-                    <li>@Html.ActionLink("Topics", "Index", "Topic", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Submissions", "Index", "Submissions", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Students", "Index", "Students", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Courses", "Index", "Courses", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Topics", "Index", "Topics", new { area = "Admin" }, null)</li>
               }
               else
               {

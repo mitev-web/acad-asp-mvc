@@ -33,7 +33,7 @@ namespace HomeworkSubmission.DAL
 
         public static IEnumerable<Topic> GetAllActive(IEnumerable<Topic> topics)
         {
-            return db.Topics.Where(x => x.IsActive == true);
+            return topics.Where(x => x.IsActive == true);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace HomeworkSubmission.DAL
         /// <returns></returns>
         public static IEnumerable<Topic> GetAllByCourse(Cours course)
         {
-            return db.Topics.Where(x => x.CourseID == course.ID);
+            return course.Topics;
         }
 
 

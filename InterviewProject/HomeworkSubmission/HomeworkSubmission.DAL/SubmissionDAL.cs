@@ -48,18 +48,62 @@ namespace HomeworkSubmission.DAL
         /// <param name="uploadDate">The upload date.</param>
         /// <param name="mimeType">Type of the MIME.</param>
         /// <param name="fileData">The file data.</param>
-        public static void Create(Student student, Topic topic, DateTime uploadDate, string mimeType)
+        public static void Create(Student student, Topic topic, Cours course, DateTime uploadDate, string mimeType, string filePath)
         {
             Submission s = new Submission();
             s.Student = student;
+            s.Cours = course;
             s.Topic = topic;
             s.UploadDate = uploadDate;
             s.MIMEType = mimeType;
-
+            s.FilePath = filePath.Trim();
             db.Submissions.AddObject(s);
             db.SaveChanges();
         }
 
+        /// <summary>
+        /// Check if submission exists
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <returns></returns>
+        public static bool Exists(string filePath)
+        {
+            if (db.Submissions.Count(x => x.FilePath == filePath) > 0)
+            {
+                return true;
+            }else
+            {
+                return false;
+        	}
+        }
+
+        /// <summary>
+        /// Updates the specified submission.
+        /// </summary>
+        /// <param name="submission">The submission.</param>
+        /// <param name="uploadDate">The upload date.</param>
+        /// <param name="fileType">Type of the file.</param>
+        public static void Update(Submission submission, DateTime uploadDate, string fileType)
+        {
+            submission.UploadDate = uploadDate;
+            submission.MIMEType = fileType;
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// Gets submission the by file path.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <returns></returns>
+        public static Submission GetByFilePath(string filePath)
+        {
+            return db.Submissions.FirstOrDefault(x => x.FilePath == filePath);
+        }
+
+        /// <summary>
+        /// Adds the submissions.
+        /// </summary>
+        /// <param name="submissions">The submissions.</param>
         public static void AddSubmissions(List<Submission> submissions)
         {
             foreach (Submission submission in submissions)

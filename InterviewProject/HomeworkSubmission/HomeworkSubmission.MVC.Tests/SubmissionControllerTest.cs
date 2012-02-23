@@ -45,7 +45,7 @@ namespace HomeworkSubmission.MVC.Tests
         [TestMethod()]
         [HostType("ASP.NET")]
         [AspNetDevelopmentServerHost("T:\\01. ASP-MVC\\Data\\InterviewProject\\HomeworkSubmission\\HomeworkSubmission.MVC", "/")]
-        [UrlToTest("http://localhost:777/")]
+        [UrlToTest("http://localhost:777/Submission/Create")]
         public void CreateTest()
         {
             SubmissionViewModel model = new SubmissionViewModel(StudentDAL.GetRandomStudent().AcademyID, "1", "1"); 
@@ -59,9 +59,7 @@ namespace HomeworkSubmission.MVC.Tests
             //Assert.AreEqual(expected, actual);
             //Assert.Inconclusive("Verify the correctness of this test method.");
 
-
-            var submissionControler = new SubmissionController();
-            var result = submissionControler.Create(model) as ViewResult;
+            ActionResult result = new SubmissionController().Create(model) as ViewResult;
 
             Assert.IsNotNull(result, "Viewresult should be returned");
 

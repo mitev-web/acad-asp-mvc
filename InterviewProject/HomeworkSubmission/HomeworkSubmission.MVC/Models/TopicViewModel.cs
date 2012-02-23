@@ -12,9 +12,7 @@ namespace HomeworkSubmission.MVC.Models
         public CourseViewModel Course {get;set;}
         public DateTime? ActiveFrom { get; set; }
         public DateTime? ActiveTo { get; set; }
-
-
-
+  
         public TopicViewModel(int iD, string name, bool isActive,
             CourseViewModel course, DateTime? activeFrom, DateTime? activeTo)
         {
