@@ -78,8 +78,18 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            Student student = db.Students.Single(s => s.ID == id);
+            Student student = new Student();
+
+            try
+            {
+               student = db.Students.Single(s => s.ID == id);
+            }
+            catch (Exception)
+            {
+            	
+            }
             return PartialView(student);
+          
         }
 
         //

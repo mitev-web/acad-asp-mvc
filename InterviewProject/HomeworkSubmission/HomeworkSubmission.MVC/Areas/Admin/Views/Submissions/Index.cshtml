@@ -6,7 +6,6 @@
 
 <h2>Student Submissions</h2>
 
-
 <table>
     <tr>
         <th>
@@ -27,7 +26,7 @@
         <th>
            Download
         </th>
-        <th>Download all for Student</th>
+   
     </tr>
 
 @foreach (var item in Model) {
@@ -45,14 +44,12 @@
             @Html.DisplayFor(modelItem => item.UploadDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MIMEType)
+            @Html.DisplayFor(modelItem => item.Extension)
         </td>
         <td>
-           <a href="../@item.FilePath.ToString().Trim().@item.MIMEType")>Download</a>
+           <a href="../@item.FilePath.ToString().Trim().@item.Extension")>Download</a>
         </td>
-        <td>
-            @Html.ActionLink("Download All", "GetAllForCourse", new { courseID = item.CourseID })
-        </td>
+
     </tr>
 }
 

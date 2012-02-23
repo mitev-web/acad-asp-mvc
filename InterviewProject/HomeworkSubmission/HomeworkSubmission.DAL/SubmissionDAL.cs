@@ -46,16 +46,16 @@ namespace HomeworkSubmission.DAL
         /// <param name="student">The student.</param>
         /// <param name="topic">The topic.</param>
         /// <param name="uploadDate">The upload date.</param>
-        /// <param name="mimeType">Type of the MIME.</param>
+        /// <param name="Extension">Type of the MIME.</param>
         /// <param name="fileData">The file data.</param>
-        public static void Create(Student student, Topic topic, Cours course, DateTime uploadDate, string mimeType, string filePath)
+        public static void Create(Student student, Topic topic, Cours course, DateTime uploadDate, string Extension, string filePath)
         {
             Submission s = new Submission();
             s.Student = student;
             s.Cours = course;
             s.Topic = topic;
             s.UploadDate = uploadDate;
-            s.MIMEType = mimeType;
+            s.Extension = Extension;
             s.FilePath = filePath.Trim();
             db.Submissions.AddObject(s);
             db.SaveChanges();
@@ -86,7 +86,7 @@ namespace HomeworkSubmission.DAL
         public static void Update(Submission submission, DateTime uploadDate, string fileType)
         {
             submission.UploadDate = uploadDate;
-            submission.MIMEType = fileType;
+            submission.Extension = fileType;
             db.SaveChanges();
         }
 

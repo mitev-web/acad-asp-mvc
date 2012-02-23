@@ -11,10 +11,8 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
 {
     public class CoursesController : AdminController
     {
-
         //
         // GET: /Admin/Courses/
-
         public ViewResult Index()
         {
             return View(db.Courses.ToList());
@@ -35,7 +33,7 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
         //
         // POST: /Admin/Courses/Create
@@ -58,7 +56,14 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
  
         public ActionResult Edit(int id)
         {
-            Cours cours = db.Courses.Single(c => c.ID == id);
+            Cours cours = new Cours();
+            try
+            {
+                cours = db.Courses.Single(c => c.ID == id);
+            }
+            catch (Exception)
+            {
+            }
             return View(cours);
         }
 
@@ -92,13 +97,11 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {            
+        { 
             Cours cours = db.Courses.Single(c => c.ID == id);
             db.Courses.DeleteObject(cours);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
     }
 }

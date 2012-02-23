@@ -7,24 +7,6 @@ namespace UserTestData
 {
     class GenerateTestData
     {
-        /// <summary>
-        /// Adds the students to submissions.
-        /// </summary>
-        /// <param name="submissions">The submissions.</param>
-        /// <returns></returns>
-        private static List<Submission> AddStudentsToSubmissions(List<Submission> submissions)
-        {
-            List<Student> students = StudentDAL.GetAll().ToList();
-            int topicMax = students.Count();
-            Random rand = new Random();
-            foreach (Submission submission in submissions)
-            {
-                submission.Student = students[rand.Next(0, topicMax - 1)];
-            }
-
-            return submissions;
-        }
-
         public static void PopulateAdminUsers(int numberOfUsers)
         {
             for (int i = 0; i < numberOfUsers; i++)
@@ -42,27 +24,9 @@ namespace UserTestData
         /// <param name="pass">password</param>
         public static void AddUser(string user, string pass)
         {
-                UserDAL.Create(user, pass,
+            UserDAL.Create(user, pass,
                 Faker.StringFaker.Alpha(3) + Faker.InternetFaker.Email(),
                 Faker.NameFaker.FirstName(), Faker.NameFaker.LastName());
-        }
-
-            /// <summary>
-            /// Adds the topics to submissions.
-            /// </summary>
-            /// <param name="submissions">The submissions.</param>
-            /// <returns></returns>
-        private static List<Submission> AddTopicsToSubmissions(List<Submission> submissions)
-        {
-            List<Topic> topics = TopicDAL.GetAll().ToList();
-            int topicMax = topics.Count();
-            Random rand = new Random();
-            foreach (Submission submission in submissions)
-            {
-                submission.Topic = topics[rand.Next(0, topicMax - 1)];
-            }
-
-            return submissions;
         }
 
         /// <summary>
@@ -191,55 +155,6 @@ namespace UserTestData
             }
             // Return char and concat substring.
             return char.ToUpper(s[0]) + s.Substring(1);
-        }
-
-        /// <summary>
-        /// Generates submissions.
-        /// </summary>
-        /// <param name="numberSubmissions">The number of submissions.</param>
-        /// <returns></returns>
-        public static List<Submission> GenerateSubmissions(int numberSubmissions)
-        {
-            List<Student> students = StudentDAL.GetAll().ToList();
-            List<Submission> submissions = new List<Submission>(); 
-            foreach (Student student in students)
-            {
-                for (int i = 0; i < numberSubmissions; i++)
-                {
-                    Submission s = new Submission();
-                    s.Student = student;
-                    s.MIMEType = "zip";
-                    s.UploadDate = Faker.DateTimeFaker.DateTime();
-
-                    submissions.Add(s);
-                }
-            }
-
-            return submissions;
-        }
-
-        /// <summary>
-        /// Adds submissions to students.
-        /// </summary>
-        /// <param name="numberOfSubmissions">The number of submissions per student.</param>
-        public static void AddSubmissionsToStudents(int numberOfSubmissions)
-        {
-            List<Submission> submissions = GenerateSubmissions(numberOfSubmissions);
-
-            submissions = AddTopicsToSubmissions(submissions);
-
-            foreach (Submission submission in submissions)
-            {
-                try
-                {
-                    DAO.db.Submissions.AddObject(submission);
-                    DAO.db.SaveChanges();
-                }
-                catch (Exception e)
-                { //TODO: fix this exception
-                    //Console.WriteLine(numberOfSubmissions);
-                }
-            }
         }
 
         public static List<Topic> GenerateTopics(int numberTopics)

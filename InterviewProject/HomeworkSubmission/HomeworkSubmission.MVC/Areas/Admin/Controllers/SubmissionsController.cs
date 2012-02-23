@@ -40,7 +40,7 @@ namespace HomeworkSubmission.MVC.Areas.Admin.Controllers
 
             string filename = "COURSE_" + courseID +"_"+date+".zip";
             Response.AppendHeader("content-disposition", "attachment; filename=" + filename);
-            Response.ContentType = "Application/msword";
+            Response.ContentType = "Application/zip";
             Response.WriteFile(filePath);
             Response.End();
         }

@@ -686,7 +686,7 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool.ogg  = elem.canPlayType('audio/ogg; codecs="vorbis"');
                 bool.mp3  = elem.canPlayType('audio/mpeg;');
 
-                // Mimetypes accepted:
+                // Extensions accepted:
                 //   https://developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_video_elements
                 //   http://bit.ly/iphoneoscodecs
                 bool.wav  = elem.canPlayType('audio/wav; codecs="1"');
