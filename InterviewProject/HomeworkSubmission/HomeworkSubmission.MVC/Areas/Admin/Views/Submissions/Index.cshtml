@@ -27,7 +27,7 @@
         <th>
            Download
         </th>
-        <th></th>
+        <th>Download all for Student</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -51,7 +51,7 @@
            <a href="../@item.FilePath.ToString().Trim().@item.MIMEType")>Download</a>
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id = item.ID })
+            @Html.ActionLink("Download All", "GetAllForCourse", new { courseID = item.CourseID })
         </td>
     </tr>
 }

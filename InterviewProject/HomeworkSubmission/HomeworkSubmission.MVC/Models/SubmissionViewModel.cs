@@ -17,8 +17,6 @@ namespace HomeworkSubmission.MVC.Models
         public string FilePath { get; set; }
 
 
-
-
         public SubmissionViewModel(string studentAcademyID, string topicID, string courseID, HttpPostedFileBase fileUpload)
         {
             this.StudentAcademyID = studentAcademyID;

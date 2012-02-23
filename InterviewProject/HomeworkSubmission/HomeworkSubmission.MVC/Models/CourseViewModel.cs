@@ -13,8 +13,6 @@ namespace HomeworkSubmission.MVC.Models
         public bool IsActive { get; set; }
         public List<Topic> Topics { get; set; }
 
-
-
         public CourseViewModel(string name, int iD, bool isActive, List<Topic> topics)
         {
             this.Name = name;
@@ -22,8 +20,6 @@ namespace HomeworkSubmission.MVC.Models
             this.IsActive = isActive;
             this.Topics = topics;
         }
-
-
 
         public CourseViewModel(HomeworkSubmission.DAL.Cours course)
         {
